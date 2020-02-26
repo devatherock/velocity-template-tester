@@ -1,0 +1,5 @@
+profile: service
+defaultPackage: io.github.devatherock.velocity.tester
+---
+testFramework: spek
+sourceLanguage: kotlin

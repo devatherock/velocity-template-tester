@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css">
+
+    <script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.blockUI/2.70/jquery.blockUI.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/autosize.js/3.0.8/autosize.min.js"></script>
+    <script src="scripts.js"></script>
+    <title>Velocity Template Tester</title>
+</head>
+<body>
+<div id="layout">
+    <div id="main">
+        <div class="header">
+            <h1>Velocity Template Tester</h1>
+        </div>
+
+        <div class="content">
+            <form id="templateAndModelForm" method="post" class="pure-form pure-form-stacked">
+                <label for="template">Template</label>
+                <textarea id="template" name="template" class="pure-input-1 source-code"
+                          placeholder="Enter template, like: Hello ${user}!"
+                ></textarea>
+
+                <label for="dataModel">
+                    Data model
+                </label>
+                <textarea id="dataModel" name="dataModel" class="pure-input-1 source-code"
+                      placeholder='Enter one or more assignments (e.g., user = John Doe), starting each in its own line.'></textarea>
+                <div class="formBottomButtonsContainer">
+                    <input id="eval-btn" type="button" value="Evaluate" class="pure-button pure-button-primary"/>
+                </div>
+                <div style="display:none" class="resultContainer">
+                    <label for="result">Result</label>
+                    <textarea id="result" class="pure-input-1 source-code" readonly></textarea>
+                </div>
+
+            </form>
+        </div><!-- content -->
+    </div><!-- main -->
+</div><!-- layout -->
+</body>
+</html>
