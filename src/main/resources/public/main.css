@@ -1,0 +1,27 @@
+.content {
+  width: 50%;
+  display: block;
+  margin: 2% auto;
+}
+.header {
+  text-align: center;
+  color: #444;
+  border-bottom: 1px solid #eee;
+}
+.header h1 {
+  margin: 1% 0;
+  font-size: 1.75em;
+  font-weight: normal;
+}
+#eval-btn {
+  margin: 2% 0;
+}
+#template {
+  margin: 1% 0 3% 0;
+}
+#dataModel, #result {
+  margin: 1% 0;
+}
+.resultContainer {
+  margin: 5% 0;
+}

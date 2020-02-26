@@ -1,0 +1,63 @@
+version: 2
+jobs:
+  test:
+    docker:
+      - image: circleci/openjdk:8-jdk
+    working_directory: ~/velocity-template-tester
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - v1-dependencies-{{ checksum "build.gradle" }}
+            - v1-dependencies-    
+      - run: |
+          ./gradlew build
+  build:
+    docker:
+      - image: circleci/openjdk:8-jdk
+    working_directory: ~/velocity-template-tester
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - v1-dependencies-{{ checksum "build.gradle" }}
+            - v1-dependencies-
+      - run: ./gradlew build
+      - save_cache:
+          paths:
+            - ~/.gradle
+          key: v1-dependencies-{{ checksum "build.gradle" }}
+      - store_artifacts:
+          path: build/libs       
+  publish:
+    docker:
+      - image: docker:19.03.6
+    working_directory: ~/velocity-template-tester
+    steps:
+      - checkout
+      - setup_remote_docker
+      - attach_workspace:
+          at: ~/velocity-template-tester    
+      - run: |
+          TAG=0.1.0
+          docker build -t devatherock/velocity-template-tester:$TAG .
+          docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
+          docker push devatherock/velocity-template-tester:$TAG
+
+workflows:
+  version: 2
+  build_publish:
+    jobs:
+      - build:
+          filters:
+            branches:
+              only: master
+      - publish:
+          requires:
+            - build
+  pr_check:
+    jobs:
+      - test:
+          filters:
+            branches:
+              ignore: master
