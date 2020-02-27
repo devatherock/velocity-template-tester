@@ -15,6 +15,9 @@ jobs:
   build:
     docker:
       - image: circleci/openjdk:8-jdk
+    environment:
+      # To generate swagger UI
+      JAVA_TOOL_OPTIONS: '-Dmicronaut.openapi.views.spec=swagger-ui.enabled=true,swagger-ui.theme=flattop'
     working_directory: ~/velocity-template-tester
     steps:
       - checkout
@@ -22,7 +25,7 @@ jobs:
           keys:
             - v1-dependencies-{{ checksum "build.gradle" }}
             - v1-dependencies-
-      - run: ./gradlew build
+      - run: ./gradlew build --no-daemon
       - save_cache:
           paths:
             - ~/.gradle
@@ -41,7 +44,7 @@ jobs:
       - attach_workspace:
           at: ~/velocity-template-tester    
       - run: |
-          TAG=0.2.0
+          TAG=0.3.0
           docker build -t devatherock/velocity-template-tester:$TAG -t devatherock/velocity-template-tester:latest .
           docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
           docker push devatherock/velocity-template-tester:$TAG

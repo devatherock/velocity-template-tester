@@ -8,3 +8,7 @@
 - Added `/health` endpoint
 - Added `latest` tag to the docker image
 - Added build and docker pull badges to readme
+
+## 0.3.0
+### 2020-02-27
+- Added swagger integration to generate API specification

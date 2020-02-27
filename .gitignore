@@ -6,3 +6,4 @@
 .project
 .mvn
 .settings
+.DS_Store
