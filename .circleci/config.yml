@@ -41,10 +41,11 @@ jobs:
       - attach_workspace:
           at: ~/velocity-template-tester    
       - run: |
-          TAG=0.1.0
-          docker build -t devatherock/velocity-template-tester:$TAG .
+          TAG=0.2.0
+          docker build -t devatherock/velocity-template-tester:$TAG -t devatherock/velocity-template-tester:latest .
           docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
           docker push devatherock/velocity-template-tester:$TAG
+          docker push devatherock/velocity-template-tester:latest
 
 workflows:
   version: 2
