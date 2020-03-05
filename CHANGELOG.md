@@ -12,3 +12,7 @@
 ## 0.3.0
 ### 2020-02-27
 - Added swagger integration to generate API specification
+
+## 0.4.0
+### 2020-03-05
+- Fixed the mapping for static paths that broke the UI

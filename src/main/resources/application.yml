@@ -2,7 +2,7 @@ micronaut:
   router:
     static-resources:
       '*':
-        .paths:
+        paths:
           - classpath:public
       swagger:
         paths: classpath:META-INF/swagger

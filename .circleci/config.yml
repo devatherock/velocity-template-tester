@@ -9,7 +9,7 @@ jobs:
       - restore_cache:
           keys:
             - v1-dependencies-{{ checksum "build.gradle" }}
-            - v1-dependencies-    
+            - v1-dependencies-
       - run: |
           ./gradlew build
   build:
@@ -33,7 +33,7 @@ jobs:
       - persist_to_workspace:
           root: ~/velocity-template-tester
           paths:
-            - build/libs       
+            - build/libs
   publish:
     docker:
       - image: docker:19.03.6
@@ -42,9 +42,9 @@ jobs:
       - checkout
       - setup_remote_docker
       - attach_workspace:
-          at: ~/velocity-template-tester    
+          at: ~/velocity-template-tester
       - run: |
-          TAG=0.3.0
+          TAG=0.4.0
           docker build -t devatherock/velocity-template-tester:$TAG -t devatherock/velocity-template-tester:latest .
           docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
           docker push devatherock/velocity-template-tester:$TAG
