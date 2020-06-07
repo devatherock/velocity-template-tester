@@ -1,4 +1,6 @@
 micronaut:
+  server:
+    port: ${PORT:8080}
   router:
     static-resources:
       '*':
