@@ -1,9 +1,15 @@
+work_directory: &work_directory
+  working_directory: ~/velocity-template-tester
+
+orbs:
+  heroku: circleci/heroku@1.0.1
+
 version: 2.1
 jobs:
   test:
     docker:
       - image: circleci/openjdk:8-jdk
-    working_directory: ~/velocity-template-tester
+    <<: *work_directory
     steps:
       - checkout
       - restore_cache:
@@ -18,7 +24,7 @@ jobs:
     environment:
       # To generate swagger UI
       JAVA_TOOL_OPTIONS: '-Dmicronaut.openapi.views.spec=swagger-ui.enabled=true,swagger-ui.theme=flattop'
-    working_directory: ~/velocity-template-tester
+    <<: *work_directory
     steps:
       - checkout
       - restore_cache:
@@ -37,7 +43,7 @@ jobs:
   publish:
     docker:
       - image: docker:19.03.6
-    working_directory: ~/velocity-template-tester
+    <<: *work_directory
     steps:
       - checkout
       - setup_remote_docker
@@ -49,6 +55,22 @@ jobs:
           docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
           docker push devatherock/velocity-template-tester:$TAG
           docker push devatherock/velocity-template-tester:latest
+  deploy:
+    executor: heroku/default
+    <<: *work_directory
+    steps:
+      - checkout
+      - heroku/install
+      - setup_remote_docker
+      - attach_workspace:
+          at: ~/velocity-template-tester
+      - run:
+          name: Build and push the docker image to registry.heroku.com
+          command: |
+            docker build -t registry.heroku.com/velocity-template-tester/web .
+            heroku container:login
+            docker push registry.heroku.com/velocity-template-tester/web
+            heroku container:release -a velocity-template-tester web
 
 workflows:
   version: 2
@@ -59,6 +81,9 @@ workflows:
             branches:
               only: master
       - publish:
+          requires:
+            - build
+      - deploy:
           requires:
             - build
   pr_check:

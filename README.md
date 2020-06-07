@@ -6,11 +6,11 @@
 UI/API for testing Apache Velocity templates
 
 ## API Reference
-The swagger specification of the API can be accessed at `${host}/swagger/velocity-template-tester-${version}.yml` and 
-the swagger UI at `${host}/swagger-ui/`
+Refer the swagger [spec](https://velocity-template-tester.herokuapp.com/swagger/velocity-template-tester-0.4.1.yml)
+or the swagger [UI](https://velocity-template-tester.herokuapp.com/swagger-ui/)
 
 ### Key parameters:
-- **Endpoint**: `${host}/api/expandTemplate`
+- **Endpoint**: `https://velocity-template-tester.herokuapp.com/api/expandTemplate`
 - **Request Content-Type**: `application/json`, `application/x-yaml`
 - **Response Content-Type**: `text/plain`
 
