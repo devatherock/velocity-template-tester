@@ -1,5 +1,9 @@
 # Changelog
 
+## [0.4.2] - 2020-06-06
+### Changed
+- Corrected version number in swagger docs
+
 ## [0.4.1] - 2020-06-06
 ### Added
 - Config to deploy the app to heroku
