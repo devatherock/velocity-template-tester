@@ -1,5 +1,13 @@
-FROM adoptopenjdk/openjdk11-openj9:jdk-11.0.1.13-alpine-slim
-COPY build/libs/velocity-template-tester-*-all.jar velocity-template-tester.jar
+FROM oracle/graalvm-ce:20.0.0-java11 as graalvm
+RUN gu install native-image
+
+COPY . /home/app/micronaut-graal-app
+WORKDIR /home/app/micronaut-graal-app
+
+RUN native-image --no-server -cp build/libs/*-all.jar
+
+FROM frolvlad/alpine-glibc
+RUN apk update && apk add libstdc++
 EXPOSE 8080
-CMD java -XX:+UnlockExperimentalVMOptions -XX:+UseCGroupMemoryLimitForHeap \
-    -Dcom.sun.management.jmxremote -noverify ${JAVA_OPTS} -jar velocity-template-tester.jar
+COPY --from=graalvm /home/app/micronaut-graal-app/micronautgraalapp /micronaut-graal-app/micronautgraalapp
+ENTRYPOINT ["/micronaut-graal-app/micronautgraalapp"]

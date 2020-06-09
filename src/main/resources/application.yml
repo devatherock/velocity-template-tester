@@ -12,3 +12,5 @@ micronaut:
       swagger-ui:
         paths: classpath:META-INF/swagger/views/swagger-ui
         mapping: /swagger-ui/**
+jackson:
+  bean-introspection-module: true

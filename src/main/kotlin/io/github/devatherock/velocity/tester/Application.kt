@@ -12,7 +12,7 @@ import io.swagger.v3.oas.annotations.info.Info
 @OpenAPIDefinition(
     info = Info(
         title = "Velocity Template Tester",
-        version = "0.4.2",
+        version = "0.5.0",
         description = "Velocity Template Tester API",
         contact = Contact(url = "https://github.com/devatherock", name = "devatherock")
     )

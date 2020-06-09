@@ -1,5 +1,9 @@
 # Changelog
 
+## [0.5.0] - 2020-06-09
+### Changed
+- [Issue 6](https://github.com/devatherock/velocity-template-tester/issues/6): Built a native image using graal vm
+
 ## [0.4.2] - 2020-06-06
 ### Changed
 - Corrected version number in swagger docs
