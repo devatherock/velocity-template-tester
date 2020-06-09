@@ -1,14 +1,17 @@
 work_directory: &work_directory
   working_directory: ~/velocity-template-tester
 
+jdk_image: &jdk_image
+  docker:
+    - image: circleci/openjdk:11-jdk
+
 orbs:
   heroku: circleci/heroku@1.0.1
 
 version: 2.1
 jobs:
   test:
-    docker:
-      - image: circleci/openjdk:8-jdk
+    <<: *jdk_image
     <<: *work_directory
     steps:
       - checkout
@@ -19,8 +22,7 @@ jobs:
       - run: |
           ./gradlew build
   build:
-    docker:
-      - image: circleci/openjdk:8-jdk
+    <<: *jdk_image
     environment:
       # To generate swagger UI
       JAVA_TOOL_OPTIONS: '-Dmicronaut.openapi.views.spec=swagger-ui.enabled=true,swagger-ui.theme=flattop'
@@ -50,7 +52,7 @@ jobs:
       - attach_workspace:
           at: ~/velocity-template-tester
       - run: |
-          TAG=0.4.2
+          TAG=0.5.0
           docker build -t devatherock/velocity-template-tester:$TAG -t devatherock/velocity-template-tester:latest .
           docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
           docker push devatherock/velocity-template-tester:$TAG

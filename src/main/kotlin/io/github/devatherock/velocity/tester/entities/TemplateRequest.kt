@@ -5,5 +5,5 @@ package io.github.devatherock.velocity.tester.entities
  */
 class TemplateRequest {
     var template: String = ""
-    val parameters: Map<String, Any> = HashMap()
+    var parameters: Map<String, Any> = HashMap()
 }
