@@ -41,7 +41,7 @@ jobs:
       - persist_to_workspace:
           root: ~/velocity-template-tester
           paths:
-            - build/libs
+            - build
   publish:
     docker:
       - image: docker:19.03.6
