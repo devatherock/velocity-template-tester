@@ -1,5 +1,9 @@
 # Changelog
 
+## [0.6.0] - 2020-06-12
+### Added
+- `java.lang.String` to the reflection config as `substring` function isn't working within the template
+
 ## [0.5.0] - 2020-06-09
 ### Changed
 - [Issue 6](https://github.com/devatherock/velocity-template-tester/issues/6): Built a native image using graal vm
