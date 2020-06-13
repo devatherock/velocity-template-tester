@@ -3,6 +3,7 @@
 ## [0.6.0] - 2020-06-12
 ### Added
 - `java.lang.String` to the reflection config as `substring` function isn't working within the template
+- Built two docker images - one with jar and one with native image
 
 ## [0.5.0] - 2020-06-09
 ### Changed

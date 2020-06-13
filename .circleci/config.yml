@@ -53,7 +53,7 @@ jobs:
           at: ~/velocity-template-tester
       - run: |
           TAG=0.6.0
-          docker build -t devatherock/velocity-template-tester:$TAG -t devatherock/velocity-template-tester:latest .
+          docker build -t devatherock/velocity-template-tester:$TAG -t devatherock/velocity-template-tester:latest -f docker/Jar.Dockerfile .
           docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
           docker push devatherock/velocity-template-tester:$TAG
           docker push devatherock/velocity-template-tester:latest
@@ -69,10 +69,12 @@ jobs:
       - run:
           name: Build and push the docker image to registry.heroku.com
           command: |
-            docker build -t registry.heroku.com/velocity-template-tester/web .
+            docker build -t registry.heroku.com/velocity-template-tester/web -t devatherock/velocity-template-tester:native -f docker/Native.Dockerfile .
             heroku container:login
             docker push registry.heroku.com/velocity-template-tester/web
             heroku container:release -a velocity-template-tester web
+            docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
+            docker push devatherock/velocity-template-tester:native
 
 workflows:
   version: 2
