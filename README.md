@@ -3,7 +3,7 @@
 [![Docker Image Size](https://img.shields.io/docker/image-size/devatherock/velocity-template-tester.svg?sort=date)](https://hub.docker.com/r/devatherock/velocity-template-tester/)
 [![Docker Image Layers](https://img.shields.io/microbadger/layers/devatherock/velocity-template-tester.svg)](https://microbadger.com/images/devatherock/velocity-template-tester)
 # velocity-template-tester
-UI/API for testing Apache Velocity templates
+UI/API for testing [Apache Velocity](https://velocity.apache.org/engine/2.2/user-guide.html) templates
 
 ## API Reference
 Refer the swagger [spec](https://velocity-template-tester.herokuapp.com/swagger/velocity-template-tester-0.6.0.yml)
