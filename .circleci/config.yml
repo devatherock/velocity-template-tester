@@ -1,17 +1,25 @@
-work_directory: &work_directory
-  working_directory: ~/velocity-template-tester
-
 jdk_image: &jdk_image
   docker:
     - image: circleci/openjdk:11-jdk
 
+slack_image: &slack_image
+  docker:
+    - image: devatherock/simple-slack:0.4.0
+
 orbs:
   heroku: circleci/heroku@1.0.1
+
+work_directory: &work_directory
+  working_directory: ~/velocity-template-tester
+
+resource_class: &resource_class
+  resource_class: small
 
 version: 2.1
 jobs:
   test:
     <<: *jdk_image
+    <<: *resource_class
     <<: *work_directory
     steps:
       - checkout
@@ -23,6 +31,7 @@ jobs:
           ./gradlew build
   build:
     <<: *jdk_image
+    <<: *resource_class
     environment:
       # To generate swagger UI
       JAVA_TOOL_OPTIONS: '-Dmicronaut.openapi.views.spec=swagger-ui.enabled=true,swagger-ui.theme=flattop'
@@ -45,6 +54,7 @@ jobs:
   publish:
     docker:
       - image: docker:19.03.6
+    <<: *resource_class
     <<: *work_directory
     steps:
       - checkout
@@ -52,13 +62,14 @@ jobs:
       - attach_workspace:
           at: ~/velocity-template-tester
       - run: |
-          TAG=0.6.0
+          TAG=0.6.1
           docker build -t devatherock/velocity-template-tester:$TAG -t devatherock/velocity-template-tester:latest -f docker/Jar.Dockerfile .
           docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
           docker push devatherock/velocity-template-tester:$TAG
           docker push devatherock/velocity-template-tester:latest
   deploy:
     executor: heroku/default
+    <<: *resource_class
     <<: *work_directory
     steps:
       - checkout
@@ -76,8 +87,26 @@ jobs:
             docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
             docker push devatherock/velocity-template-tester:native
 
+  notify_success:
+    <<: *slack_image
+    <<: *resource_class
+    environment:
+      TEXT: "Success: {{.CircleBuildUrl}} by {{.CircleUsername}}"
+    steps:
+      - run: /bin/simpleslack -c "#33ad7f" || true
+  notify_failure:
+    <<: *slack_image
+    <<: *resource_class
+    environment:
+      TEXT: "Failure: {{.CircleBuildUrl}} by {{.CircleUsername}}"
+    steps:
+      - run:
+          name: Failure notification
+          command: /bin/simpleslack -c "#a1040c" || true
+          when: on_fail
+
 workflows:
-  version: 2
+  version: 2.1
   build_publish:
     jobs:
       - build:
@@ -90,6 +119,14 @@ workflows:
       - deploy:
           requires:
             - build
+      - notify_success:
+          requires:
+            - publish
+            - deploy
+      - notify_failure:
+          requires:
+            - publish
+            - deploy
   pr_check:
     jobs:
       - test:

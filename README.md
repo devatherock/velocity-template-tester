@@ -6,7 +6,7 @@
 UI/API for testing [Apache Velocity](https://velocity.apache.org/engine/2.2/user-guide.html) templates
 
 ## API Reference
-Refer the swagger [spec](https://velocity-template-tester.herokuapp.com/swagger/velocity-template-tester-0.6.0.yml)
+Refer the swagger [spec](https://velocity-template-tester.herokuapp.com/swagger/velocity-template-tester-0.6.1.yml)
 or the swagger [UI](https://velocity-template-tester.herokuapp.com/swagger-ui/)
 
 ### Key parameters:

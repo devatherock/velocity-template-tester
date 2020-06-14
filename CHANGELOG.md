@@ -1,5 +1,10 @@
 # Changelog
 
+## [0.6.1] - 2020-06-14
+### Changed
+- Enabled debug logging for requests
+- Enabled `/metrics` endpoint
+
 ## [0.6.0] - 2020-06-12
 ### Added
 - `java.lang.String` to the reflection config as `substring` function isn't working within the template
