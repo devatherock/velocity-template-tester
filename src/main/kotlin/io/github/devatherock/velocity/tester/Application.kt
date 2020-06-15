@@ -12,7 +12,7 @@ import io.swagger.v3.oas.annotations.info.Info
 @OpenAPIDefinition(
     info = Info(
         title = "Velocity Template Tester",
-        version = "0.6.0",
+        version = "0.6.1",
         description = "Velocity Template Tester API",
         contact = Contact(url = "https://github.com/devatherock", name = "devatherock")
     )
@@ -23,7 +23,7 @@ object Application {
     fun main(args: Array<String>) {
         Micronaut.build()
                  .packages("")
-                 .mainClass(Application.javaClass)
+                 .mainClass(Application::class.java)
                  .start()
     }
 }
