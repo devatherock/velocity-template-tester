@@ -1,12 +1,13 @@
-jdk_image: &jdk_image
-  docker:
-    - image: circleci/openjdk:11-jdk
-
 slack_image: &slack_image
   docker:
     - image: devatherock/simple-slack:0.4.0
+      auth:
+        username: $DOCKER_USERNAME
+        password: $DOCKER_PASSWORD
 
 orbs:
+  docker: circleci/docker@1.5.0
+  gradle: circleci/gradle@2.2.0
   heroku: circleci/heroku@1.0.1
 
 work_directory: &work_directory
@@ -14,59 +15,22 @@ work_directory: &work_directory
 
 resource_class: &resource_class
   resource_class: small
-
-version: 2.1
-jobs:
-  test:
-    <<: *jdk_image
+  
+executors:
+  jdk-executor:
+    docker:
+      - image: cimg/openjdk:11.0
+        auth:
+          username: $DOCKER_USERNAME
+          password: $DOCKER_PASSWORD
     <<: *resource_class
     <<: *work_directory
-    steps:
-      - checkout
-      - restore_cache:
-          keys:
-            - v1-dependencies-{{ checksum "build.gradle" }}
-            - v1-dependencies-
-      - run: |
-          ./gradlew build
-  build:
-    <<: *jdk_image
-    <<: *resource_class
     environment:
       # To generate swagger UI
       JAVA_TOOL_OPTIONS: '-Dmicronaut.openapi.views.spec=swagger-ui.enabled=true,swagger-ui.theme=flattop'
-    <<: *work_directory
-    steps:
-      - checkout
-      - restore_cache:
-          keys:
-            - v1-dependencies-{{ checksum "build.gradle" }}
-            - v1-dependencies-
-      - run: ./gradlew build --no-daemon
-      - save_cache:
-          paths:
-            - ~/.gradle
-          key: v1-dependencies-{{ checksum "build.gradle" }}
-      - persist_to_workspace:
-          root: ~/velocity-template-tester
-          paths:
-            - build
-  publish:
-    docker:
-      - image: docker:19.03.6
-    <<: *resource_class
-    <<: *work_directory
-    steps:
-      - checkout
-      - setup_remote_docker
-      - attach_workspace:
-          at: ~/velocity-template-tester
-      - run: |
-          TAG=0.6.1
-          docker build -t devatherock/velocity-template-tester:$TAG -t devatherock/velocity-template-tester:latest -f docker/Jar.Dockerfile .
-          docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
-          docker push devatherock/velocity-template-tester:$TAG
-          docker push devatherock/velocity-template-tester:latest
+
+version: 2.1
+jobs:
   deploy:
     executor: heroku/default
     <<: *resource_class
@@ -109,27 +73,56 @@ workflows:
   version: 2.1
   build_publish:
     jobs:
-      - build:
+      - gradle/run:
+          executor: jdk-executor
+          context:
+            - docker-credentials
           filters:
             branches:
               only: master
-      - publish:
+          post-steps:
+            - persist_to_workspace:
+                root: ~/velocity-template-tester
+                paths:
+                  - build
+      - docker/publish:
+          executor: jdk-executor
+          context:
+            - docker-credentials
           requires:
-            - build
+            - gradle/run
+          image: devatherock/velocity-template-tester  
+          attach-at: ~/velocity-template-tester
+          tag: "0.6.1,latest"
+          use-remote-docker: true
+          docker-username: DOCKER_USERNAME
+          dockerfile: docker/Jar.Dockerfile
       - deploy:
+          context:
+            - docker-credentials
+            - heroku-credentials
           requires:
-            - build
+            - gradle/run
       - notify_success:
+          context:
+            - docker-credentials
+            - slack-webhook
           requires:
-            - publish
+            - docker/publish
             - deploy
       - notify_failure:
+          context:
+            - docker-credentials
+            - slack-webhook 
           requires:
-            - publish
+            - docker/publish
             - deploy
   pr_check:
     jobs:
-      - test:
+      - gradle/run:
+          executor: jdk-executor
+          context:
+            - docker-credentials
           filters:
             branches:
               ignore: master
