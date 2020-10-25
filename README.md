@@ -1,7 +1,9 @@
 [![CircleCI](https://circleci.com/gh/devatherock/velocity-template-tester.svg?style=svg)](https://circleci.com/gh/devatherock/velocity-template-tester)
+[![Version](https://img.shields.io/docker/v/devatherock/velocity-template-tester?sort=date)](https://hub.docker.com/r/devatherock/velocity-template-tester/)
 [![Docker Pulls](https://img.shields.io/docker/pulls/devatherock/velocity-template-tester.svg)](https://hub.docker.com/r/devatherock/velocity-template-tester/)
 [![Docker Image Size](https://img.shields.io/docker/image-size/devatherock/velocity-template-tester.svg?sort=date)](https://hub.docker.com/r/devatherock/velocity-template-tester/)
 [![Docker Image Layers](https://img.shields.io/microbadger/layers/devatherock/velocity-template-tester.svg)](https://microbadger.com/images/devatherock/velocity-template-tester)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 # velocity-template-tester
 UI/API for testing [Apache Velocity](https://velocity.apache.org/engine/2.2/user-guide.html) templates
 
