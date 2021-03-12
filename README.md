@@ -1,6 +1,6 @@
 [![CircleCI](https://circleci.com/gh/devatherock/velocity-template-tester.svg?style=svg)](https://circleci.com/gh/devatherock/velocity-template-tester)
 [![Version](https://img.shields.io/docker/v/devatherock/velocity-template-tester?sort=semver)](https://hub.docker.com/r/devatherock/velocity-template-tester/)
-[![Coverage Status](https://coveralls.io/repos/github/devatherock/velocity-template-tester/badge.svg?branch=master)](https://coveralls.io/github/devatherock/velocity-template-tester?branch=master)
+[![Coverage Status](https://sonarcloud.io/api/project_badges/measure?project=velocity-template-tester&metric=coverage)](https://sonarcloud.io/component_measures?id=velocity-template-tester&metric=coverage)
 [![Quality Gate](https://sonarcloud.io/api/project_badges/measure?project=velocity-template-tester&metric=alert_status)](https://sonarcloud.io/component_measures?id=velocity-template-tester&metric=alert_status&view=list)
 [![Docker Pulls](https://img.shields.io/docker/pulls/devatherock/velocity-template-tester.svg)](https://hub.docker.com/r/devatherock/velocity-template-tester/)
 [![Lines of Code](https://sonarcloud.io/api/project_badges/measure?project=velocity-template-tester&metric=ncloc)](https://sonarcloud.io/component_measures?id=velocity-template-tester&metric=ncloc)
