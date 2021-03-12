@@ -2,7 +2,6 @@
 [![Version](https://img.shields.io/docker/v/devatherock/velocity-template-tester?sort=semver)](https://hub.docker.com/r/devatherock/velocity-template-tester/)
 [![Coverage Status](https://sonarcloud.io/api/project_badges/measure?project=velocity-template-tester&metric=coverage)](https://sonarcloud.io/component_measures?id=velocity-template-tester&metric=coverage)
 [![Quality Gate](https://sonarcloud.io/api/project_badges/measure?project=velocity-template-tester&metric=alert_status)](https://sonarcloud.io/component_measures?id=velocity-template-tester&metric=alert_status&view=list)
-[![Docker Pulls](https://img.shields.io/docker/pulls/devatherock/velocity-template-tester.svg)](https://hub.docker.com/r/devatherock/velocity-template-tester/)
 [![Lines of Code](https://sonarcloud.io/api/project_badges/measure?project=velocity-template-tester&metric=ncloc)](https://sonarcloud.io/component_measures?id=velocity-template-tester&metric=ncloc)
 [![Docker Image Size](https://img.shields.io/docker/image-size/devatherock/velocity-template-tester.svg?sort=date)](https://hub.docker.com/r/devatherock/velocity-template-tester/)
 # velocity-template-tester
