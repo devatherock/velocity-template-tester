@@ -1,13 +1,12 @@
 slack_image: &slack_image
   docker:
-    - image: devatherock/simple-slack:0.4.0
+    - image: devatherock/simple-slack:0.6.0
       auth:
         username: $DOCKER_USERNAME
         password: $DOCKER_PASSWORD
 
 orbs:
   docker: circleci/docker@1.5.0
-  gradle: circleci/gradle@2.2.0
   heroku: circleci/heroku@1.0.1
 
 work_directory: &work_directory
@@ -31,6 +30,58 @@ executors:
 
 version: 2.1
 jobs:
+  test:
+    executor: jdk-executor
+    steps:
+      - checkout
+      - attach_workspace:
+          at: ~/velocity-template-tester
+      - restore_cache:
+          keys:
+            - v1-dependencies-{{ checksum "build.gradle" }}
+            - v1-dependencies
+      - run: |
+          ./gradlew test sonarqube -Dsonar.login=$SONAR_TOKEN
+      - store_test_results:
+          path: build/test-results
+  build:
+    executor: jdk-executor
+    steps:
+      - checkout
+      - attach_workspace:
+          at: ~/velocity-template-tester
+      - restore_cache:
+          keys:
+            - v1-dependencies-{{ checksum "build.gradle" }}
+            - v1-dependencies
+      - run: |
+          ./gradlew build coveralls sonarqube -Dsonar.login=$SONAR_TOKEN
+      - persist_to_workspace:
+          root: ~/velocity-template-tester
+          paths:
+            - build
+      - save_cache:
+          paths:
+            - ~/.gradle
+          key: v1-dependencies-{{ checksum "build.gradle" }}
+      - store_test_results:
+          path: build/test-results
+          
+  publish_release:
+    executor: jdk-executor
+    steps:
+      - checkout
+      - setup_remote_docker
+      - attach_workspace:
+          at: ~/velocity-template-tester
+      - run: |
+          TAG=${CIRCLE_TAG#v}
+          DEV_TAG=${CIRCLE_SHA1:0:8}
+          docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
+          docker pull devatherock/velocity-template-tester:$DEV_TAG
+          docker tag devatherock/velocity-template-tester:$DEV_TAG devatherock/velocity-template-tester:$TAG
+          docker push devatherock/velocity-template-tester:$TAG
+
   deploy:
     executor: heroku/default
     <<: *resource_class
@@ -44,85 +95,82 @@ jobs:
       - run:
           name: Build and push the docker image to registry.heroku.com
           command: |
-            docker build -t registry.heroku.com/velocity-template-tester/web -t devatherock/velocity-template-tester:native -f docker/Native.Dockerfile .
+            TAG=${CIRCLE_TAG#v}
+            docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
+            docker pull devatherock/velocity-template-tester:$TAG
+            docker tag devatherock/velocity-template-tester:$TAG registry.heroku.com/velocity-template-tester/web
             heroku container:login
             docker push registry.heroku.com/velocity-template-tester/web
             heroku container:release -a velocity-template-tester web
-            docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
-            docker push devatherock/velocity-template-tester:native
 
-  notify_success:
+  notify:
     <<: *slack_image
     <<: *resource_class
     environment:
       TEXT: "Success: {{.CircleBuildUrl}} by {{.CircleUsername}}"
     steps:
       - run: /bin/simpleslack -c "#33ad7f" || true
-  notify_failure:
-    <<: *slack_image
-    <<: *resource_class
-    environment:
-      TEXT: "Failure: {{.CircleBuildUrl}} by {{.CircleUsername}}"
-    steps:
-      - run:
-          name: Failure notification
-          command: /bin/simpleslack -c "#a1040c" || true
-          when: on_fail
 
 workflows:
   version: 2.1
   build_publish:
     jobs:
-      - gradle/run:
-          executor: jdk-executor
+      - build:
           context:
             - docker-credentials
+            - sonar-credentials
           filters:
             branches:
               only: master
-          post-steps:
-            - persist_to_workspace:
-                root: ~/velocity-template-tester
-                paths:
-                  - build
       - docker/publish:
+          name: publish
           executor: jdk-executor
           context:
             - docker-credentials
           requires:
-            - gradle/run
+            - build
           image: devatherock/velocity-template-tester  
           attach-at: ~/velocity-template-tester
-          tag: "0.6.1,latest"
+          tag: "${CIRCLE_SHA1:0:8},latest"
           use-remote-docker: true
           docker-username: DOCKER_USERNAME
-          dockerfile: docker/Jar.Dockerfile
+          dockerfile: docker/Dockerfile
+      - notify:
+          context:
+            - docker-credentials
+            - slack-webhook
+          requires:
+            - publish
+            
+  release:
+    jobs:
+      - publish_release:
+          context:
+            - docker-credentials
+          filters:
+            branches:
+              only: non-existent-branch
+            tags:
+              only: /^v[0-9\.]+$/
       - deploy:
           context:
             - docker-credentials
             - heroku-credentials
           requires:
-            - gradle/run
-      - notify_success:
+            - publish_release
+      - notify:
           context:
             - docker-credentials
             - slack-webhook
           requires:
-            - docker/publish
-            - deploy
-      - notify_failure:
-          context:
-            - docker-credentials
-            - slack-webhook 
-          requires:
-            - docker/publish
-            - deploy
+            - publish_release
+            
   pr_check:
     jobs:
-      - gradle/run:
-          executor: jdk-executor
+      - test:
           context:
             - docker-credentials
+            - sonar-credentials
           filters:
             branches:
               ignore: master
