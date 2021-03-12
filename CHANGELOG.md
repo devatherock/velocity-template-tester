@@ -2,6 +2,10 @@
 
 ## [Unreleased]
 ### Changed
+- Fixed release pipeline
+
+## [0.7.0] - 2021-03-11
+### Changed
 - Accepted requests with no `parameters`([#19](https://github.com/devatherock/velocity-template-tester/issues/19))
 
 ### Removed
