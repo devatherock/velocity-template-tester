@@ -1,5 +1,12 @@
 # Changelog
 
+## [Unreleased]
+### Changed
+- Accepted requests with no `parameters`([#19](https://github.com/devatherock/velocity-template-tester/issues/19))
+
+### Removed
+- Conversion to native image([#17](https://github.com/devatherock/velocity-template-tester/issues/17))
+
 ## [0.6.1] - 2020-06-14
 ### Changed
 - Enabled debug logging for requests
