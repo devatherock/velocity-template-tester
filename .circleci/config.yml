@@ -54,7 +54,7 @@ jobs:
           
   add_timestamp_to_static_files:
     executor: jdk-executor
-    working_directory: ~/velocity-template-tester
+    <<: *work_directory
     steps:
       - checkout
       - run: sh build_time.sh
@@ -69,12 +69,15 @@ jobs:
         auth:
           username: $DOCKER_USERNAME
           password: $DOCKER_PASSWORD
-    working_directory: ~/velocity-template-tester
+    <<: *resource_class
+    <<: *work_directory
     environment:
       PARAMETER_INPUT_PATH: src/main/resources/public
       PARAMETER_ADD_SUFFIX: false
     steps:
       - checkout
+      - attach_workspace:
+          at: ~/velocity-template-tester
       - run: sh /entrypoint.sh
       - persist_to_workspace:
           root: ~/velocity-template-tester
