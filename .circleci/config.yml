@@ -51,6 +51,25 @@ jobs:
           ./gradlew test sonarqube -Dsonar.login=$SONAR_TOKEN
       - store_test_results:
           path: build/test-results
+          
+  minify_js:
+    docker:
+      - image: devatherock/minify-js:1.0.2
+        auth:
+          username: $DOCKER_USERNAME
+          password: $DOCKER_PASSWORD
+    working_directory: ~/velocity-template-tester
+    environment:
+      PARAMETER_INPUT_PATH: src/main/resources/public
+      PARAMETER_ADD_SUFFIX: false
+    steps:
+      - checkout
+      - run: sh /entrypoint.sh
+      - persist_to_workspace:
+          root: ~/velocity-template-tester
+          paths:
+            - src/main/resources/public
+
   build:
     executor: jdk-executor
     steps:
@@ -122,13 +141,18 @@ workflows:
   version: 2.1
   build_publish:
     jobs:
+      - minify_js:
+          context:
+            - docker-credentials
+          filters:
+            branches:
+              only: master
       - build:
           context:
             - docker-credentials
             - sonar-credentials
-          filters:
-            branches:
-              only: master
+          requires:
+            - minify_js
       - docker/publish:
           name: publish
           executor: jdk-executor
