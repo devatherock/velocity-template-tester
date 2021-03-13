@@ -212,7 +212,7 @@ workflows:
             
   pr_check:
     jobs:
-      - test:
+      - add_timestamp_to_static_files:
           context:
             - docker-credentials
             - sonar-credentials
