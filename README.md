@@ -32,3 +32,12 @@ template: Hello ${user}
 parameters:
   name: John Doe
 ```
+
+## Usage
+### Sample command
+
+```
+docker run --rm \
+  -p 8080:8080 \
+  devatherock/velocity-template-tester:latest
+```

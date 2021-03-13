@@ -1,6 +1,9 @@
 # Changelog
 
 ## [Unreleased]
+### Added
+- HTML, JS and CSS minification([#5](https://github.com/devatherock/velocity-template-tester/issues/5))
+
 ### Changed
 - Fixed release pipeline
 
