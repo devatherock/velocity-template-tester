@@ -1,6 +1,10 @@
 # Changelog
 
 ## [Unreleased]
+### Changed
+- Upgraded Kotlin to `1.4.30`
+
+## [0.8.0] - 2021-03-13
 ### Added
 - HTML, JS and CSS minification([#5](https://github.com/devatherock/velocity-template-tester/issues/5))
 - Appended build time to static JS and CSS urls
