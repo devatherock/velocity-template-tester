@@ -95,7 +95,7 @@ jobs:
             - v1-dependencies-{{ checksum "build.gradle" }}
             - v1-dependencies
       - run: |
-          ./gradlew build sonarqube -Dsonar.login=$SONAR_TOKEN
+          ./gradlew build coverallsJacoco sonarqube -Dsonar.login=$SONAR_TOKEN
       - persist_to_workspace:
           root: ~/velocity-template-tester
           paths:
