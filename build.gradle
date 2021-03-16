@@ -1,7 +1,7 @@
 plugins {
-    id "org.jetbrains.kotlin.jvm" version "1.3.61"
-    id "org.jetbrains.kotlin.kapt" version "1.3.61"
-    id "org.jetbrains.kotlin.plugin.allopen" version "1.3.61"
+    id "org.jetbrains.kotlin.jvm" version "1.4.30"
+    id "org.jetbrains.kotlin.kapt" version "1.4.30"
+    id "org.jetbrains.kotlin.plugin.allopen" version "1.4.30"
     id "com.github.johnrengelman.shadow" version "5.0.0"
     id "application"
     id 'groovy'
@@ -73,18 +73,12 @@ allOpen {
 }
 
 compileKotlin {
-	kotlinOptions {
-	    jvmTarget = '1.8'
-	    //Will retain parameter names for Java reflection
-	    javaParameters = true
-	}
-}
-
-compileTestKotlin {
-	kotlinOptions {
-	    jvmTarget = '1.8'
-	    javaParameters = true
-	}
+    kotlinOptions {
+        jvmTarget = '1.8'
+        // Will retain parameter names for Java reflection
+        javaParameters = true
+        useIR = true
+    }
 }
 
 shadowJar {
@@ -101,8 +95,9 @@ ext.jacoco = [
     ],
     coverageThresholds: [
         'io.github.devatherock.velocity.tester.controller.VelocityController': [
-            'COMPLEXITY': 0.75,
-            'INSTRUCTION': 0.96
+            'BRANCH': 0.50,
+            'COMPLEXITY': 0.50,
+            'INSTRUCTION': 0.86
         ],
         'io.github.devatherock.velocity.tester.util.VelocityUtil.Companion': [
             'BRANCH': 0.90,
