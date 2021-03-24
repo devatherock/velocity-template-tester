@@ -7,7 +7,7 @@ slack_image: &slack_image
 
 orbs:
   docker: circleci/docker@1.5.0
-  heroku: circleci/heroku@1.2.5
+  heroku: circleci/heroku@1.2.6
 
 work_directory: &work_directory
   working_directory: ~/velocity-template-tester
