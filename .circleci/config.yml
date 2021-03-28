@@ -148,6 +148,8 @@ jobs:
     <<: *resource_class
     environment:
       TEXT: "Success: {{.CircleBuildUrl}} by {{.CircleUsername}}"
+      CHANNEL: general
+      TITLE: "Build completed"
     steps:
       - run: /bin/simpleslack -c "#33ad7f" || true
 
