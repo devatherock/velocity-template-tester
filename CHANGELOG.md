@@ -2,7 +2,9 @@
 
 ## [Unreleased]
 ### Changed
-- Upgraded Kotlin to `1.4.30`
+- Upgraded Kotlin to `1.4.32`
+- The versioning parameter to `build_time` from `{build_time}`. Done to not impact running the application in local
+- Prevented script error when an empty line is present in parameters text box
 
 ## [0.8.0] - 2021-03-13
 ### Added

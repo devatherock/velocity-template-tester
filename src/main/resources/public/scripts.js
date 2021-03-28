@@ -18,8 +18,10 @@ $(function() {
             var parameters = {}
 
             for(index = 0; index < paramPairs.length; index++) {
-                var parameter = paramPairs[index].split('=')
-                parameters[parameter[0].trim()] = parameter[1].trim()
+            	if(paramPairs[index].includes('=')) {
+            		var parameter = paramPairs[index].split('=')
+                    parameters[parameter[0].trim()] = parameter[1].trim()
+            	}
             }
             payload.parameters = parameters
         }
