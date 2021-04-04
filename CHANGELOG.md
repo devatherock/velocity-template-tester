@@ -1,6 +1,10 @@
 # Changelog
 
 ## [Unreleased]
+### Added
+- Support for JSON logs
+
+## [0.8.1] - 2021-03-28
 ### Changed
 - Upgraded Kotlin to `1.4.32`
 - The versioning parameter to `build_time` from `{build_time}`. Done to not impact running the application in local
