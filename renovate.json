@@ -1,5 +1,5 @@
 {
   "extends": [
-    ["github>devatherock/renovate-config"]
+    "github>devatherock/renovate-config"
   ]
 }
