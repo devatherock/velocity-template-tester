@@ -4,6 +4,9 @@
 ### Added
 - Support for JSON logs
 
+### Removed
+- Custom environment variables with `LOGGING_LEVEL` prefix and updated documentation to use environment variables with `LOGGER_LEVELS` prefix supported out of the box by micronaut([#78](https://github.com/devatherock/velocity-template-tester/issues/78))
+
 ## [0.8.1] - 2021-03-28
 ### Changed
 - Upgraded Kotlin to `1.4.32`

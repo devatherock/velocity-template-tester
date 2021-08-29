@@ -44,8 +44,8 @@ docker run --rm \
 
 ## Troubleshooting
 ### Enabling debug logs
-- Set the environment variable `LOGGING_LEVEL_ROOT` to `DEBUG` to enable all debug logs - custom and framework
-- Set the environment variable `LOGGING_LEVEL_IO_GITHUB_DEVATHEROCK` to `DEBUG` to enable debug logs only in custom code
+- Set the environment variable `LOGGER_LEVELS_ROOT` to `DEBUG` to enable all debug logs - custom and framework
+- Set the environment variable `LOGGER_LEVELS_IO_GITHUB_DEVATHEROCK` to `DEBUG` to enable debug logs only in custom code
 - For fine-grained logging control, supply a custom [logback.xml](http://logback.qos.ch/manual/configuration.html) file
 and set the environment variable `JAVA_OPTS` to `-Dlogback.configurationFile=/path/to/custom/logback.xml`
 
