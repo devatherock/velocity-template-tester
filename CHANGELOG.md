@@ -1,6 +1,10 @@
 # Changelog
 
 ## [Unreleased]
+### Changed
+- chore(deps): update dependency org.codehaus.groovy:groovy-all to v3.0.9
+
+## [0.9.0] - 2021-08-29
 ### Added
 - Support for JSON logs
 
