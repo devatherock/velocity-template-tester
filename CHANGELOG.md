@@ -6,6 +6,7 @@
 - chore(deps): update kotlinversion to v1.5.31
 - chore(deps): update plugin org.jetbrains.kotlin.jvm to v1.5.31
 - chore: Added changelog-updater for creating missed changelog entries
+- chore(deps): update plugin org.jetbrains.kotlin.kapt to v1.5.31
 
 ## [0.9.0] - 2021-08-29
 ### Added
