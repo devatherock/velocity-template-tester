@@ -21,6 +21,11 @@ release_filter: &release_filter
       only: non-existent-branch
     tags:
       only: /^v[0-9\.]+$/
+      
+pr_filter: &pr_filter
+  filters:
+    branches:
+      ignore: master
   
 executors:
   jdk-executor:
@@ -37,6 +42,17 @@ executors:
 
 version: 2.1
 jobs:
+  changelog_updater:
+    docker:
+    - image: devatherock/changelog-updater:latest
+      auth:
+        username: $DOCKER_USERNAME
+        password: $DOCKER_PASSWORD
+    <<: *resource_class
+    steps:
+      - checkout
+      - run: sh /scripts/entry-point.sh
+
   test:
     executor: jdk-executor
     steps:
@@ -217,10 +233,15 @@ workflows:
             
   pr_check:
     jobs:
+      - changelog_updater:
+          context:
+            - docker-credentials
+            - changelog-updater-credentials
+          <<: *pr_filter
       - test:
           context:
             - docker-credentials
             - sonar-credentials
-          filters:
-            branches:
-              ignore: master
+          <<: *pr_filter
+          requires:
+            - changelog_updater
