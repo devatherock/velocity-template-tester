@@ -9,6 +9,7 @@
 - chore(deps): update plugin org.jetbrains.kotlin.kapt to v1.5.31
 - chore(deps): update plugin org.jetbrains.kotlin.plugin.allopen to v1.5.31
 - chore(deps): update dependency com.fasterxml.jackson.module:jackson-module-kotlin to v2.13.0
+- chore(deps): update devatherock/minify-js docker tag to v1.0.3
 
 ## [0.9.0] - 2021-08-29
 ### Added
