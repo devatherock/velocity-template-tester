@@ -81,7 +81,7 @@ jobs:
           
   minify_js:
     docker:
-      - image: devatherock/minify-js:1.0.2
+      - image: devatherock/minify-js:1.0.3
         auth:
           username: $DOCKER_USERNAME
           password: $DOCKER_PASSWORD
