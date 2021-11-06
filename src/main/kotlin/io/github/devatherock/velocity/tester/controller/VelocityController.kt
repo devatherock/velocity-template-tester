@@ -18,14 +18,18 @@ class VelocityController {
     @Post("/expandTemplate", produces = [MediaType.TEXT_PLAIN], consumes = [MediaType.APPLICATION_JSON])
     fun expandJsonTemplate(@Body request: String): String {
         var parsedRequest = objectMapper.readValue(request, Map::class.java)
-        return VelocityUtil.expandTemplate(parsedRequest.get("template") as String,
-                parsedRequest.get("parameters") as Map<String, Any>?)
+        return VelocityUtil.expandTemplate(
+            parsedRequest.get("template") as String,
+            parsedRequest.get("parameters") as Map<String, Any>?
+        )
     }
 
     @Post("/expandTemplate", produces = [MediaType.TEXT_PLAIN], consumes = [MediaType.APPLICATION_YAML])
     fun expandYamlTemplate(@Body request: String): String {
         var parsedRequest = Yaml().load<Map<String, Any>>(request)
-        return VelocityUtil.expandTemplate(parsedRequest.get("template") as String,
-                parsedRequest.get("parameters") as Map<String, Any>?)
+        return VelocityUtil.expandTemplate(
+            parsedRequest.get("template") as String,
+            parsedRequest.get("parameters") as Map<String, Any>?
+        )
     }
 }
