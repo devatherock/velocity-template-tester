@@ -15,6 +15,7 @@
 - chore(deps): update dependency com.fasterxml.jackson.module:jackson-module-kotlin to v2.13.0
 - chore(deps): update devatherock/minify-js docker tag to v1.0.3
 - chore(deps): update docker orb to v2
+- chore(deps): update plugin com.diffplug.spotless to v5.17.1
 
 ## [0.9.0] - 2021-08-29
 ### Added
