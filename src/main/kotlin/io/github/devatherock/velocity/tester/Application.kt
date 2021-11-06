@@ -22,10 +22,8 @@ object Application {
     @JvmStatic
     fun main(args: Array<String>) {
         Micronaut.build()
-                 .packages("")
-                 .mainClass(Application::class.java)
-                 .start()
+            .packages("")
+            .mainClass(Application::class.java)
+            .start()
     }
 }
-
-

@@ -1,6 +1,10 @@
 # Changelog
 
 ## [Unreleased]
+### Added
+- Spotless plugin to format groovy code
+- ktlint plugin to format kotlin code
+
 ### Changed
 - chore(deps): update dependency org.codehaus.groovy:groovy-all to v3.0.9
 - chore(deps): update kotlinversion to v1.5.31

@@ -19,7 +19,7 @@ class VelocityUtil {
             var writer = StringWriter()
             var context = VelocityContext()
 
-            if(null != parameters) {
+            if (null != parameters) {
                 for ((key, value) in parameters) {
                     if ("true" == value || "false" == value) {
                         context.put(key, value.toBoolean())

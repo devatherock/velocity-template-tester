@@ -7,10 +7,13 @@ plugins {
     id 'groovy'
     id 'jacoco'
     id 'org.sonarqube' version '3.3'
+    id 'com.diffplug.spotless' version '5.17.0'
+    id 'org.jlleitschuh.gradle.ktlint' version '10.2.0'
 }
 
 version "0.9.0"
 group "io.github.devatherock"
+targetCompatibility = '1.8'
 
 repositories {
     mavenCentral()
@@ -70,7 +73,7 @@ test {
 }
 
 allOpen {
-	annotation("io.micronaut.aop.Around")
+    annotation("io.micronaut.aop.Around")
 }
 
 compileKotlin {
