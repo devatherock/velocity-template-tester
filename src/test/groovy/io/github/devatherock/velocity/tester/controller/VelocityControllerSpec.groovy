@@ -107,9 +107,13 @@ class VelocityControllerSpec extends Specification {
         where:
         isMorning << [
                 'true',
-                'false'
+                'false',
+                true,
+                false
         ]
         expectedOutput << [
+                'Good morning, World!',
+                'Good morning, World!',
                 'Good morning, World!',
                 'Good evening, World!'
         ]

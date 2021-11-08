@@ -16,6 +16,7 @@
 - chore(deps): update devatherock/minify-js docker tag to v1.0.3
 - chore(deps): update docker orb to v2
 - chore(deps): update plugin com.diffplug.spotless to v5.17.1
+- [#100](https://github.com/devatherock/velocity-template-tester/issues/100): Stopped converting string parameters with values as true/false into boolean
 
 ## [0.9.0] - 2021-08-29
 ### Added
