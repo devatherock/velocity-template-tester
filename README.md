@@ -39,7 +39,7 @@ parameters:
 ```
 docker run --rm \
   -p 8080:8080 \
-  devatherock/velocity-template-tester:latest
+  devatherock/velocity-template-tester:1.0.0
 ```
 
 ## Troubleshooting

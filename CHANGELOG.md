@@ -1,6 +1,6 @@
 # Changelog
 
-## [Unreleased]
+## [1.0.0] - 2021-11-08
 ### Added
 - Spotless plugin to format groovy code
 - ktlint plugin to format kotlin code

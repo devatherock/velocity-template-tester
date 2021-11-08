@@ -4,6 +4,7 @@ import io.micronaut.runtime.Micronaut
 import io.swagger.v3.oas.annotations.OpenAPIDefinition
 import io.swagger.v3.oas.annotations.info.Contact
 import io.swagger.v3.oas.annotations.info.Info
+import io.swagger.v3.oas.annotations.servers.Server
 
 /**
  * The application is defined in this way so we can easily reference
@@ -15,7 +16,13 @@ import io.swagger.v3.oas.annotations.info.Info
         version = "0.6.1",
         description = "Velocity Template Tester API",
         contact = Contact(url = "https://github.com/devatherock", name = "devatherock")
-    )
+    ),
+    servers = [
+        Server(
+            url = "https://velocity-template-tester.herokuapp.com",
+            description = "The server where the application is hosted"
+        )
+    ]
 )
 object Application {
 
