@@ -14,15 +14,22 @@ $(function() {
         // Parameters
         var paramText = $('#dataModel').val()
         if(paramText.length > 0) {
-            var paramPairs = paramText.split('\n')
-            var parameters = {}
+            var parameters
 
-            for(index = 0; index < paramPairs.length; index++) {
-            	if(paramPairs[index].includes('=')) {
-            		var parameter = paramPairs[index].split('=')
-                    parameters[parameter[0].trim()] = parameter[1].trim()
-            	}
+            try {
+                parameters = JSON.parse(paramText);
+            } catch (error) {
+                var paramPairs = paramText.split('\n')
+                parameters = {}
+
+                for(index = 0; index < paramPairs.length; index++) {
+                    if(paramPairs[index].includes('=')) {
+                        var parameter = paramPairs[index].split('=')
+                        parameters[parameter[0].trim()] = parameter[1].trim()
+                    }
+                }
             }
+
             payload.parameters = parameters
         }
 

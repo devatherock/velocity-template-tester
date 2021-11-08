@@ -21,11 +21,7 @@ class VelocityUtil {
 
             if (null != parameters) {
                 for ((key, value) in parameters) {
-                    if ("true" == value || "false" == value) {
-                        context.put(key, value.toBoolean())
-                    } else {
-                        context.put(key, value)
-                    }
+                    context.put(key, value)
                 }
             }
             Velocity.evaluate(context, writer, "", template)
