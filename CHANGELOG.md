@@ -1,5 +1,9 @@
 # Changelog
 
+## [Unreleased]
+### Changed
+- chore(deps): update dependency ch.qos.logback:logback-classic to v1.2.7
+
 ## [1.0.0] - 2021-11-08
 ### Added
 - Spotless plugin to format groovy code
