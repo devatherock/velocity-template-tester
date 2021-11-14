@@ -4,6 +4,7 @@
 ### Changed
 - chore(deps): update dependency ch.qos.logback:logback-classic to v1.2.7
 - chore(deps): update docker orb to v2.0.1
+- chore(deps): update plugin com.diffplug.spotless to v6
 
 ## [1.0.0] - 2021-11-08
 ### Added
