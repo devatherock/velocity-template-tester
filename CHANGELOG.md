@@ -9,6 +9,7 @@
 - chore(deps): update dependency net.logstash.logback:logstash-logback-encoder to v7.0.1
 - chore(deps): update plugin org.jetbrains.kotlin.plugin.allopen to v1.6.0
 - chore(deps): update plugin com.diffplug.spotless to v6.0.1
+- chore(deps): update plugin com.diffplug.spotless to v6.0.4
 
 ## [1.0.0] - 2021-11-08
 ### Added
