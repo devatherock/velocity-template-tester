@@ -10,6 +10,7 @@
 - chore(deps): update plugin org.jetbrains.kotlin.plugin.allopen to v1.6.0
 - chore(deps): update plugin com.diffplug.spotless to v6.0.1
 - chore(deps): update plugin com.diffplug.spotless to v6.0.4
+- chore(deps): update dependency ch.qos.logback:logback-classic to v1.2.10
 
 ## [1.0.0] - 2021-11-08
 ### Added
