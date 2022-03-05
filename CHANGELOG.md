@@ -13,6 +13,7 @@
 - chore(deps): update dependency ch.qos.logback:logback-classic to v1.2.10
 - chore(deps): update dependency com.fasterxml.jackson.module:jackson-module-kotlin to v2.13.1
 - chore(deps): update dependency gradle to v6.9.2
+- chore(deps): update docker orb to v2.0.2
 
 ## [1.0.0] - 2021-11-08
 ### Added
