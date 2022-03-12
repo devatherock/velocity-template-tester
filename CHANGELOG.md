@@ -16,6 +16,7 @@
 - chore(deps): update docker orb to v2.0.2
 - chore(deps): update plugin org.jetbrains.kotlin.plugin.allopen to v1.6.10
 - chore(deps): update dependency ch.qos.logback:logback-classic to v1.2.11
+- chore(deps): update dependency org.codehaus.groovy:groovy-all to v3.0.10
 
 ## [1.0.0] - 2021-11-08
 ### Added
