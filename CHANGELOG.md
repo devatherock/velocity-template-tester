@@ -15,6 +15,7 @@
 - chore(deps): update dependency gradle to v6.9.2
 - chore(deps): update docker orb to v2.0.2
 - chore(deps): update plugin org.jetbrains.kotlin.plugin.allopen to v1.6.10
+- chore(deps): update dependency ch.qos.logback:logback-classic to v1.2.11
 
 ## [1.0.0] - 2021-11-08
 ### Added
