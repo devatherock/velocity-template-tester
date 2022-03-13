@@ -18,6 +18,7 @@
 - chore(deps): update dependency ch.qos.logback:logback-classic to v1.2.11
 - chore(deps): update dependency org.codehaus.groovy:groovy-all to v3.0.10
 - chore(deps): update docker orb to v2.0.3
+- chore(deps): update plugin org.jlleitschuh.gradle.ktlint to v10.2.1
 
 ## [1.0.0] - 2021-11-08
 ### Added
