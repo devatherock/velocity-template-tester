@@ -20,6 +20,7 @@
 - chore(deps): update docker orb to v2.0.3
 - chore(deps): update plugin org.jlleitschuh.gradle.ktlint to v10.2.1
 - chore(deps): update dependency com.fasterxml.jackson.module:jackson-module-kotlin to v2.13.2
+- chore(deps): update dependency org.spockframework:spock-core to v2.1-groovy-3.0
 
 ## [1.0.0] - 2021-11-08
 ### Added
