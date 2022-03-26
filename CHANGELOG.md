@@ -22,6 +22,7 @@
 - chore(deps): update dependency com.fasterxml.jackson.module:jackson-module-kotlin to v2.13.2
 - chore(deps): update dependency org.spockframework:spock-core to v2.1-groovy-3.0
 - chore(deps): update plugin com.diffplug.spotless to v6.3.0
+- chore(deps): update plugin org.jetbrains.kotlin.jvm to v1.6.10
 
 ## [1.0.0] - 2021-11-08
 ### Added
