@@ -104,7 +104,7 @@ ext.jacoco = [
         'io.github.devatherock.velocity.tester.controller.VelocityController': [
             'BRANCH': 0.50,
             'COMPLEXITY': 0.50,
-            'INSTRUCTION': 0.86
+            'INSTRUCTION': 0.81
         ],
         'io.github.devatherock.velocity.tester.util.VelocityUtil.Companion': [
             'BRANCH': 0.90,
