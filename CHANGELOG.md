@@ -27,6 +27,7 @@
 - chore(deps): update kotlinversion to v1.6.20
 - chore(deps): update plugin com.diffplug.spotless to v6.4.1
 - chore(deps): update plugin org.jetbrains.kotlin.jvm to v1.6.20
+- chore(deps): update plugin com.diffplug.spotless to v6.4.2
 
 ## [1.0.0] - 2021-11-08
 ### Added
