@@ -36,7 +36,7 @@ dependencies {
     implementation "io.micronaut:micronaut-management"
 
     implementation group: 'org.apache.velocity', name: 'velocity-engine-core', version: '2.3'
-    implementation group: 'net.logstash.logback', name: 'logstash-logback-encoder', version: '7.0.1'
+    implementation group: 'net.logstash.logback', name: 'logstash-logback-encoder', version: '7.1'
 
     kapt platform("io.micronaut:micronaut-bom:$micronautVersion")
     kapt "io.micronaut:micronaut-inject-java"
