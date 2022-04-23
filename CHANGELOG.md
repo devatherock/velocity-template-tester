@@ -30,6 +30,7 @@
 - chore(deps): update plugin com.diffplug.spotless to v6.4.2
 - chore(deps): update dependency net.logstash.logback:logstash-logback-encoder to v7.1
 - chore(deps): update dependency net.logstash.logback:logstash-logback-encoder to v7.1.1
+- chore(deps): update kotlinversion to v1.6.21
 
 ## [1.0.0] - 2021-11-08
 ### Added
