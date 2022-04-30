@@ -35,6 +35,7 @@
 - chore(deps): update docker orb to v2.0.4
 - chore(deps): update plugin org.jetbrains.kotlin.kapt to v1.6.21
 - chore(deps): update plugin org.jetbrains.kotlin.plugin.allopen to v1.6.21
+- chore(deps): update plugin com.diffplug.spotless to v6.5.1
 
 ## [1.0.0] - 2021-11-08
 ### Added
