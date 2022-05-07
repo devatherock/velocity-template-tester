@@ -38,6 +38,7 @@
 - chore(deps): update plugin com.diffplug.spotless to v6.5.1
 - chore: Used custom ssh key to push to github
 - chore(deps): update plugin com.diffplug.spotless to v6.5.2
+- chore(deps): update docker orb to v2.1.1
 
 ## [1.0.0] - 2021-11-08
 ### Added
