@@ -9,7 +9,6 @@ import org.yaml.snakeyaml.Yaml
 import io.micronaut.http.HttpRequest
 import io.micronaut.http.client.HttpClient
 import io.micronaut.http.client.annotation.Client
-import io.micronaut.test.extensions.spock.annotation.MicronautTest
 import spock.lang.Shared
 import spock.lang.Specification
 import spock.lang.Unroll
@@ -17,8 +16,7 @@ import spock.lang.Unroll
 /**
  * Test class for {@link VelocityController}
  */
-@MicronautTest
-class VelocityControllerSpec extends Specification {
+abstract class VelocityControllerSpec extends Specification {
 
     @Inject
     @Client('/')
