@@ -43,14 +43,11 @@ dependencies {
     kapt "io.micronaut:micronaut-validation"
     kapt "io.micronaut.configuration:micronaut-openapi"
 
-    kaptTest platform("io.micronaut:micronaut-bom:$micronautVersion")
-    kaptTest "io.micronaut:micronaut-inject-java"
-
     runtimeOnly "com.fasterxml.jackson.module:jackson-module-kotlin:2.13.2"
     runtimeOnly "ch.qos.logback:logback-classic:1.2.11"
 
-    compileOnly "org.graalvm.nativeimage:svm"
-    annotationProcessor "io.micronaut:micronaut-graal"
+    kaptTest platform("io.micronaut:micronaut-bom:$micronautVersion")
+    kaptTest "io.micronaut:micronaut-inject-java"
 
     testAnnotationProcessor platform("io.micronaut:micronaut-bom:$micronautVersion")
     testAnnotationProcessor "io.micronaut:micronaut-inject-java"
@@ -68,7 +65,7 @@ test.classpath += configurations.developmentOnly
 
 mainClassName = "io.github.devatherock.velocity.tester.Application"
 
-test {
+tasks.withType(Test) {
     useJUnitPlatform()
 }
 
@@ -114,4 +111,5 @@ ext.jacoco = [
     ]
 ]
 
+apply from: 'https://raw.githubusercontent.com/devatherock/gradle-includes/master/integration.gradle'
 apply from: 'https://raw.githubusercontent.com/devatherock/gradle-includes/master/checks.gradle'

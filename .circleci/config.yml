@@ -128,6 +128,18 @@ jobs:
       - store_test_results:
           path: build/test-results
           
+  integration_test:
+    machine:
+      image: ubuntu-2004:202010-01
+    steps:
+      - checkout
+      - attach_workspace:
+          at: ~/velocity-template-tester
+      - run: |
+          make integration-test
+      - store_test_results:
+          path: build/test-results
+          
   publish_release:
     executor: jdk-executor
     steps:
@@ -208,12 +220,17 @@ workflows:
           use-remote-docker: true
           docker-username: DOCKER_USERNAME
           dockerfile: docker/Dockerfile
+      - integration_test:
+          context:
+            - docker-credentials
+          requires:
+            - publish
       - notify:
           context:
             - docker-credentials
             - slack-webhook
           requires:
-            - publish
+            - integration_test
             
   release:
     jobs:

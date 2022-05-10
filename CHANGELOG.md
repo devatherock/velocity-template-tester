@@ -1,41 +1,20 @@
 # Changelog
 
 ## [Unreleased]
+### Added
+- [#18](https://github.com/devatherock/velocity-template-tester/issues/18): Integration tests
+
 ### Changed
-- chore(deps): update dependency ch.qos.logback:logback-classic to v1.2.7
-- chore(deps): update docker orb to v2.0.1
-- chore(deps): update plugin com.diffplug.spotless to v6
-- chore(deps): update dependency net.logstash.logback:logstash-logback-encoder to v7
-- chore(deps): update dependency net.logstash.logback:logstash-logback-encoder to v7.0.1
-- chore(deps): update plugin org.jetbrains.kotlin.plugin.allopen to v1.6.0
-- chore(deps): update plugin com.diffplug.spotless to v6.0.1
-- chore(deps): update plugin com.diffplug.spotless to v6.0.4
-- chore(deps): update dependency ch.qos.logback:logback-classic to v1.2.10
-- chore(deps): update dependency com.fasterxml.jackson.module:jackson-module-kotlin to v2.13.1
 - chore(deps): update dependency gradle to v6.9.2
-- chore(deps): update docker orb to v2.0.2
-- chore(deps): update plugin org.jetbrains.kotlin.plugin.allopen to v1.6.10
 - chore(deps): update dependency ch.qos.logback:logback-classic to v1.2.11
 - chore(deps): update dependency org.codehaus.groovy:groovy-all to v3.0.10
-- chore(deps): update docker orb to v2.0.3
-- chore(deps): update plugin org.jlleitschuh.gradle.ktlint to v10.2.1
 - chore(deps): update dependency com.fasterxml.jackson.module:jackson-module-kotlin to v2.13.2
 - chore(deps): update dependency org.spockframework:spock-core to v2.1-groovy-3.0
-- chore(deps): update plugin com.diffplug.spotless to v6.3.0
-- chore(deps): update plugin org.jetbrains.kotlin.kapt to v1.6.20
-- chore(deps): update plugin org.jetbrains.kotlin.plugin.allopen to v1.6.20
-- chore(deps): update kotlinversion to v1.6.20
-- chore(deps): update plugin com.diffplug.spotless to v6.4.1
-- chore(deps): update plugin org.jetbrains.kotlin.jvm to v1.6.20
-- chore(deps): update plugin com.diffplug.spotless to v6.4.2
-- chore(deps): update dependency net.logstash.logback:logstash-logback-encoder to v7.1
 - chore(deps): update dependency net.logstash.logback:logstash-logback-encoder to v7.1.1
 - chore(deps): update kotlinversion to v1.6.21
 - chore(deps): update plugin org.jetbrains.kotlin.jvm to v1.6.21
-- chore(deps): update docker orb to v2.0.4
 - chore(deps): update plugin org.jetbrains.kotlin.kapt to v1.6.21
 - chore(deps): update plugin org.jetbrains.kotlin.plugin.allopen to v1.6.21
-- chore(deps): update plugin com.diffplug.spotless to v6.5.1
 - chore: Used custom ssh key to push to github
 - chore(deps): update plugin com.diffplug.spotless to v6.5.2
 - chore(deps): update docker orb to v2.1.1
