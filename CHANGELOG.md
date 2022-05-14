@@ -19,6 +19,7 @@
 - chore(deps): update plugin com.diffplug.spotless to v6.5.2
 - chore(deps): update docker orb to v2.1.1
 - chore(deps): update plugin org.jlleitschuh.gradle.ktlint to v10.3.0
+- chore(deps): update plugin com.diffplug.spotless to v6.6.1
 
 ## [1.0.0] - 2021-11-08
 ### Added
