@@ -43,7 +43,7 @@ dependencies {
     kapt "io.micronaut:micronaut-validation"
     kapt "io.micronaut.configuration:micronaut-openapi"
 
-    runtimeOnly "com.fasterxml.jackson.module:jackson-module-kotlin:2.13.2"
+    runtimeOnly "com.fasterxml.jackson.module:jackson-module-kotlin:2.13.3"
     runtimeOnly "ch.qos.logback:logback-classic:1.2.11"
 
     kaptTest platform("io.micronaut:micronaut-bom:$micronautVersion")
