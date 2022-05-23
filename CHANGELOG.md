@@ -3,6 +3,7 @@
 ## [Unreleased]
 ### Added
 - [#18](https://github.com/devatherock/velocity-template-tester/issues/18): Integration tests
+- `yaml-validator` to CI pipeline
 
 ### Changed
 - chore(deps): update dependency gradle to v6.9.2
