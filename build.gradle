@@ -57,7 +57,7 @@ dependencies {
     testImplementation "io.micronaut.test:micronaut-test-spock"
     testImplementation "io.micronaut:micronaut-http-client"
 
-    testImplementation group: 'org.codehaus.groovy', name: 'groovy-all', version: '3.0.10'
+    testImplementation group: 'org.codehaus.groovy', name: 'groovy-all', version: '3.0.11'
     testImplementation group: 'org.spockframework', name: 'spock-core', version: '2.1-groovy-3.0'
 }
 
