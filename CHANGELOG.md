@@ -23,6 +23,7 @@
 - chore(deps): update plugin com.diffplug.spotless to v6.6.1
 - chore(deps): update dependency com.fasterxml.jackson.module:jackson-module-kotlin to v2.13.3
 - chore(deps): update dependency net.logstash.logback:logstash-logback-encoder to v7.2
+- chore(deps): update dependency org.codehaus.groovy:groovy-all to v3.0.11
 
 ## [1.0.0] - 2021-11-08
 ### Added
