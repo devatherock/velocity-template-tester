@@ -25,6 +25,7 @@
 - chore(deps): update dependency net.logstash.logback:logstash-logback-encoder to v7.2
 - chore(deps): update dependency org.codehaus.groovy:groovy-all to v3.0.11
 - chore(deps): update kotlinversion to v1.7.0
+- chore(deps): update plugin com.diffplug.spotless to v6.7.1
 
 ## [1.0.0] - 2021-11-08
 ### Added
