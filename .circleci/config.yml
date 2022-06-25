@@ -6,7 +6,7 @@ slack_image: &slack_image
         password: $DOCKER_PASSWORD
 
 orbs:
-  docker: circleci/docker@2.1.1
+  docker: circleci/docker@2.1.2
   heroku: circleci/heroku@1.2.6
 
 work_directory: &work_directory
