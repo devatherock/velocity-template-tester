@@ -27,6 +27,7 @@
 - chore(deps): update kotlinversion to v1.7.0
 - chore(deps): update plugin org.jetbrains.kotlin.jvm to v1.7.0
 - chore(deps): update docker orb to v2.1.2
+- chore(deps): update plugin com.diffplug.spotless to v6.8.0
 
 ## [1.0.0] - 2021-11-08
 ### Added
