@@ -27,6 +27,7 @@
 - chore(deps): update kotlinversion to v1.7.0
 - chore(deps): update plugin org.jetbrains.kotlin.jvm to v1.7.0
 - chore(deps): update docker orb to v2.1.2
+- chore(deps): update kotlinversion to v1.7.10
 
 ## [1.0.0] - 2021-11-08
 ### Added
