@@ -30,6 +30,7 @@
 - chore(deps): update kotlinversion to v1.7.10
 - chore(deps): update plugin org.jetbrains.kotlin.jvm to v1.7.10
 - chore(deps): update plugin org.jetbrains.kotlin.kapt to v1.7.10
+- chore(deps): update plugin org.jetbrains.kotlin.plugin.allopen to v1.7.10
 
 ## [1.0.0] - 2021-11-08
 ### Added
