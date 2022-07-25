@@ -32,6 +32,7 @@
 - chore(deps): update plugin org.jetbrains.kotlin.kapt to v1.7.10
 - chore(deps): update plugin org.jetbrains.kotlin.plugin.allopen to v1.7.10
 - chore(deps): update plugin org.sonarqube to v3.4.0.2513
+- chore(deps): update dependency org.codehaus.groovy:groovy-all to v3.0.12
 
 ## [1.0.0] - 2021-11-08
 ### Added
