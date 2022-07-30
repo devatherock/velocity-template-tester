@@ -33,6 +33,7 @@
 - chore(deps): update plugin org.jetbrains.kotlin.plugin.allopen to v1.7.10
 - chore(deps): update plugin org.sonarqube to v3.4.0.2513
 - chore(deps): update dependency org.codehaus.groovy:groovy-all to v3.0.12
+- chore(deps): update plugin com.diffplug.spotless to v6.9.0
 
 ## [1.0.0] - 2021-11-08
 ### Added
