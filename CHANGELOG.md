@@ -4,28 +4,16 @@
 ### Added
 - [#18](https://github.com/devatherock/velocity-template-tester/issues/18): Integration tests
 - `yaml-validator` to CI pipeline
+- `org.owasp.dependencycheck` gradle plugin
 
 ### Changed
 - chore(deps): update dependency gradle to v6.9.2
 - chore(deps): update dependency ch.qos.logback:logback-classic to v1.2.11
-- chore(deps): update dependency org.codehaus.groovy:groovy-all to v3.0.10
-- chore(deps): update dependency com.fasterxml.jackson.module:jackson-module-kotlin to v2.13.2
 - chore(deps): update dependency org.spockframework:spock-core to v2.1-groovy-3.0
-- chore(deps): update dependency net.logstash.logback:logstash-logback-encoder to v7.1.1
-- chore(deps): update kotlinversion to v1.6.21
-- chore(deps): update plugin org.jetbrains.kotlin.jvm to v1.6.21
-- chore(deps): update plugin org.jetbrains.kotlin.kapt to v1.6.21
-- chore(deps): update plugin org.jetbrains.kotlin.plugin.allopen to v1.6.21
 - chore: Used custom ssh key to push to github
 - chore(deps): update plugin com.diffplug.spotless to v6.5.2
-- chore(deps): update docker orb to v2.1.1
-- chore(deps): update plugin org.jlleitschuh.gradle.ktlint to v10.3.0
-- chore(deps): update plugin com.diffplug.spotless to v6.6.1
 - chore(deps): update dependency com.fasterxml.jackson.module:jackson-module-kotlin to v2.13.3
 - chore(deps): update dependency net.logstash.logback:logstash-logback-encoder to v7.2
-- chore(deps): update dependency org.codehaus.groovy:groovy-all to v3.0.11
-- chore(deps): update kotlinversion to v1.7.0
-- chore(deps): update plugin org.jetbrains.kotlin.jvm to v1.7.0
 - chore(deps): update docker orb to v2.1.2
 - chore(deps): update kotlinversion to v1.7.10
 - chore(deps): update plugin org.jetbrains.kotlin.jvm to v1.7.10
@@ -33,6 +21,11 @@
 - chore(deps): update plugin org.jetbrains.kotlin.plugin.allopen to v1.7.10
 - chore(deps): update plugin org.sonarqube to v3.4.0.2513
 - chore(deps): update dependency org.codehaus.groovy:groovy-all to v3.0.12
+- Used spotless plugin for Kotlin formatting
+- Upgraded micronaut to `3.5.4` from `2.5.13`
+
+### Removed
+- `org.jlleitschuh.gradle.ktlint` plugin as it had vulnerabilities from old kotlin versions
 
 ## [1.0.0] - 2021-11-08
 ### Added
