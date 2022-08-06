@@ -24,6 +24,7 @@
 - Used spotless plugin for Kotlin formatting
 - Upgraded micronaut to `3.5.4` from `2.5.13`
 - chore(deps): update plugin org.owasp.dependencycheck to v7.1.1
+- fix(deps): update dependency io.micronaut:micronaut-bom to v3.6.0
 
 ### Removed
 - `org.jlleitschuh.gradle.ktlint` plugin as it had vulnerabilities from old kotlin versions
