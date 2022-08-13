@@ -28,6 +28,7 @@
 - Used `check` instead of `test` in PR build
 - Upgraded `jsoup` due to security vulnerability
 - fix(deps): update dependency org.jsoup:jsoup to v1.15.2
+- chore(deps): update cimg/openjdk docker tag to v18
 
 ### Removed
 - `org.jlleitschuh.gradle.ktlint` plugin as it had vulnerabilities from old kotlin versions
