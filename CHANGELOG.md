@@ -28,6 +28,7 @@
 - Used `check` instead of `test` in PR build
 - Upgraded `jsoup` due to security vulnerability
 - fix(deps): update dependency org.jsoup:jsoup to v1.15.2
+- fix(deps): update dependency io.micronaut:micronaut-bom to v3.6.1
 
 ### Removed
 - `org.jlleitschuh.gradle.ktlint` plugin as it had vulnerabilities from old kotlin versions
