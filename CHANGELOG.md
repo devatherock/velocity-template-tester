@@ -23,13 +23,11 @@
 - chore(deps): update dependency org.codehaus.groovy:groovy-all to v3.0.12
 - Used spotless plugin for Kotlin formatting
 - Upgraded micronaut to `3.5.4` from `2.5.13`
-- chore(deps): update plugin org.owasp.dependencycheck to v7.1.1
-- fix(deps): update dependency io.micronaut:micronaut-bom to v3.6.0
 - Used `check` instead of `test` in PR build
 - Upgraded `jsoup` due to security vulnerability
 - fix(deps): update dependency org.jsoup:jsoup to v1.15.2
 - fix(deps): update dependency io.micronaut:micronaut-bom to v3.6.1
-- chore(deps): update plugin org.owasp.dependencycheck to v7.1.2
+- [#175](https://github.com/devatherock/velocity-template-tester/issues/175): Set `content-type` header as `text/html` if `accept` header is `text/html`
 
 ### Removed
 - `org.jlleitschuh.gradle.ktlint` plugin as it had vulnerabilities from old kotlin versions
