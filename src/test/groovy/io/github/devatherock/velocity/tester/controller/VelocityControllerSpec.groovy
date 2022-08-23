@@ -7,6 +7,7 @@ import groovy.json.JsonOutput
 import org.yaml.snakeyaml.Yaml
 
 import io.micronaut.http.HttpRequest
+import io.micronaut.http.HttpResponse
 import io.micronaut.http.client.HttpClient
 import io.micronaut.http.client.annotation.Client
 import spock.lang.Shared
@@ -32,27 +33,54 @@ abstract class VelocityControllerSpec extends Specification {
 
     @Shared
     def requestWithoutParameters = [
-            'template': 'Hello ${user}'
+            'template': '<html><body>Hello ${user}</body></html>'
     ]
 
     @Unroll
     void 'test expand template - no parameters, content type - #contentType'() {
         when:
-        String response = httpClient.toBlocking().retrieve(
+        HttpResponse response = httpClient.toBlocking().exchange(
                 HttpRequest.POST('/api/expandTemplate', requestBody)
-                        .contentType(contentType))
+                        .contentType(contentType)
+                        .accept(acceptHeader), String
+        )
 
         then:
-        response == 'Hello ${user}'
+        response.body() == '<html><body>Hello ${user}</body></html>'
+        response.header('content-type') == outputContentType
 
         where:
         requestBody << [
                 JsonOutput.toJson(requestWithoutParameters),
-                new Yaml().dump(requestWithoutParameters)
+                JsonOutput.toJson(requestWithoutParameters),
+                JsonOutput.toJson(requestWithoutParameters),
+                new Yaml().dump(requestWithoutParameters),
+                new Yaml().dump(requestWithoutParameters),
+                new Yaml().dump(requestWithoutParameters),
         ]
         contentType << [
                 'application/json',
-                'application/x-yaml'
+                'application/json',
+                'application/json',
+                'application/x-yaml',
+                'application/x-yaml',
+                'application/x-yaml',
+        ]
+        acceptHeader << [
+                'text/plain',
+                'text/html',
+                '*/*',
+                'text/plain',
+                'text/html',
+                '*/*',
+        ]
+        outputContentType << [
+                'text/plain',
+                'text/html',
+                'text/plain',
+                'text/plain',
+                'text/html',
+                'text/plain',
         ]
     }
 
