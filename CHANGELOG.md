@@ -2,6 +2,13 @@
 
 ## [Unreleased]
 ### Added
+- Config required to deploy to `render.com`
+
+### Removed
+- Deployment to heroku
+
+## [1.1.0] - 2022-08-23
+### Added
 - [#18](https://github.com/devatherock/velocity-template-tester/issues/18): Integration tests
 - `yaml-validator` to CI pipeline
 - `org.owasp.dependencycheck` gradle plugin
