@@ -8,7 +8,7 @@
 UI/API for testing [Apache Velocity](https://velocity.apache.org/engine/2.2/user-guide.html) templates
 
 ## API Reference
-Refer the swagger [spec](https://velocity-template-tester.onrender.com/swagger/velocity-template-tester-0.6.1.yml)
+Refer the swagger [spec](https://velocity-template-tester.onrender.com/swagger/velocity-template-tester-1.2.0.yml)
 or the swagger [UI](https://velocity-template-tester.onrender.com/swagger-ui/)
 
 ### Key parameters:
