@@ -1,1 +1,1 @@
-FROM devatherock/velocity-template-tester:1.1.0
+FROM devatherock/velocity-template-tester:1.2.0

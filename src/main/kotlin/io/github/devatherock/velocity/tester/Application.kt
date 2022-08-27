@@ -13,13 +13,13 @@ import io.swagger.v3.oas.annotations.servers.Server
 @OpenAPIDefinition(
     info = Info(
         title = "Velocity Template Tester",
-        version = "0.6.1",
+        version = "1.2.0",
         description = "Velocity Template Tester API",
         contact = Contact(url = "https://github.com/devatherock", name = "devatherock")
     ),
     servers = [
         Server(
-            url = "https://velocity-template-tester.herokuapp.com",
+            url = "https://velocity-template-tester.onrender.com",
             description = "The server where the application is hosted"
         )
     ]

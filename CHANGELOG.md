@@ -4,6 +4,9 @@
 ### Added
 - Config required to deploy to `render.com`
 
+### Changed
+- Heroku URL to render in swagger spec
+
 ### Removed
 - Deployment to heroku
 
