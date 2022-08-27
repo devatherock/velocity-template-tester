@@ -1,6 +1,10 @@
 # Changelog
 
 ## [Unreleased]
+### Removed
+- Unused `PORT` environment variable from render
+
+## [1.2.0] - 2022-08-27
 ### Added
 - Config required to deploy to `render.com`
 

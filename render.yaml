@@ -6,6 +6,3 @@ services:
     autoDeploy: false
     dockerfilePath: ./render/Dockerfile
     dockerContext: ./render
-    envVars:
-      - key: PORT
-        property: port
