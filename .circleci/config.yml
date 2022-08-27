@@ -7,7 +7,6 @@ slack_image: &slack_image
 
 orbs:
   docker: circleci/docker@2.1.2
-  heroku: circleci/heroku@1.2.6
 
 work_directory: &work_directory
   working_directory: ~/velocity-template-tester
@@ -164,25 +163,13 @@ jobs:
           docker push devatherock/velocity-template-tester:$TAG
 
   deploy:
-    executor: heroku/default
+    executor: jdk-executor
     <<: *resource_class
-    <<: *work_directory
     steps:
-      - checkout
-      - heroku/install
-      - setup_remote_docker
-      - attach_workspace:
-          at: ~/velocity-template-tester
       - run:
-          name: Build and push the docker image to registry.heroku.com
+          name: Trigger deployment to render.com
           command: |
-            TAG=${CIRCLE_TAG#v}
-            docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
-            docker pull devatherock/velocity-template-tester:$TAG
-            docker tag devatherock/velocity-template-tester:$TAG registry.heroku.com/velocity-template-tester/web
-            heroku container:login
-            docker push registry.heroku.com/velocity-template-tester/web
-            heroku container:release -a velocity-template-tester web
+            curl $RENDER_DEPLOY_HOOK
 
   notify:
     <<: *slack_image
@@ -254,7 +241,6 @@ workflows:
       - deploy:
           context:
             - docker-credentials
-            - heroku-credentials
           <<: *release_filter  
           requires:
             - publish_release

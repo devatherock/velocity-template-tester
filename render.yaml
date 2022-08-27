@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: velocity-template-tester
+    env: docker
+    plan: free
+    autoDeploy: false
+    dockerfilePath: ./render/Dockerfile
+    dockerContext: ./render
+    envVars:
+      - key: PORT
+        property: port
