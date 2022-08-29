@@ -1,6 +1,9 @@
 # Changelog
 
 ## [Unreleased]
+### Changed
+- Improved the API spec using additional annotations
+
 ### Removed
 - Unused `PORT` environment variable from render
 

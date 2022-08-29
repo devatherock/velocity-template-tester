@@ -1,6 +1,7 @@
 package io.github.devatherock.velocity.tester.controller
 
 import com.fasterxml.jackson.databind.ObjectMapper
+import io.github.devatherock.velocity.tester.model.ExpandTemplateRequest
 import io.github.devatherock.velocity.tester.util.VelocityUtil
 import io.micronaut.http.HttpHeaders
 import io.micronaut.http.HttpResponse
@@ -8,6 +9,10 @@ import io.micronaut.http.MediaType
 import io.micronaut.http.annotation.Body
 import io.micronaut.http.annotation.Controller
 import io.micronaut.http.annotation.Post
+import io.swagger.v3.oas.annotations.Operation
+import io.swagger.v3.oas.annotations.media.Content
+import io.swagger.v3.oas.annotations.media.Schema
+import io.swagger.v3.oas.annotations.responses.ApiResponse
 import org.yaml.snakeyaml.Yaml
 
 /**
@@ -18,31 +23,62 @@ class VelocityController {
     val objectMapper = ObjectMapper()
 
     /**
-     * Handles a JSON request payload
+     * Accepts a JSON request and expands the supplied Velocity template
      *
      * @param request
      * @param headers
-     * @return response
+     * @return response the expanded template string/html
      */
-    @Post("/expandTemplate", produces = [MediaType.TEXT_PLAIN, MediaType.TEXT_HTML], consumes = [MediaType.APPLICATION_JSON])
-    fun expandJsonTemplate(@Body request: String, headers: HttpHeaders): HttpResponse<String> {
-        var parsedRequest = objectMapper.readValue(request, Map::class.java)
-
+    @Post(
+        "/expandTemplate",
+        produces = [MediaType.TEXT_PLAIN, MediaType.TEXT_HTML],
+        consumes = [MediaType.APPLICATION_JSON]
+    )
+    @Operation(
+        summary = "expandJsonTemplate",
+        description = "Accepts a JSON request and expands the supplied Velocity template",
+        responses = [
+            ApiResponse(
+                description = "the expanded template string/html",
+                content = [
+                    Content(mediaType = MediaType.TEXT_PLAIN, schema = Schema(implementation = String::class)),
+                    Content(mediaType = MediaType.TEXT_HTML, schema = Schema(implementation = String::class))
+                ]
+            )
+        ]
+    )
+    fun expandJsonTemplate(@Body request: ExpandTemplateRequest, headers: HttpHeaders): HttpResponse<String> {
         val result = VelocityUtil.expandTemplate(
-            parsedRequest.get("template") as String,
-            parsedRequest.get("parameters") as Map<String, Any>?
+            request.template, request.parameters
         )
         return HttpResponse.ok(result).contentType(contentType(headers))
     }
 
     /**
-     * Handles a YAML request payload
+     * Accepts a YAML request and expands the supplied Velocity template
      *
      * @param request
      * @param headers
-     * @return response
+     * @return response the expanded template string/html
      */
-    @Post("/expandTemplate", produces = [MediaType.TEXT_PLAIN, MediaType.TEXT_HTML], consumes = [MediaType.APPLICATION_YAML])
+    @Post(
+        "/expandTemplate",
+        produces = [MediaType.TEXT_PLAIN, MediaType.TEXT_HTML],
+        consumes = [MediaType.APPLICATION_YAML]
+    )
+    @Operation(
+        summary = "expandYamlTemplate",
+        description = "Accepts a YAML request and expands the supplied Velocity template",
+        responses = [
+            ApiResponse(
+                description = "the expanded template string/html",
+                content = [
+                    Content(mediaType = MediaType.TEXT_PLAIN, schema = Schema(implementation = String::class)),
+                    Content(mediaType = MediaType.TEXT_HTML, schema = Schema(implementation = String::class))
+                ]
+            )
+        ]
+    )
     fun expandYamlTemplate(@Body request: String, headers: HttpHeaders): HttpResponse<String> {
         var parsedRequest = Yaml().load<Map<String, Any>>(request)
 
@@ -60,6 +96,8 @@ class VelocityController {
      * @return content type
      */
     private fun contentType(headers: HttpHeaders): MediaType {
-        return if (headers.accept().contains(MediaType.TEXT_HTML_TYPE)) MediaType.TEXT_HTML_TYPE else MediaType.TEXT_PLAIN_TYPE
+        return if (headers.accept()
+            .contains(MediaType.TEXT_HTML_TYPE)
+        ) MediaType.TEXT_HTML_TYPE else MediaType.TEXT_PLAIN_TYPE
     }
 }
