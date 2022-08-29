@@ -41,8 +41,8 @@ class VelocityController {
             ApiResponse(
                 description = "the expanded template string/html",
                 content = [
-                    Content(mediaType = MediaType.TEXT_PLAIN, schema = Schema(implementation = String::class)),
-                    Content(mediaType = MediaType.TEXT_HTML, schema = Schema(implementation = String::class))
+                    Content(mediaType = MediaType.TEXT_PLAIN, schema = Schema(implementation = String::class, example = "Hello foo")),
+                    Content(mediaType = MediaType.TEXT_HTML, schema = Schema(implementation = String::class, example = "<html>Hello!</html>"))
                 ]
             )
         ]
@@ -73,8 +73,8 @@ class VelocityController {
             ApiResponse(
                 description = "the expanded template string/html",
                 content = [
-                    Content(mediaType = MediaType.TEXT_PLAIN, schema = Schema(implementation = String::class)),
-                    Content(mediaType = MediaType.TEXT_HTML, schema = Schema(implementation = String::class))
+                    Content(mediaType = MediaType.TEXT_PLAIN, schema = Schema(implementation = String::class, example = "Hello foo")),
+                    Content(mediaType = MediaType.TEXT_HTML, schema = Schema(implementation = String::class, example = "<html>Hello!</html>"))
                 ]
             )
         ]

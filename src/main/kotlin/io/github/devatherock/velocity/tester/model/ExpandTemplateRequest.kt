@@ -6,16 +6,16 @@ import io.swagger.v3.oas.annotations.media.Schema
  * Represents a request to expand a template
  */
 @Schema(name = "ExpandTemplateRequest", description = "Represents a request to expand a template")
-data class ExpandTemplateRequest(
+class ExpandTemplateRequest {
     /**
      * The Velocity template to expand
      */
     @Schema(description = "The Velocity template to expand", example = "Hello \${user}")
-    val template: String,
+    lateinit var template: String
 
     /**
      * Parameters to use to expand the template
      */
-    @Schema(description = "Parameters to use to expand the template", example = "{\"user\":\"foo\"")
+    @Schema(description = "Parameters to use to expand the template")
     val parameters: Map<String, Any>? = null
-)
+}

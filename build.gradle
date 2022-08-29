@@ -117,7 +117,8 @@ ext.jacoco = [
         ],
         'io.github.devatherock.velocity.tester.model.ExpandTemplateRequest': [
             'BRANCH': 0.50,
-            'COMPLEXITY': 0.80
+            'COMPLEXITY': 0.80,
+            'INSTRUCTION': 0.78
         ]
     ]
 ]
