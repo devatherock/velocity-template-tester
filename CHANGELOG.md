@@ -4,6 +4,7 @@
 ### Changed
 - Improved the API spec using additional annotations
 - chore(deps): update docker orb to v2.1.3
+- fix(deps): update dependency org.jsoup:jsoup to v1.15.3
 
 ### Removed
 - Unused `PORT` environment variable from render
