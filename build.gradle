@@ -27,6 +27,7 @@ configurations {
     all {
         resolutionStrategy {
             force 'org.jsoup:jsoup:1.15.3'
+            force 'org.yaml:snakeyaml:1.31'
         }
     }
 }
