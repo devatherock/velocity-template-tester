@@ -6,6 +6,7 @@
 - chore(deps): update docker orb to v2.1.3
 - fix(deps): update dependency org.jsoup:jsoup to v1.15.3
 - fix(deps): update dependency com.fasterxml.jackson.module:jackson-module-kotlin to v2.14.0
+- chore(deps): update dependency gradle to v6.9.3
 
 ### Removed
 - Unused `PORT` environment variable from render
