@@ -8,6 +8,7 @@
 - fix(deps): update dependency com.fasterxml.jackson.module:jackson-module-kotlin to v2.14.0
 - chore(deps): update dependency gradle to v6.9.3
 - chore(deps): update docker orb to v2.1.4
+- chore(deps): update kotlin monorepo to v1.7.21
 
 ### Removed
 - Unused `PORT` environment variable from render
