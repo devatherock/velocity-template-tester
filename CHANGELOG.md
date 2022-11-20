@@ -9,6 +9,7 @@
 - chore(deps): update dependency gradle to v6.9.3
 - chore(deps): update docker orb to v2.1.4
 - chore(deps): update kotlin monorepo to v1.7.21
+- fix(deps): update dependency org.codehaus.groovy:groovy-all to v3.0.13
 
 ### Removed
 - Unused `PORT` environment variable from render
