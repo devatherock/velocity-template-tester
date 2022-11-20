@@ -10,6 +10,7 @@
 - chore(deps): update docker orb to v2.1.4
 - chore(deps): update kotlin monorepo to v1.7.21
 - fix(deps): update dependency org.codehaus.groovy:groovy-all to v3.0.13
+- chore(deps): update plugin com.diffplug.spotless to v6.11.0
 
 ### Removed
 - Unused `PORT` environment variable from render
