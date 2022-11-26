@@ -12,6 +12,7 @@
 - fix(deps): update dependency org.codehaus.groovy:groovy-all to v3.0.13
 - fix(deps): update dependency com.fasterxml.jackson.core:jackson-databind to v2.14.1
 - fix(deps): update dependency com.fasterxml.jackson.module:jackson-module-kotlin to v2.14.1
+- chore(deps): update plugin com.diffplug.spotless to v6.12.0
 
 ### Removed
 - Unused `PORT` environment variable from render
