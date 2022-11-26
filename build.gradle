@@ -28,7 +28,7 @@ configurations {
         resolutionStrategy {
             force 'org.jsoup:jsoup:1.15.3'
             force 'org.yaml:snakeyaml:1.33'
-            force 'com.fasterxml.jackson.core:jackson-databind:2.14.0'
+            force 'com.fasterxml.jackson.core:jackson-databind:2.14.1'
         }
     }
 }
