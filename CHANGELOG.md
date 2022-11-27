@@ -13,6 +13,7 @@
 - fix(deps): update dependency com.fasterxml.jackson.core:jackson-databind to v2.14.1
 - fix(deps): update dependency com.fasterxml.jackson.module:jackson-module-kotlin to v2.14.1
 - chore(deps): update plugin org.owasp.dependencycheck to v7.3.2
+- chore(deps): update plugin org.sonarqube to v3.5.0.2730
 
 ### Removed
 - Unused `PORT` environment variable from render
