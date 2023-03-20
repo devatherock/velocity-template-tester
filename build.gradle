@@ -1,14 +1,14 @@
 plugins {
-    id "org.jetbrains.kotlin.jvm" version "1.7.21"
-    id "org.jetbrains.kotlin.kapt" version "1.7.21"
-    id "org.jetbrains.kotlin.plugin.allopen" version "1.7.21"
+    id "org.jetbrains.kotlin.jvm" version "1.8.10"
+    id "org.jetbrains.kotlin.kapt" version "1.8.10"
+    id "org.jetbrains.kotlin.plugin.allopen" version "1.8.10"
     id "com.github.johnrengelman.shadow" version "6.1.0"
     id "application"
     id 'groovy'
     id 'jacoco'
     id 'org.sonarqube' version '3.5.0.2730'
     id 'com.diffplug.spotless' version '6.5.2'
-    id 'org.owasp.dependencycheck' version '7.3.2'
+    id 'org.owasp.dependencycheck' version '8.1.2'
 }
 
 version "0.9.0"
@@ -27,7 +27,6 @@ configurations {
     all {
         resolutionStrategy {
             force 'org.jsoup:jsoup:1.15.3'
-            force 'org.yaml:snakeyaml:1.33'
             force 'com.fasterxml.jackson.core:jackson-databind:2.14.1'
         }
     }
