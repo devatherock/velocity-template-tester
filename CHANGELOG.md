@@ -16,6 +16,7 @@
 - chore(deps): update plugin org.sonarqube to v3.5.0.2730
 - fix(deps): update kotlin monorepo to v1.8.10
 - chore(deps): update dependency gradle to v6.9.4
+- chore(deps): update plugin org.jetbrains.kotlin.jvm to v1.8.20
 
 ### Removed
 - Unused `PORT` environment variable from render
