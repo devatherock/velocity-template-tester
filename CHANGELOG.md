@@ -19,6 +19,7 @@
 - chore(deps): update plugin org.jetbrains.kotlin.jvm to v1.8.20
 - chore(deps): update plugin org.jetbrains.kotlin.kapt to v1.8.20
 - chore(deps): update plugin org.jetbrains.kotlin.plugin.allopen to v1.8.20
+- fix(deps): update dependency com.fasterxml.jackson.core:jackson-databind to v2.14.2
 
 ### Removed
 - Unused `PORT` environment variable from render
