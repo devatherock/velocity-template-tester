@@ -18,6 +18,7 @@
 - chore(deps): update dependency gradle to v6.9.4
 - chore(deps): update plugin org.jetbrains.kotlin.jvm to v1.8.20
 - chore(deps): update plugin org.jetbrains.kotlin.kapt to v1.8.20
+- chore(deps): update plugin org.jetbrains.kotlin.plugin.allopen to v1.8.20
 
 ### Removed
 - Unused `PORT` environment variable from render
