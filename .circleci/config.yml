@@ -6,7 +6,7 @@ slack_image: &slack_image
         password: $DOCKER_PASSWORD
 
 orbs:
-  docker: circleci/docker@2.1.4
+  docker: circleci/docker@2.2.0
 
 work_directory: &work_directory
   working_directory: ~/velocity-template-tester
