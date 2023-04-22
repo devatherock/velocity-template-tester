@@ -27,6 +27,7 @@
 - fix(deps): update dependency org.jsoup:jsoup to v1.15.4
 - fix(deps): update kotlin monorepo to v1.8.20
 - chore(deps): update docker orb to v2.2.0
+- chore(deps): update plugin org.owasp.dependencycheck to v8.2.1
 
 ### Removed
 - Unused `PORT` environment variable from render
