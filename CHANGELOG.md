@@ -26,6 +26,7 @@
 - fix(deps): update dependency io.micronaut:micronaut-bom to v3.8.9
 - fix(deps): update dependency org.jsoup:jsoup to v1.15.4
 - fix(deps): update kotlin monorepo to v1.8.20
+- chore(deps): update docker orb to v2.2.0
 
 ### Removed
 - Unused `PORT` environment variable from render
