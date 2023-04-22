@@ -7,7 +7,7 @@ plugins {
     id 'groovy'
     id 'jacoco'
     id 'org.sonarqube' version '3.5.0.2730'
-    id 'com.diffplug.spotless' version '6.5.2'
+    id 'com.diffplug.spotless' version '6.18.0'
     id 'org.owasp.dependencycheck' version '8.1.2'
 }
 
