@@ -25,6 +25,7 @@
 - fix(deps): update dependency org.codehaus.groovy:groovy-all to v3.0.17
 - fix(deps): update dependency io.micronaut:micronaut-bom to v3.8.9
 - fix(deps): update dependency org.jsoup:jsoup to v1.15.4
+- fix(deps): update kotlin monorepo to v1.8.20
 
 ### Removed
 - Unused `PORT` environment variable from render
