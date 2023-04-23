@@ -30,6 +30,7 @@
 - chore(deps): update plugin org.owasp.dependencycheck to v8.2.1
 - fix(deps): update dependency ch.qos.logback:logback-classic to v1.4.7
 - fix(deps): update dependency io.micronaut:micronaut-bom to v3.9.0
+- fix(deps): update dependency net.logstash.logback:logstash-logback-encoder to v7.3
 
 ### Removed
 - Unused `PORT` environment variable from render
