@@ -28,6 +28,7 @@
 - fix(deps): update kotlin monorepo to v1.8.20
 - chore(deps): update docker orb to v2.2.0
 - chore(deps): update plugin org.owasp.dependencycheck to v8.2.1
+- fix(deps): update dependency ch.qos.logback:logback-classic to v1.4.7
 
 ### Removed
 - Unused `PORT` environment variable from render
