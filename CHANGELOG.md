@@ -36,6 +36,7 @@
 - chore(deps): update plugin org.jetbrains.kotlin.plugin.allopen to v1.8.21
 - fix(deps): update dependency io.micronaut:micronaut-bom to v3.9.1
 - fix(deps): update kotlin monorepo to v1.8.21
+- fix(deps): update dependency com.fasterxml.jackson.core:jackson-databind to v2.15.0
 
 ### Removed
 - Unused `PORT` environment variable from render
