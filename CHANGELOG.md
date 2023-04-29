@@ -32,6 +32,7 @@
 - fix(deps): update dependency io.micronaut:micronaut-bom to v3.9.0
 - fix(deps): update dependency net.logstash.logback:logstash-logback-encoder to v7.3
 - chore(deps): update plugin org.jetbrains.kotlin.jvm to v1.8.21
+- chore(deps): update plugin org.jetbrains.kotlin.kapt to v1.8.21
 
 ### Removed
 - Unused `PORT` environment variable from render
