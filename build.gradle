@@ -67,7 +67,7 @@ dependencies {
     testImplementation "io.micronaut:micronaut-http-client"
 
     testImplementation group: 'org.codehaus.groovy', name: 'groovy-all', version: '3.0.17'
-    testImplementation group: 'org.spockframework', name: 'spock-core', version: '2.1-groovy-3.0'
+    testImplementation group: 'org.spockframework', name: 'spock-core', version: '2.3-groovy-4.0'
 }
 
 test.classpath += configurations.developmentOnly
