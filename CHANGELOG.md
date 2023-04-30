@@ -38,6 +38,7 @@
 - fix(deps): update kotlin monorepo to v1.8.21
 - fix(deps): update dependency com.fasterxml.jackson.core:jackson-databind to v2.15.0
 - fix(deps): update dependency com.fasterxml.jackson.module:jackson-module-kotlin to v2.15.0
+- fix(deps): update dependency org.jsoup:jsoup to v1.16.1
 
 ### Removed
 - Unused `PORT` environment variable from render
