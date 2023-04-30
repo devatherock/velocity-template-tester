@@ -39,6 +39,7 @@
 - fix(deps): update dependency com.fasterxml.jackson.core:jackson-databind to v2.15.0
 - fix(deps): update dependency com.fasterxml.jackson.module:jackson-module-kotlin to v2.15.0
 - fix(deps): update dependency org.jsoup:jsoup to v1.16.1
+- chore(deps): update cimg/openjdk docker tag to v19
 
 ### Removed
 - Unused `PORT` environment variable from render
