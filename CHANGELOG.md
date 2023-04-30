@@ -39,6 +39,7 @@
 - fix(deps): update dependency com.fasterxml.jackson.core:jackson-databind to v2.15.0
 - fix(deps): update dependency com.fasterxml.jackson.module:jackson-module-kotlin to v2.15.0
 - fix(deps): update dependency org.jsoup:jsoup to v1.16.1
+- fix(deps): update dependency org.spockframework:spock-core to v2.3-groovy-4.0
 
 ### Removed
 - Unused `PORT` environment variable from render
