@@ -3,33 +3,11 @@
 ## [Unreleased]
 ### Changed
 - Improved the API spec using additional annotations
-- chore(deps): update docker orb to v2.1.3
-- fix(deps): update dependency org.jsoup:jsoup to v1.15.3
-- fix(deps): update dependency com.fasterxml.jackson.module:jackson-module-kotlin to v2.14.0
-- chore(deps): update dependency gradle to v6.9.3
-- chore(deps): update docker orb to v2.1.4
-- chore(deps): update kotlin monorepo to v1.7.21
-- fix(deps): update dependency org.codehaus.groovy:groovy-all to v3.0.13
-- fix(deps): update dependency com.fasterxml.jackson.core:jackson-databind to v2.14.1
-- fix(deps): update dependency com.fasterxml.jackson.module:jackson-module-kotlin to v2.14.1
-- chore(deps): update plugin org.owasp.dependencycheck to v8.1.2
 - chore(deps): update plugin org.sonarqube to v3.5.0.2730
-- fix(deps): update kotlin monorepo to v1.8.10
-- chore(deps): update dependency gradle to v6.9.4
-- chore(deps): update plugin org.jetbrains.kotlin.jvm to v1.8.20
-- chore(deps): update plugin org.jetbrains.kotlin.kapt to v1.8.20
-- chore(deps): update plugin org.jetbrains.kotlin.plugin.allopen to v1.8.20
-- fix(deps): update dependency com.fasterxml.jackson.core:jackson-databind to v2.14.2
-- fix(deps): update dependency com.fasterxml.jackson.module:jackson-module-kotlin to v2.14.2
-- fix(deps): update dependency io.micronaut:micronaut-bom to v3.8.8
 - fix(deps): update dependency org.codehaus.groovy:groovy-all to v3.0.17
-- fix(deps): update dependency io.micronaut:micronaut-bom to v3.8.9
-- fix(deps): update dependency org.jsoup:jsoup to v1.15.4
-- fix(deps): update kotlin monorepo to v1.8.20
 - chore(deps): update docker orb to v2.2.0
 - chore(deps): update plugin org.owasp.dependencycheck to v8.2.1
 - fix(deps): update dependency ch.qos.logback:logback-classic to v1.4.7
-- fix(deps): update dependency io.micronaut:micronaut-bom to v3.9.0
 - fix(deps): update dependency net.logstash.logback:logstash-logback-encoder to v7.3
 - chore(deps): update plugin org.jetbrains.kotlin.jvm to v1.8.21
 - chore(deps): update plugin org.jetbrains.kotlin.kapt to v1.8.21
@@ -40,6 +18,8 @@
 - fix(deps): update dependency com.fasterxml.jackson.module:jackson-module-kotlin to v2.15.0
 - fix(deps): update dependency org.jsoup:jsoup to v1.16.1
 - chore: Added auth for drone-yaml-validator docker image
+- Upgraded gradle to 7 and Java to 17
+- Upgraded spotless to `6.18.0`
 
 ### Removed
 - Unused `PORT` environment variable from render
