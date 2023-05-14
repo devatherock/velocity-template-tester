@@ -32,7 +32,7 @@ class VelocityController {
     @Post(
         "/expandTemplate",
         produces = [MediaType.TEXT_PLAIN, MediaType.TEXT_HTML],
-        consumes = [MediaType.APPLICATION_JSON]
+        consumes = [MediaType.APPLICATION_JSON],
     )
     @Operation(
         summary = "expandJsonTemplate",
@@ -42,14 +42,15 @@ class VelocityController {
                 description = "the expanded template string/html",
                 content = [
                     Content(mediaType = MediaType.TEXT_PLAIN, schema = Schema(implementation = String::class, example = "Hello foo")),
-                    Content(mediaType = MediaType.TEXT_HTML, schema = Schema(implementation = String::class, example = "<html>Hello!</html>"))
-                ]
-            )
-        ]
+                    Content(mediaType = MediaType.TEXT_HTML, schema = Schema(implementation = String::class, example = "<html>Hello!</html>")),
+                ],
+            ),
+        ],
     )
     fun expandJsonTemplate(@Body request: ExpandTemplateRequest, headers: HttpHeaders): HttpResponse<String> {
         val result = VelocityUtil.expandTemplate(
-            request.template, request.parameters
+            request.template,
+            request.parameters,
         )
         return HttpResponse.ok(result).contentType(contentType(headers))
     }
@@ -64,7 +65,7 @@ class VelocityController {
     @Post(
         "/expandTemplate",
         produces = [MediaType.TEXT_PLAIN, MediaType.TEXT_HTML],
-        consumes = [MediaType.APPLICATION_YAML]
+        consumes = [MediaType.APPLICATION_YAML],
     )
     @Operation(
         summary = "expandYamlTemplate",
@@ -74,17 +75,17 @@ class VelocityController {
                 description = "the expanded template string/html",
                 content = [
                     Content(mediaType = MediaType.TEXT_PLAIN, schema = Schema(implementation = String::class, example = "Hello foo")),
-                    Content(mediaType = MediaType.TEXT_HTML, schema = Schema(implementation = String::class, example = "<html>Hello!</html>"))
-                ]
-            )
-        ]
+                    Content(mediaType = MediaType.TEXT_HTML, schema = Schema(implementation = String::class, example = "<html>Hello!</html>")),
+                ],
+            ),
+        ],
     )
     fun expandYamlTemplate(@Body request: String, headers: HttpHeaders): HttpResponse<String> {
         var parsedRequest = Yaml().load<Map<String, Any>>(request)
 
         val result = VelocityUtil.expandTemplate(
             parsedRequest.get("template") as String,
-            parsedRequest.get("parameters") as Map<String, Any>?
+            parsedRequest.get("parameters") as Map<String, Any>?,
         )
         return HttpResponse.ok(result).contentType(contentType(headers))
     }
@@ -97,7 +98,11 @@ class VelocityController {
      */
     private fun contentType(headers: HttpHeaders): MediaType {
         return if (headers.accept()
-            .contains(MediaType.TEXT_HTML_TYPE)
-        ) MediaType.TEXT_HTML_TYPE else MediaType.TEXT_PLAIN_TYPE
+                .contains(MediaType.TEXT_HTML_TYPE)
+        ) {
+            MediaType.TEXT_HTML_TYPE
+        } else {
+            MediaType.TEXT_PLAIN_TYPE
+        }
     }
 }

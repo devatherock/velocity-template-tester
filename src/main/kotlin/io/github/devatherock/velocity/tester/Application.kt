@@ -15,14 +15,14 @@ import io.swagger.v3.oas.annotations.servers.Server
         title = "Velocity Template Tester",
         version = "1.2.0",
         description = "Velocity Template Tester API",
-        contact = Contact(url = "https://github.com/devatherock", name = "devatherock")
+        contact = Contact(url = "https://github.com/devatherock", name = "devatherock"),
     ),
     servers = [
         Server(
             url = "https://velocity-template-tester.onrender.com",
-            description = "The server where the application is hosted"
-        )
-    ]
+            description = "The server where the application is hosted",
+        ),
+    ],
 )
 object Application {
 
