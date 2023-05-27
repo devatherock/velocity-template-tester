@@ -64,6 +64,7 @@ jobs:
         auth:
           username: $DOCKER_USERNAME
           password: $DOCKER_PASSWORD
+    <<: *resource_class
     <<: *work_directory
     steps:
       - checkout
@@ -138,6 +139,20 @@ jobs:
           key: v1-dependencies-{{ checksum "build.gradle" }}
       - store_test_results:
           path: build/test-results
+          
+  dockerhub_readme:
+    machine:
+      image: ubuntu-2204:2023.04.2
+    steps:
+      - checkout
+      - run: |
+          docker run -v $PWD:/workspace \
+              -e DOCKERHUB_USERNAME \
+              -e DOCKERHUB_PASSWORD \
+              -e DOCKERHUB_REPOSITORY='devatherock/velocity-template-tester' \
+              -e SHORT_DESCRIPTION='UI/API for testing Apache Velocity templates' \
+              -e README_FILEPATH='/workspace/README.md' \
+              peterevans/dockerhub-description:3.4.1
           
   integration_test:
     machine:
@@ -224,11 +239,17 @@ workflows:
           use-remote-docker: true
           docker-username: DOCKER_USERNAME
           dockerfile: docker/Dockerfile
+      - dockerhub_readme:
+          context:
+            - docker-credentials
+            - dockerhub-readme-credentials
+          requires:
+            - publish
       - integration_test:
           context:
             - docker-credentials
           requires:
-            - publish
+            - dockerhub_readme
       - notify:
           context:
             - docker-credentials
