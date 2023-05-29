@@ -21,6 +21,7 @@
 - Upgraded gradle to 7 and Java to 17
 - Upgraded spotless to `6.18.0`
 - Updated dockerhub readme in CI pipeline
+- Built a multi-arch docker image
 
 ### Removed
 - Unused `PORT` environment variable from render

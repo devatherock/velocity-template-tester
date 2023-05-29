@@ -4,3 +4,5 @@ services:
   velocity-template-tester:
     image: devatherock/velocity-template-tester:latest
     network_mode: "host"
+    environment:
+      JAVA_OPTS: '-Xmx640m'
