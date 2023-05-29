@@ -5,9 +5,6 @@ slack_image: &slack_image
         username: $DOCKER_USERNAME
         password: $DOCKER_PASSWORD
 
-orbs:
-  docker: circleci/docker@2.2.0
-
 work_directory: &work_directory
   working_directory: ~/velocity-template-tester
 
@@ -156,7 +153,7 @@ jobs:
           
   integration_test:
     machine:
-      image: ubuntu-2004:202010-01
+      image: ubuntu-2204:2023.04.2
     steps:
       - checkout
       - attach_workspace:
@@ -165,6 +162,25 @@ jobs:
           make integration-test
       - store_test_results:
           path: build/test-results
+          
+  publish:
+    executor: jdk-executor
+    steps:
+      - checkout
+      - setup_remote_docker
+      - attach_workspace:
+          at: ~/velocity-template-tester
+      - run: |
+          TAG=${CIRCLE_SHA1:0:8}
+          docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
+          docker buildx create --name rockbuilder \
+            --driver docker-container --use --bootstrap
+          docker buildx build \
+            --platform linux/amd64,linux/arm64 \
+            --push \
+            -t devatherock/velocity-template-tester:$TAG \
+            -t devatherock/velocity-template-tester:latest \
+            -f docker/Dockerfile .
           
   publish_release:
     executor: jdk-executor
@@ -177,9 +193,10 @@ jobs:
           TAG=${CIRCLE_TAG#v}
           DEV_TAG=${CIRCLE_SHA1:0:8}
           docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
-          docker pull devatherock/velocity-template-tester:$DEV_TAG
-          docker tag devatherock/velocity-template-tester:$DEV_TAG devatherock/velocity-template-tester:$TAG
-          docker push devatherock/velocity-template-tester:$TAG
+          docker buildx create --name rockbuilder \
+            --driver docker-container --use --bootstrap
+          docker buildx imagetools create \
+            -t devatherock/velocity-template-tester:$TAG devatherock/velocity-template-tester:$DEV_TAG
 
   deploy:
     executor: jdk-executor
@@ -226,19 +243,11 @@ workflows:
             - sonar-credentials
           requires:
             - minify_js
-      - docker/publish:
-          name: publish
-          executor: jdk-executor
+      - publish:
           context:
             - docker-credentials
           requires:
             - build
-          image: devatherock/velocity-template-tester  
-          attach-at: ~/velocity-template-tester
-          tag: "${CIRCLE_SHA1:0:8},latest"
-          use-remote-docker: true
-          docker-username: DOCKER_USERNAME
-          dockerfile: docker/Dockerfile
       - dockerhub_readme:
           context:
             - docker-credentials
