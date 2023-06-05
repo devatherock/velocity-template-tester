@@ -2,6 +2,11 @@
 
 ## [Unreleased]
 ### Changed
+- Used cache for integration tests
+- Integration tested the arm image
+
+## [2.0.0] - 2023-05-29
+### Changed
 - Improved the API spec using additional annotations
 - chore(deps): update plugin org.sonarqube to v3.5.0.2730
 - fix(deps): update dependency org.codehaus.groovy:groovy-all to v3.0.17
@@ -22,7 +27,6 @@
 - Upgraded spotless to `6.18.0`
 - Updated dockerhub readme in CI pipeline
 - Built a multi-arch docker image
-- Used cache for integration tests
 
 ### Removed
 - Unused `PORT` environment variable from render

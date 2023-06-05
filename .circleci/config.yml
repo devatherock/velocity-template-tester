@@ -40,6 +40,11 @@ executors:
       image: ubuntu-2204:2023.04.2
     resource_class: medium
     <<: *work_directory
+  arm-executor:
+    machine:
+      image: ubuntu-2004:2022.04.1
+    resource_class: arm.medium
+    <<: *work_directory
 
 version: 2.1
 jobs:
@@ -83,7 +88,7 @@ jobs:
             - v1-dependencies-{{ checksum "build.gradle" }}
             - v1-dependencies
       - run: |
-          ./gradlew check sonarqube -Dsonar.login=$SONAR_TOKEN
+          ./gradlew check sonar -Dsonar.login=$SONAR_TOKEN
       - store_test_results:
           path: build/test-results
           
@@ -130,7 +135,7 @@ jobs:
             - v1-dependencies-{{ checksum "build.gradle" }}
             - v1-dependencies
       - run: |
-          ./gradlew build sonarqube -Dsonar.login=$SONAR_TOKEN
+          ./gradlew build sonar -Dsonar.login=$SONAR_TOKEN
       - persist_to_workspace:
           root: ~/velocity-template-tester
           paths:
@@ -156,7 +161,10 @@ jobs:
               peterevans/dockerhub-description:3.4.1
           
   integration_test:
-    executor: machine-executor
+    parameters:
+      runner:
+        type: executor
+    executor: << parameters.runner >>
     steps:
       - checkout
       - attach_workspace:
@@ -183,7 +191,7 @@ jobs:
           at: ~/velocity-template-tester
       - run: |
           TAG=${CIRCLE_SHA1:0:8}
-          docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
+          echo $DOCKER_PASSWORD | docker login -u $DOCKER_USERNAME --password-stdin
           docker buildx create --name rockbuilder \
             --driver docker-container --use --bootstrap
           docker buildx build \
@@ -203,7 +211,7 @@ jobs:
       - run: |
           TAG=${CIRCLE_TAG#v}
           DEV_TAG=${CIRCLE_SHA1:0:8}
-          docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
+          echo $DOCKER_PASSWORD | docker login -u $DOCKER_USERNAME --password-stdin
           docker buildx create --name rockbuilder \
             --driver docker-container --use --bootstrap
           docker buildx imagetools create \
@@ -266,8 +274,17 @@ workflows:
           requires:
             - publish
       - integration_test:
+          name: integration_test_amd
           context:
             - docker-credentials
+          runner: machine-executor
+          requires:
+            - publish
+      - integration_test:
+          name: integration_test_arm
+          context:
+            - docker-credentials
+          runner: arm-executor  
           requires:
             - dockerhub_readme
       - notify:
@@ -275,7 +292,8 @@ workflows:
             - docker-credentials
             - slack-webhook
           requires:
-            - integration_test
+            - integration_test_amd
+            - integration_test_arm
             
   release:
     jobs:
