@@ -22,6 +22,7 @@
 - Upgraded spotless to `6.18.0`
 - Updated dockerhub readme in CI pipeline
 - Built a multi-arch docker image
+- Used cache for integration tests
 
 ### Removed
 - Unused `PORT` environment variable from render

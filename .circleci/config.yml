@@ -35,6 +35,11 @@ executors:
     environment:
       # To generate swagger UI
       JAVA_TOOL_OPTIONS: '-Dmicronaut.openapi.views.spec=swagger-ui.enabled=true,swagger-ui.theme=flattop'
+  machine-executor:
+    machine:
+      image: ubuntu-2204:2023.04.2
+    resource_class: medium
+    <<: *work_directory
 
 version: 2.1
 jobs:
@@ -138,8 +143,7 @@ jobs:
           path: build/test-results
           
   dockerhub_readme:
-    machine:
-      image: ubuntu-2204:2023.04.2
+    executor: machine-executor
     steps:
       - checkout
       - run: |
@@ -152,16 +156,23 @@ jobs:
               peterevans/dockerhub-description:3.4.1
           
   integration_test:
-    machine:
-      image: ubuntu-2204:2023.04.2
+    executor: machine-executor
     steps:
       - checkout
       - attach_workspace:
           at: ~/velocity-template-tester
+      - restore_cache:
+          keys:
+            - v1-integration-{{ checksum "build.gradle" }}
+            - v1-integration
       - run: |
           make integration-test
       - store_test_results:
           path: build/test-results
+      - save_cache:
+          paths:
+            - ~/.gradle
+          key: v1-integration-{{ checksum "build.gradle" }}          
           
   publish:
     executor: jdk-executor
