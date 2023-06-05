@@ -125,17 +125,12 @@ jobs:
             - v1-dependencies-{{ checksum "build.gradle" }}
             - v1-dependencies
       - run: |
+          rm -rf ~/.gradle
           ./gradlew build sonarqube -Dsonar.login=$SONAR_TOKEN
-      - persist_to_workspace:
-          root: ~/velocity-template-tester
-          paths:
-            - build
       - save_cache:
           paths:
             - ~/.gradle
           key: v1-dependencies-{{ checksum "build.gradle" }}
-      - store_test_results:
-          path: build/test-results
           
   dockerhub_readme:
     machine:
@@ -288,20 +283,10 @@ workflows:
             
   pr_check:
     jobs:
-      - changelog_updater:
-          context:
-            - docker-credentials
-            - changelog-updater-credentials
-          <<: *pr_filter
-      - validate_yamls:
-          context:
-            - docker-credentials
-          requires:
-            - changelog_updater
-      - test:
+      - build:
           context:
             - docker-credentials
             - sonar-credentials
-          <<: *pr_filter
-          requires:
-            - validate_yamls
+          filters:
+            branches:
+              only: prune-cache
