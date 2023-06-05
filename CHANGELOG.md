@@ -4,6 +4,7 @@
 ### Changed
 - Used cache for integration tests
 - Integration tested the arm image
+- chore(deps): update dependency autosize.js to v6
 
 ## [2.0.0] - 2023-05-29
 ### Changed
