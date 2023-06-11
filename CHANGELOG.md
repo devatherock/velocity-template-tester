@@ -10,6 +10,7 @@
 - fix(deps): update dependency com.fasterxml.jackson.core:jackson-databind to v2.15.2
 - fix(deps): update dependency com.fasterxml.jackson.module:jackson-module-kotlin to v2.15.2
 - fix(deps): update dependency io.micronaut:micronaut-bom to v3.9.3
+- fix(deps): update kotlin monorepo to v1.8.22
 
 ## [2.0.0] - 2023-05-29
 ### Changed
