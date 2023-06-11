@@ -5,6 +5,7 @@
 - Used cache for integration tests
 - Integration tested the arm image
 - chore(deps): update plugin org.jetbrains.kotlin.jvm to v1.8.22
+- chore(deps): update plugin org.jetbrains.kotlin.kapt to v1.8.22
 
 ## [2.0.0] - 2023-05-29
 ### Changed
