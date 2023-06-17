@@ -12,6 +12,7 @@
 - fix(deps): update dependency io.micronaut:micronaut-bom to v3.9.3
 - fix(deps): update kotlin monorepo to v1.8.22
 - fix(deps): update dependency ch.qos.logback:logback-classic to v1.4.8
+- chore(deps): update plugin com.diffplug.spotless to v6.19.0
 
 ## [2.0.0] - 2023-05-29
 ### Changed
