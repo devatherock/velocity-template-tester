@@ -15,6 +15,7 @@
 - chore(deps): update dependency gradle to v8
 - Updated sonar gradle plugin to `4.2.1.3168`
 - chore(deps): update devatherock/minify-js docker tag to v2
+- chore(deps): update eclipse-temurin docker tag to v17
 
 ## [2.0.0] - 2023-05-29
 ### Changed
