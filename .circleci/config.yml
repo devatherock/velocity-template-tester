@@ -1,9 +1,12 @@
+docker_auth: &docker_auth
+  auth:
+    username: $DOCKER_USERNAME
+    password: $DOCKER_PASSWORD
+
 slack_image: &slack_image
   docker:
-    - image: devatherock/simple-slack:0.7.0
-      auth:
-        username: $DOCKER_USERNAME
-        password: $DOCKER_PASSWORD
+    - image: devatherock/simple-slack:1.0.0
+      <<: *docker_auth
 
 work_directory: &work_directory
   working_directory: ~/velocity-template-tester
@@ -27,9 +30,7 @@ executors:
   jdk-executor:
     docker:
       - image: cimg/openjdk:11.0
-        auth:
-          username: $DOCKER_USERNAME
-          password: $DOCKER_PASSWORD
+        <<: *docker_auth
     <<: *resource_class
     <<: *work_directory
     environment:
@@ -51,9 +52,7 @@ jobs:
   changelog_updater:
     docker:
     - image: devatherock/changelog-updater:0.1.0
-      auth:
-        username: $DOCKER_USERNAME
-        password: $DOCKER_PASSWORD
+      <<: *docker_auth
     <<: *resource_class
     environment:
       VELA_BUILD_AUTHOR: "renovate[bot]"
@@ -68,9 +67,7 @@ jobs:
   validate_yamls:
     docker:
       - image: devatherock/drone-yaml-validator:2.1.0
-        auth:
-          username: $DOCKER_USERNAME
-          password: $DOCKER_PASSWORD
+        <<: *docker_auth
     <<: *resource_class
     <<: *work_directory
     steps:
@@ -106,9 +103,7 @@ jobs:
   minify_js:
     docker:
       - image: devatherock/minify-js:1.0.3
-        auth:
-          username: $DOCKER_USERNAME
-          password: $DOCKER_PASSWORD
+        <<: *docker_auth
     <<: *resource_class
     <<: *work_directory
     environment:
