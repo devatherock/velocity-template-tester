@@ -13,6 +13,7 @@
 - fix(deps): update kotlin monorepo to v1.8.22
 - fix(deps): update dependency ch.qos.logback:logback-classic to v1.4.8
 - chore(deps): update plugin com.diffplug.spotless to v6.19.0
+- chore(deps): update cimg/openjdk docker tag to v20
 
 ## [2.0.0] - 2023-05-29
 ### Changed
