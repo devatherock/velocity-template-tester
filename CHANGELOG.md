@@ -16,6 +16,7 @@
 - Updated sonar gradle plugin to `4.2.1.3168`
 - chore(deps): update devatherock/minify-js docker tag to v2
 - Upgraded Java to 17
+- Specified gradle jvm toolchain resolver
 
 ## [2.0.0] - 2023-05-29
 ### Changed
