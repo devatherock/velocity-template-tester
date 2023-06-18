@@ -47,7 +47,7 @@ dependencies {
     implementation "io.micronaut:micronaut-management"
 
     implementation group: 'org.apache.velocity', name: 'velocity-engine-core', version: '2.3'
-    implementation group: 'net.logstash.logback', name: 'logstash-logback-encoder', version: '7.3'
+    implementation group: 'net.logstash.logback', name: 'logstash-logback-encoder', version: '7.4'
     implementation group: 'javax.inject', name: 'javax.inject', version: '1'
 
     runtimeOnly "com.fasterxml.jackson.module:jackson-module-kotlin:2.15.2"
