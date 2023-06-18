@@ -17,6 +17,7 @@
 - chore(deps): update devatherock/minify-js docker tag to v2
 - Upgraded Java to 17
 - Specified gradle jvm toolchain resolver
+- fix(deps): update dependency net.logstash.logback:logstash-logback-encoder to v7.4
 
 ## [2.0.0] - 2023-05-29
 ### Changed
