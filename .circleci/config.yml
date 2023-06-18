@@ -13,23 +13,23 @@ work_directory: &work_directory
 
 resource_class: &resource_class
   resource_class: small
-  
+
 release_filter: &release_filter
   filters:
     branches:
       only: non-existent-branch
     tags:
       only: /^v[0-9\.]+$/
-      
+
 pr_filter: &pr_filter
   filters:
     branches:
       ignore: master
-  
+
 executors:
   jdk-executor:
     docker:
-      - image: cimg/openjdk:11.0
+      - image: cimg/openjdk:17.0
         <<: *docker_auth
     <<: *resource_class
     <<: *work_directory
@@ -63,7 +63,7 @@ jobs:
             - "4a:86:fe:0e:c3:0e:ad:0d:1d:5c:3e:48:cf:28:39:5d"
       - checkout
       - run: sh /scripts/entry-point.sh
-      
+
   validate_yamls:
     docker:
       - image: devatherock/drone-yaml-validator:2.1.0
@@ -75,20 +75,25 @@ jobs:
       - run: sh /scripts/entry-point.sh
 
   test:
-    executor: jdk-executor
+    executor: arm-executor
     steps:
       - checkout
       - attach_workspace:
           at: ~/velocity-template-tester
       - restore_cache:
           keys:
-            - v1-dependencies-{{ checksum "build.gradle" }}
-            - v1-dependencies
+            - v1-integration-{{ checksum "build.gradle" }}
+            - v1-integration
       - run: |
           ./gradlew check sonar -Dsonar.login=$SONAR_TOKEN
+          make fast-build docker-build integration-test
+      - save_cache:
+          paths:
+            - ~/.gradle
+          key: v1-integration-{{ checksum "build.gradle" }}
       - store_test_results:
           path: build/test-results
-          
+
   add_timestamp_to_static_files:
     executor: jdk-executor
     <<: *work_directory
@@ -99,7 +104,7 @@ jobs:
           root: ~/velocity-template-tester
           paths:
             - src/main/resources/public
-          
+
   minify_js:
     docker:
       - image: devatherock/minify-js:2.0.0
@@ -141,7 +146,7 @@ jobs:
           key: v1-dependencies-{{ checksum "build.gradle" }}
       - store_test_results:
           path: build/test-results
-          
+
   dockerhub_readme:
     executor: machine-executor
     steps:
@@ -154,7 +159,7 @@ jobs:
               -e SHORT_DESCRIPTION='UI/API for testing Apache Velocity templates' \
               -e README_FILEPATH='/workspace/README.md' \
               peterevans/dockerhub-description:3.4.1
-          
+
   integration_test:
     parameters:
       runner:
@@ -175,8 +180,8 @@ jobs:
       - save_cache:
           paths:
             - ~/.gradle
-          key: v1-integration-{{ checksum "build.gradle" }}          
-          
+          key: v1-integration-{{ checksum "build.gradle" }}
+
   publish:
     executor: jdk-executor
     steps:
@@ -195,7 +200,7 @@ jobs:
             -t devatherock/velocity-template-tester:$TAG \
             -t devatherock/velocity-template-tester:latest \
             -f docker/Dockerfile .
-          
+
   publish_release:
     executor: jdk-executor
     steps:
@@ -279,7 +284,7 @@ workflows:
           name: integration_test_arm
           context:
             - docker-credentials
-          runner: arm-executor  
+          runner: arm-executor
           requires:
             - dockerhub_readme
       - notify:
@@ -289,7 +294,7 @@ workflows:
           requires:
             - integration_test_amd
             - integration_test_arm
-            
+
   release:
     jobs:
       - publish_release:
@@ -299,17 +304,17 @@ workflows:
       - deploy:
           context:
             - docker-credentials
-          <<: *release_filter  
+          <<: *release_filter
           requires:
             - publish_release
       - notify:
           context:
             - docker-credentials
             - slack-webhook
-          <<: *release_filter  
+          <<: *release_filter
           requires:
             - deploy
-            
+
   pr_check:
     jobs:
       - changelog_updater:
