@@ -13,7 +13,6 @@ plugins {
 
 version "0.9.0"
 group "io.github.devatherock"
-targetCompatibility = '11'
 
 repositories {
     mavenCentral()
@@ -81,9 +80,12 @@ allOpen {
     annotation("io.micronaut.aop.Around")
 }
 
+kotlin {
+    jvmToolchain(11)
+}
+
 compileKotlin {
     kotlinOptions {
-        jvmTarget = '11'
         // Will retain parameter names for Java reflection
         javaParameters = true
     }
