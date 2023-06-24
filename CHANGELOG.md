@@ -18,6 +18,7 @@
 - Upgraded Java to 17
 - Specified gradle jvm toolchain resolver
 - fix(deps): update dependency net.logstash.logback:logstash-logback-encoder to v7.4
+- fix(deps): update dependency io.micronaut:micronaut-bom to v3.9.4
 
 ## [2.0.0] - 2023-05-29
 ### Changed
