@@ -91,6 +91,8 @@ jobs:
           paths:
             - ~/.gradle
           key: v1-integration-{{ checksum "build.gradle" }}
+      - store_artifacts:
+          path: build/reports
       - store_test_results:
           path: build/test-results
 
@@ -144,21 +146,27 @@ jobs:
           paths:
             - ~/.gradle
           key: v1-dependencies-{{ checksum "build.gradle" }}
+      - store_artifacts:
+          path: build/reports
       - store_test_results:
           path: build/test-results
 
   dockerhub_readme:
-    executor: machine-executor
+    docker:
+      - image: peterevans/dockerhub-description:3.4.2
+        <<: *docker_auth
+    <<: *resource_class
+    <<: *work_directory
+    environment:
+      DOCKERHUB_REPOSITORY: 'devatherock/velocity-template-tester'
+      SHORT_DESCRIPTION: 'UI/API for testing Apache Velocity templates'
+      README_FILEPATH: README.md
     steps:
       - checkout
+      - attach_workspace:
+          at: ~/velocity-template-tester
       - run: |
-          docker run -v $PWD:/workspace \
-              -e DOCKERHUB_USERNAME \
-              -e DOCKERHUB_PASSWORD \
-              -e DOCKERHUB_REPOSITORY='devatherock/velocity-template-tester' \
-              -e SHORT_DESCRIPTION='UI/API for testing Apache Velocity templates' \
-              -e README_FILEPATH='/workspace/README.md' \
-              peterevans/dockerhub-description:3.4.1
+          sh /entrypoint.sh
 
   integration_test:
     parameters:
