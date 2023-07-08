@@ -24,6 +24,7 @@
 - Persisted build reports
 - chore(deps): update dependency gradle to v8.2
 - chore(deps): update plugin org.jetbrains.kotlin.jvm to v1.9.0
+- chore(deps): update plugin org.jetbrains.kotlin.kapt to v1.9.0
 
 ## [2.0.0] - 2023-05-29
 ### Changed
