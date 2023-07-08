@@ -22,6 +22,7 @@
 - chore(deps): update plugin org.owasp.dependencycheck to v8.3.1
 - fix(deps): update dependency org.codehaus.groovy:groovy-all to v3.0.18
 - Persisted build reports
+- chore(deps): update dependency gradle to v8.2
 
 ## [2.0.0] - 2023-05-29
 ### Changed
