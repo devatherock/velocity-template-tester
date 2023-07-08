@@ -27,6 +27,7 @@
 - chore(deps): update plugin org.jetbrains.kotlin.kapt to v1.9.0
 - chore(deps): update plugin org.jetbrains.kotlin.plugin.allopen to v1.9.0
 - fix(deps): update kotlin monorepo to v1.9.0
+- chore(deps): update devatherock/drone-yaml-validator docker tag to v3
 
 ## [2.0.0] - 2023-05-29
 ### Changed
