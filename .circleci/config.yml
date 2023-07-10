@@ -26,6 +26,14 @@ pr_filter: &pr_filter
     branches:
       ignore: master
 
+orbs:
+  templates: devatherock/circleci-templates@0.2.0
+
+parameters:
+  repo_name:
+    type: string
+    default: "velocity-template-tester"
+
 executors:
   jdk-executor:
     docker:
@@ -49,21 +57,6 @@ executors:
 
 version: 2.1
 jobs:
-  changelog_updater:
-    docker:
-    - image: devatherock/changelog-updater:0.1.0
-      <<: *docker_auth
-    <<: *resource_class
-    environment:
-      VELA_BUILD_AUTHOR: "renovate[bot]"
-      VELA_BUILD_AUTHOR_EMAIL: "29139614+renovate[bot]@users.noreply.github.com"
-    steps:
-      - add_ssh_keys:
-          fingerprints:
-            - "4a:86:fe:0e:c3:0e:ad:0d:1d:5c:3e:48:cf:28:39:5d"
-      - checkout
-      - run: sh /scripts/entry-point.sh
-
   validate_yamls:
     docker:
       - image: devatherock/drone-yaml-validator:3.0.0
@@ -150,23 +143,6 @@ jobs:
           path: build/reports
       - store_test_results:
           path: build/test-results
-
-  dockerhub_readme:
-    docker:
-      - image: peterevans/dockerhub-description:3.4.2
-        <<: *docker_auth
-    <<: *resource_class
-    <<: *work_directory
-    environment:
-      DOCKERHUB_REPOSITORY: 'devatherock/velocity-template-tester'
-      SHORT_DESCRIPTION: 'UI/API for testing Apache Velocity templates'
-      README_FILEPATH: README.md
-    steps:
-      - checkout
-      - attach_workspace:
-          at: ~/velocity-template-tester
-      - run: |
-          sh /entrypoint.sh
 
   integration_test:
     parameters:
@@ -275,10 +251,14 @@ workflows:
             - docker-credentials
           requires:
             - build
-      - dockerhub_readme:
+      - templates/dockerhub_readme_update:
+          name: dockerhub_readme
           context:
             - docker-credentials
             - dockerhub-readme-credentials
+          docker_image: '<< pipeline.parameters.repo_name >>'
+          image_description: 'UI/API for testing Apache Velocity templates'
+          work_dir: '~/<< pipeline.parameters.repo_name >>'
           requires:
             - publish
       - integration_test:
@@ -325,7 +305,8 @@ workflows:
 
   pr_check:
     jobs:
-      - changelog_updater:
+      - templates/changelog_updater:
+          name: changelog_updater
           context:
             - docker-credentials
             - changelog-updater-credentials
