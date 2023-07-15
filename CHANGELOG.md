@@ -30,6 +30,7 @@
 - chore(deps): update devatherock/drone-yaml-validator docker tag to v3
 - chore: Used templates orb for dockerhub and changelog update
 - chore(deps): update dependency gradle to v8.2.1
+- chore(deps): update plugin org.gradle.toolchains.foojay-resolver-convention to v0.6.0
 
 ## [2.0.0] - 2023-05-29
 ### Changed
