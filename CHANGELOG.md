@@ -29,6 +29,7 @@
 - fix(deps): update kotlin monorepo to v1.9.0
 - chore(deps): update devatherock/drone-yaml-validator docker tag to v3
 - chore: Used templates orb for dockerhub and changelog update
+- chore(deps): update dependency gradle to v8.2.1
 
 ## [2.0.0] - 2023-05-29
 ### Changed
