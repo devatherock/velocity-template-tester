@@ -32,6 +32,7 @@
 - chore(deps): update dependency gradle to v8.2.1
 - chore(deps): update plugin org.gradle.toolchains.foojay-resolver-convention to v0.6.0
 - chore(deps): update templates orb to v0.4.0
+- chore(deps): update plugin com.diffplug.spotless to v6.20.0
 
 ## [2.0.0] - 2023-05-29
 ### Changed
