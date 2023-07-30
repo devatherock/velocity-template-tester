@@ -35,6 +35,7 @@
 - chore(deps): update plugin com.diffplug.spotless to v6.20.0
 - chore(deps): update plugin org.sonarqube to v4.3.0.3225
 - chore(deps): update eclipse-temurin docker tag to v17.0.8_7-jre-jammy
+- fix(deps): update dependency io.micronaut:micronaut-bom to v3.10.0
 
 ## [2.0.0] - 2023-05-29
 ### Changed
