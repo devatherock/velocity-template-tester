@@ -4,25 +4,14 @@
 ### Changed
 - Used cache for integration tests
 - Integration tested the arm image
-- chore(deps): update plugin org.jetbrains.kotlin.jvm to v1.8.22
-- chore(deps): update plugin org.jetbrains.kotlin.kapt to v1.8.22
-- chore(deps): update plugin org.jetbrains.kotlin.plugin.allopen to v1.8.22
 - fix(deps): update dependency com.fasterxml.jackson.module:jackson-module-kotlin to v2.15.2
-- fix(deps): update dependency io.micronaut:micronaut-bom to v3.9.3
-- fix(deps): update kotlin monorepo to v1.8.22
-- fix(deps): update dependency ch.qos.logback:logback-classic to v1.4.8
-- chore(deps): update plugin com.diffplug.spotless to v6.19.0
-- chore(deps): update dependency gradle to v8
-- Updated sonar gradle plugin to `4.2.1.3168`
 - chore(deps): update devatherock/minify-js docker tag to v2
 - Upgraded Java to 17
 - Specified gradle jvm toolchain resolver
 - fix(deps): update dependency net.logstash.logback:logstash-logback-encoder to v7.4
-- fix(deps): update dependency io.micronaut:micronaut-bom to v3.9.4
 - chore(deps): update plugin org.owasp.dependencycheck to v8.3.1
 - fix(deps): update dependency org.codehaus.groovy:groovy-all to v3.0.18
 - Persisted build reports
-- chore(deps): update dependency gradle to v8.2
 - chore(deps): update plugin org.jetbrains.kotlin.jvm to v1.9.0
 - chore(deps): update plugin org.jetbrains.kotlin.kapt to v1.9.0
 - chore(deps): update plugin org.jetbrains.kotlin.plugin.allopen to v1.9.0
@@ -37,6 +26,7 @@
 - chore(deps): update eclipse-temurin docker tag to v17.0.8_7-jre-jammy
 - fix(deps): update dependency io.micronaut:micronaut-bom to v3.10.0
 - fix(deps): update dependency ch.qos.logback:logback-classic to v1.4.9
+- Made the `gradle-includes` location configurable
 
 ## [2.0.0] - 2023-05-29
 ### Changed
