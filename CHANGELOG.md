@@ -30,6 +30,7 @@
 - fix(deps): update dependency ch.qos.logback:logback-classic to v1.4.11
 - chore(deps): update eclipse-temurin docker tag to v17.0.9_9-jre-jammy
 - chore(deps): update plugin org.jetbrains.kotlin.jvm to v1.9.20
+- chore(deps): update plugin org.jetbrains.kotlin.kapt to v1.9.20
 
 ## [2.0.0] - 2023-05-29
 ### Changed
