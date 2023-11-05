@@ -32,6 +32,7 @@
 - chore(deps): update plugin org.jetbrains.kotlin.jvm to v1.9.20
 - chore(deps): update plugin org.jetbrains.kotlin.kapt to v1.9.20
 - chore(deps): update plugin org.jetbrains.kotlin.plugin.allopen to v1.9.20
+- fix(deps): update dependency com.fasterxml.jackson.module:jackson-module-kotlin to v2.15.3
 
 ## [2.0.0] - 2023-05-29
 ### Changed
