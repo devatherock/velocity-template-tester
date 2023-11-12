@@ -38,6 +38,7 @@
 - fix(deps): update dependency io.micronaut:micronaut-bom to v3.10.3
 - fix(deps): update dependency org.jsoup:jsoup to v1.16.2
 - fix(deps): update kotlin monorepo to v1.9.20
+- chore(deps): update dependency gradle to v8.4
 
 ## [2.0.0] - 2023-05-29
 ### Changed
