@@ -42,16 +42,23 @@ class VelocityController {
                 description = "the expanded template string/html",
                 content = [
                     Content(mediaType = MediaType.TEXT_PLAIN, schema = Schema(implementation = String::class, example = "Hello foo")),
-                    Content(mediaType = MediaType.TEXT_HTML, schema = Schema(implementation = String::class, example = "<html>Hello!</html>")),
+                    Content(
+                        mediaType = MediaType.TEXT_HTML,
+                        schema = Schema(implementation = String::class, example = "<html>Hello!</html>"),
+                    ),
                 ],
             ),
         ],
     )
-    fun expandJsonTemplate(@Body request: ExpandTemplateRequest, headers: HttpHeaders): HttpResponse<String> {
-        val result = VelocityUtil.expandTemplate(
-            request.template,
-            request.parameters,
-        )
+    fun expandJsonTemplate(
+        @Body request: ExpandTemplateRequest,
+        headers: HttpHeaders,
+    ): HttpResponse<String> {
+        val result =
+            VelocityUtil.expandTemplate(
+                request.template,
+                request.parameters,
+            )
         return HttpResponse.ok(result).contentType(contentType(headers))
     }
 
@@ -75,18 +82,25 @@ class VelocityController {
                 description = "the expanded template string/html",
                 content = [
                     Content(mediaType = MediaType.TEXT_PLAIN, schema = Schema(implementation = String::class, example = "Hello foo")),
-                    Content(mediaType = MediaType.TEXT_HTML, schema = Schema(implementation = String::class, example = "<html>Hello!</html>")),
+                    Content(
+                        mediaType = MediaType.TEXT_HTML,
+                        schema = Schema(implementation = String::class, example = "<html>Hello!</html>"),
+                    ),
                 ],
             ),
         ],
     )
-    fun expandYamlTemplate(@Body request: String, headers: HttpHeaders): HttpResponse<String> {
+    fun expandYamlTemplate(
+        @Body request: String,
+        headers: HttpHeaders,
+    ): HttpResponse<String> {
         var parsedRequest = Yaml().load<Map<String, Any>>(request)
 
-        val result = VelocityUtil.expandTemplate(
-            parsedRequest.get("template") as String,
-            parsedRequest.get("parameters") as Map<String, Any>?,
-        )
+        val result =
+            VelocityUtil.expandTemplate(
+                parsedRequest.get("template") as String,
+                parsedRequest.get("parameters") as Map<String, Any>?,
+            )
         return HttpResponse.ok(result).contentType(contentType(headers))
     }
 

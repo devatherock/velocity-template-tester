@@ -15,7 +15,10 @@ class VelocityUtil {
          * @param template the template text to process
          * @param parameters the list of parameters to process the template with
          */
-        fun expandTemplate(template: String, parameters: Map<String, Any>?): String {
+        fun expandTemplate(
+            template: String,
+            parameters: Map<String, Any>?,
+        ): String {
             var writer = StringWriter()
             var context = VelocityContext()
 
