@@ -11,12 +11,13 @@ import io.swagger.v3.oas.annotations.servers.Server
  * a class to pass to [start][io.micronaut.runtime.Micronaut.start].
  */
 @OpenAPIDefinition(
-    info = Info(
-        title = "Velocity Template Tester",
-        version = "1.2.0",
-        description = "Velocity Template Tester API",
-        contact = Contact(url = "https://github.com/devatherock", name = "devatherock"),
-    ),
+    info =
+        Info(
+            title = "Velocity Template Tester",
+            version = "1.2.0",
+            description = "Velocity Template Tester API",
+            contact = Contact(url = "https://github.com/devatherock", name = "devatherock"),
+        ),
     servers = [
         Server(
             url = "https://velocity-template-tester.onrender.com",
@@ -25,7 +26,6 @@ import io.swagger.v3.oas.annotations.servers.Server
     ],
 )
 object Application {
-
     @JvmStatic
     fun main(args: Array<String>) {
         Micronaut.build()
