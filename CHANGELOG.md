@@ -43,6 +43,7 @@
 - chore(deps): update plugin org.gradle.toolchains.foojay-resolver-convention to v0.7.0
 - chore(deps): update plugin org.owasp.dependencycheck to v8.4.2
 - chore(deps): update plugin org.sonarqube to v4.4.1.3373
+- chore(deps): update plugin org.owasp.dependencycheck to v8.4.3
 
 ## [2.0.0] - 2023-05-29
 ### Changed
