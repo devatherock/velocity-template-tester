@@ -37,7 +37,7 @@ parameters:
 executors:
   jdk-executor:
     docker:
-      - image: cimg/openjdk:17.0
+      - image: cimg/openjdk:21.0
         <<: *docker_auth
     <<: *resource_class
     <<: *work_directory
