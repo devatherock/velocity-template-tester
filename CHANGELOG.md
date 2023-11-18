@@ -44,6 +44,7 @@
 - chore(deps): update plugin org.owasp.dependencycheck to v8.4.2
 - chore(deps): update plugin org.sonarqube to v4.4.1.3373
 - chore(deps): update plugin org.owasp.dependencycheck to v8.4.3
+- fix(deps): update dependency com.fasterxml.jackson.module:jackson-module-kotlin to v2.16.0
 
 ## [2.0.0] - 2023-05-29
 ### Changed
