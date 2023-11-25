@@ -48,6 +48,7 @@
 - chore(deps): update plugin org.jetbrains.kotlin.jvm to v1.9.21
 - chore(deps): update plugin org.jetbrains.kotlin.kapt to v1.9.21
 - chore(deps): update plugin org.jetbrains.kotlin.plugin.allopen to v1.9.21
+- fix(deps): update kotlin monorepo to v1.9.21
 
 ## [2.0.0] - 2023-05-29
 ### Changed
