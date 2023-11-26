@@ -102,7 +102,7 @@ jobs:
 
   minify_js:
     docker:
-      - image: devatherock/minify-js:2.0.0
+      - image: devatherock/minify-js:3.0.0
         <<: *docker_auth
     <<: *resource_class
     <<: *work_directory
