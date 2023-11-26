@@ -244,6 +244,7 @@ workflows:
           context:
             - docker-credentials
             - sonar-credentials
+            - dependencycheck-credentials
           requires:
             - minify_js
       - publish:
@@ -320,6 +321,7 @@ workflows:
           context:
             - docker-credentials
             - sonar-credentials
+            - dependencycheck-credentials
           <<: *pr_filter
           requires:
             - validate_yamls
