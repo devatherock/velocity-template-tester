@@ -51,6 +51,7 @@
 - fix(deps): update kotlin monorepo to v1.9.21
 - chore(deps): update plugin org.owasp.dependencycheck to v9
 - chore(deps): update devatherock/minify-js docker tag to v3
+- Configure Mend Bolt for GitHub
 
 ## [2.0.0] - 2023-05-29
 ### Changed
