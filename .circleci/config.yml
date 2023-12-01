@@ -113,7 +113,7 @@ jobs:
       - checkout
       - attach_workspace:
           at: ~/velocity-template-tester
-      - run: sh /entrypoint.sh
+      - run: node /app/bin/cli.mjs
       - persist_to_workspace:
           root: ~/velocity-template-tester
           paths:
@@ -317,6 +317,16 @@ workflows:
             - docker-credentials
           requires:
             - changelog_updater
+      - add_timestamp_to_static_files:
+          context:
+            - docker-credentials
+          requires:
+            - validate_yamls
+      - minify_js:
+          context:
+            - docker-credentials
+          requires:
+            - add_timestamp_to_static_files            
       - test:
           context:
             - docker-credentials
@@ -324,4 +334,4 @@ workflows:
             - dependencycheck-credentials
           <<: *pr_filter
           requires:
-            - validate_yamls
+            - minify_js
