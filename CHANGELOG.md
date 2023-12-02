@@ -13,7 +13,6 @@
 - chore(deps): update templates orb to v0.4.0
 - Made the `gradle-includes` location configurable
 - chore(deps): update eclipse-temurin docker tag to v17.0.9_9-jre-jammy
-- fix(deps): update dependency org.codehaus.groovy:groovy-all to v3.0.19
 - fix(deps): update dependency io.micronaut:micronaut-bom to v3.10.3
 - fix(deps): update dependency org.jsoup:jsoup to v1.16.2
 - chore(deps): update dependency gradle to v8.4
@@ -29,6 +28,7 @@
 - chore(deps): update plugin org.owasp.dependencycheck to v9.0.2
 - Upgraded `spock` to `2.3`
 - Upgraded `logback-classic` to `1.4.14`
+- Replaced `groovy-all` with `groovy-json`
 
 ## [2.0.0] - 2023-05-29
 ### Changed
