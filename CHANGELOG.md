@@ -30,6 +30,7 @@
 - Upgraded `logback-classic` to `1.4.14`
 - Replaced `groovy-all` with `groovy-json`
 - chore(deps): update dependency gradle to v8.5
+- chore(deps): update plugin com.diffplug.spotless to v6.23.2
 
 ## [2.0.0] - 2023-05-29
 ### Changed
