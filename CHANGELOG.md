@@ -12,7 +12,6 @@
 - chore: Used templates orb for dockerhub and changelog update
 - chore(deps): update templates orb to v0.4.0
 - Made the `gradle-includes` location configurable
-- fix(deps): update dependency ch.qos.logback:logback-classic to v1.4.11
 - chore(deps): update eclipse-temurin docker tag to v17.0.9_9-jre-jammy
 - fix(deps): update dependency org.codehaus.groovy:groovy-all to v3.0.19
 - fix(deps): update dependency io.micronaut:micronaut-bom to v3.10.3
@@ -25,9 +24,11 @@
 - chore(deps): update plugin org.jetbrains.kotlin.kapt to v1.9.21
 - chore(deps): update plugin org.jetbrains.kotlin.plugin.allopen to v1.9.21
 - fix(deps): update kotlin monorepo to v1.9.21
-- chore(deps): update plugin org.owasp.dependencycheck to v9
 - chore(deps): update devatherock/minify-js docker tag to v3
 - Configure Mend Bolt for GitHub
+- chore(deps): update plugin org.owasp.dependencycheck to v9.0.2
+- Upgraded `spock` to `2.3`
+- Upgraded `logback-classic` to `1.4.14`
 
 ## [2.0.0] - 2023-05-29
 ### Changed
