@@ -32,6 +32,7 @@
 - chore(deps): update dependency gradle to v8.5
 - chore(deps): update plugin com.diffplug.spotless to v6.23.2
 - fix(deps): update dependency org.jsoup:jsoup to v1.17.1
+- chore(deps): update plugin com.diffplug.spotless to v6.23.3
 
 ## [2.0.0] - 2023-05-29
 ### Changed
