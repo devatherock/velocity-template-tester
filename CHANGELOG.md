@@ -35,6 +35,7 @@
 - chore(deps): update plugin com.diffplug.spotless to v6.23.3
 - chore(deps): update plugin org.owasp.dependencycheck to v9.0.6
 - chore(deps): update plugin org.jetbrains.kotlin.jvm to v1.9.22
+- chore(deps): update plugin org.jetbrains.kotlin.kapt to v1.9.22
 
 ## [2.0.0] - 2023-05-29
 ### Changed
