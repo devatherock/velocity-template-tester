@@ -38,6 +38,7 @@
 - chore(deps): update plugin org.jetbrains.kotlin.kapt to v1.9.22
 - chore(deps): update plugin org.jetbrains.kotlin.plugin.allopen to v1.9.22
 - chore(deps): update plugin org.owasp.dependencycheck to v9.0.7
+- fix(deps): update dependency com.fasterxml.jackson.module:jackson-module-kotlin to v2.16.1
 
 ## [2.0.0] - 2023-05-29
 ### Changed
