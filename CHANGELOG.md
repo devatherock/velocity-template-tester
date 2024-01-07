@@ -41,6 +41,7 @@
 - fix(deps): update dependency com.fasterxml.jackson.module:jackson-module-kotlin to v2.16.1
 - chore(deps): update plugin org.owasp.dependencycheck to v9.0.8
 - fix(deps): update dependency org.codehaus.groovy:groovy-json to v3.0.20
+- fix(deps): update dependency org.jsoup:jsoup to v1.17.2
 
 ## [2.0.0] - 2023-05-29
 ### Changed
