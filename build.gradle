@@ -25,7 +25,7 @@ configurations {
     // Force dependency versions to use dependencies without vulnerabilities
     all {
         resolutionStrategy {
-            force 'org.jsoup:jsoup:1.17.1'
+            force 'org.jsoup:jsoup:1.17.2'
         }
     }
 }
