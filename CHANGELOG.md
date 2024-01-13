@@ -42,6 +42,7 @@
 - chore(deps): update plugin org.owasp.dependencycheck to v9.0.8
 - fix(deps): update dependency org.codehaus.groovy:groovy-json to v3.0.20
 - fix(deps): update dependency org.jsoup:jsoup to v1.17.2
+- fix(deps): update kotlin monorepo to v1.9.22
 
 ## [2.0.0] - 2023-05-29
 ### Changed
