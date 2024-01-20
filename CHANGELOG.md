@@ -44,6 +44,7 @@
 - fix(deps): update dependency org.jsoup:jsoup to v1.17.2
 - fix(deps): update kotlin monorepo to v1.9.22
 - chore(deps): update plugin org.gradle.toolchains.foojay-resolver-convention to v0.8.0
+- chore(deps): update plugin org.owasp.dependencycheck to v9.0.9
 
 ## [2.0.0] - 2023-05-29
 ### Changed
