@@ -30,6 +30,7 @@
 - chore(deps): update plugin org.gradle.toolchains.foojay-resolver-convention to v0.8.0
 - chore(deps): update eclipse-temurin docker tag to v17.0.10_7-jre-jammy
 - chore(deps): update cimg/openjdk docker tag to v17.0.10
+- chore(deps): update dependency gradle to v8.6
 
 ### Removed
 - Dependency check plugin
