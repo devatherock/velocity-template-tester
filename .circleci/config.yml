@@ -3,10 +3,9 @@ docker_auth: &docker_auth
     username: $DOCKER_USERNAME
     password: $DOCKER_PASSWORD
 
-slack_image: &slack_image
-  docker:
-    - image: devatherock/simple-slack:1.0.0
-      <<: *docker_auth
+vm_executor_image: &vm_executor_image
+  machine:
+    image: ubuntu-2204:2023.04.2    
 
 work_directory: &work_directory
   working_directory: ~/velocity-template-tester
@@ -27,7 +26,7 @@ pr_filter: &pr_filter
       ignore: master
 
 orbs:
-  templates: devatherock/circleci-templates@0.4.0
+  templates: devatherock/circleci-templates@0.5.0
 
 parameters:
   repo_name:
@@ -45,28 +44,16 @@ executors:
       # To generate swagger UI
       JAVA_TOOL_OPTIONS: '-Dmicronaut.openapi.views.spec=swagger-ui.enabled=true,swagger-ui.theme=flattop'
   machine-executor:
-    machine:
-      image: ubuntu-2204:2023.04.2
+    <<: *vm_executor_image
     resource_class: medium
     <<: *work_directory
   arm-executor:
-    machine:
-      image: ubuntu-2004:2022.04.1
+    <<: *vm_executor_image
     resource_class: arm.medium
     <<: *work_directory
 
 version: 2.1
 jobs:
-  validate_yamls:
-    docker:
-      - image: devatherock/drone-yaml-validator:3.0.0
-        <<: *docker_auth
-    <<: *resource_class
-    <<: *work_directory
-    steps:
-      - checkout
-      - run: sh /scripts/entry-point.sh
-
   test:
     executor: arm-executor
     steps:
@@ -78,7 +65,7 @@ jobs:
             - v1-integration-{{ checksum "build.gradle" }}
             - v1-integration
       - run: |
-          ./gradlew check sonar -Dsonar.login=$SONAR_TOKEN
+          ./gradlew check sonar -Dsonar.token=$SONAR_TOKEN
           make fast-build docker-build integration-test
       - save_cache:
           paths:
@@ -130,7 +117,7 @@ jobs:
             - v1-dependencies-{{ checksum "build.gradle" }}
             - v1-dependencies
       - run: |
-          ./gradlew build sonar -Dsonar.login=$SONAR_TOKEN
+          ./gradlew build sonar -Dsonar.token=$SONAR_TOKEN
       - persist_to_workspace:
           root: ~/velocity-template-tester
           paths:
@@ -210,23 +197,15 @@ jobs:
           command: |
             curl $RENDER_DEPLOY_HOOK
 
-  notify:
-    <<: *slack_image
-    <<: *resource_class
-    environment:
-      TEXT: "Success: {{.CircleBuildUrl}} by {{.CircleUsername}}"
-      CHANNEL: general
-      TITLE: "Build completed"
-    steps:
-      - run: /bin/simpleslack -c "#33ad7f" || true
-
 workflows:
   version: 2.1
   build_publish:
     jobs:
-      - validate_yamls:
+      - templates/yaml_validator:
+          name: validate_yamls
           context:
             - docker-credentials
+          work_dir: '~/<< pipeline.parameters.repo_name >>'
           filters:
             branches:
               only: master
@@ -276,7 +255,8 @@ workflows:
           runner: arm-executor
           requires:
             - dockerhub_readme
-      - notify:
+      - templates/slack:
+          name: notify
           context:
             - docker-credentials
             - slack-webhook
@@ -296,7 +276,8 @@ workflows:
           <<: *release_filter
           requires:
             - publish_release
-      - notify:
+      - templates/slack:
+          name: notify
           context:
             - docker-credentials
             - slack-webhook
@@ -312,9 +293,11 @@ workflows:
             - docker-credentials
             - changelog-updater-credentials
           <<: *pr_filter
-      - validate_yamls:
+      - templates/yaml_validator:
+          name: validate_yamls
           context:
             - docker-credentials
+          work_dir: '~/<< pipeline.parameters.repo_name >>'
           requires:
             - changelog_updater
       - add_timestamp_to_static_files:
