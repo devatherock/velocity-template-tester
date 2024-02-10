@@ -5,45 +5,32 @@
 - Used cache for integration tests
 - Integration tested the arm image
 - Upgraded Java to 17
-- Specified gradle jvm toolchain resolver
 - fix(deps): update dependency net.logstash.logback:logstash-logback-encoder to v7.4
 - Persisted build reports
-- chore(deps): update devatherock/drone-yaml-validator docker tag to v3
 - chore: Used templates orb for dockerhub and changelog update
-- chore(deps): update templates orb to v0.4.0
 - Made the `gradle-includes` location configurable
 - chore(deps): update eclipse-temurin docker tag to v17.0.9_9-jre-jammy
 - fix(deps): update dependency io.micronaut:micronaut-bom to v3.10.3
-- fix(deps): update dependency org.jsoup:jsoup to v1.16.2
-- chore(deps): update dependency gradle to v8.4
-- chore(deps): update plugin com.diffplug.spotless to v6.22.0
 - chore(deps): update plugin org.sonarqube to v4.4.1.3373
-- fix(deps): update dependency com.fasterxml.jackson.module:jackson-module-kotlin to v2.16.0
-- chore(deps): update plugin org.jetbrains.kotlin.jvm to v1.9.21
-- chore(deps): update plugin org.jetbrains.kotlin.kapt to v1.9.21
-- chore(deps): update plugin org.jetbrains.kotlin.plugin.allopen to v1.9.21
-- fix(deps): update kotlin monorepo to v1.9.21
 - chore(deps): update devatherock/minify-js docker tag to v3
 - Configure Mend Bolt for GitHub
-- chore(deps): update plugin org.owasp.dependencycheck to v9.0.2
 - Upgraded `spock` to `2.3`
 - Upgraded `logback-classic` to `1.4.14`
 - Replaced `groovy-all` with `groovy-json`
 - chore(deps): update dependency gradle to v8.5
-- chore(deps): update plugin com.diffplug.spotless to v6.23.2
-- fix(deps): update dependency org.jsoup:jsoup to v1.17.1
 - chore(deps): update plugin com.diffplug.spotless to v6.23.3
 - chore(deps): update plugin org.owasp.dependencycheck to v9.0.6
 - chore(deps): update plugin org.jetbrains.kotlin.jvm to v1.9.22
 - chore(deps): update plugin org.jetbrains.kotlin.kapt to v1.9.22
 - chore(deps): update plugin org.jetbrains.kotlin.plugin.allopen to v1.9.22
-- chore(deps): update plugin org.owasp.dependencycheck to v9.0.7
 - fix(deps): update dependency com.fasterxml.jackson.module:jackson-module-kotlin to v2.16.1
-- chore(deps): update plugin org.owasp.dependencycheck to v9.0.8
 - fix(deps): update dependency org.codehaus.groovy:groovy-json to v3.0.20
 - fix(deps): update dependency org.jsoup:jsoup to v1.17.2
 - fix(deps): update kotlin monorepo to v1.9.22
 - chore(deps): update plugin org.gradle.toolchains.foojay-resolver-convention to v0.8.0
+
+### Removed
+- Dependency check plugin
 
 ## [2.0.0] - 2023-05-29
 ### Changed

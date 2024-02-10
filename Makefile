@@ -9,7 +9,7 @@ ifeq ($(all), true)
 endif
 	./gradlew check	
 fast-build:
-	./gradlew build	-x dependencyCheckAggregate $(additional_gradle_args)
+	./gradlew build $(additional_gradle_args)
 docker-build:
 	docker build -t devatherock/velocity-template-tester:$(docker_tag) -f docker/Dockerfile .	
 docker-run:
