@@ -31,6 +31,7 @@
 - chore(deps): update eclipse-temurin docker tag to v17.0.10_7-jre-jammy
 - chore(deps): update cimg/openjdk docker tag to v17.0.10
 - chore(deps): update dependency gradle to v8.6
+- chore(deps): update plugin com.diffplug.spotless to v6.25.0
 
 ### Removed
 - Dependency check plugin
