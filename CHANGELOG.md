@@ -28,6 +28,7 @@
 - fix(deps): update dependency org.jsoup:jsoup to v1.17.2
 - fix(deps): update kotlin monorepo to v1.9.22
 - chore(deps): update plugin org.gradle.toolchains.foojay-resolver-convention to v0.8.0
+- chore(deps): update eclipse-temurin docker tag to v17.0.10_7-jre-jammy
 
 ### Removed
 - Dependency check plugin
