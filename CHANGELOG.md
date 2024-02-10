@@ -29,6 +29,7 @@
 - fix(deps): update kotlin monorepo to v1.9.22
 - chore(deps): update plugin org.gradle.toolchains.foojay-resolver-convention to v0.8.0
 - chore(deps): update eclipse-temurin docker tag to v17.0.10_7-jre-jammy
+- chore(deps): update cimg/openjdk docker tag to v17.0.10
 
 ### Removed
 - Dependency check plugin
