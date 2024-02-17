@@ -32,6 +32,7 @@
 - chore(deps): update cimg/openjdk docker tag to v17.0.10
 - chore(deps): update dependency gradle to v8.6
 - chore(deps): update plugin com.diffplug.spotless to v6.25.0
+- fix(deps): update dependency ch.qos.logback:logback-classic to v1.5.0
 
 ### Removed
 - Dependency check plugin
