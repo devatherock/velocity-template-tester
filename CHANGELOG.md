@@ -36,6 +36,7 @@
 - chore(deps): update dependency autosize.js to v5.0.2
 - fix(deps): update dependency ch.qos.logback:logback-classic to v1.5.2
 - fix(deps): update dependency org.codehaus.groovy:groovy-json to v3.0.21
+- chore(deps): update plugin org.jetbrains.kotlin.jvm to v1.9.23
 
 ### Removed
 - Dependency check plugin
