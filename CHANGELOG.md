@@ -38,6 +38,7 @@
 - fix(deps): update dependency org.codehaus.groovy:groovy-json to v3.0.21
 - chore(deps): update plugin org.jetbrains.kotlin.jvm to v1.9.23
 - chore(deps): update plugin org.jetbrains.kotlin.kapt to v1.9.23
+- chore(deps): update plugin org.jetbrains.kotlin.plugin.allopen to v1.9.23
 
 ### Removed
 - Dependency check plugin
