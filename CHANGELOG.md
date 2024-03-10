@@ -40,6 +40,7 @@
 - chore(deps): update plugin org.jetbrains.kotlin.kapt to v1.9.23
 - chore(deps): update plugin org.jetbrains.kotlin.plugin.allopen to v1.9.23
 - fix(deps): update dependency ch.qos.logback:logback-classic to v1.5.3
+- fix(deps): update dependency com.fasterxml.jackson.module:jackson-module-kotlin to v2.16.2
 
 ### Removed
 - Dependency check plugin
