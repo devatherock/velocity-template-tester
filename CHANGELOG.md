@@ -42,6 +42,7 @@
 - fix(deps): update dependency ch.qos.logback:logback-classic to v1.5.3
 - fix(deps): update dependency com.fasterxml.jackson.module:jackson-module-kotlin to v2.16.2
 - fix(deps): update kotlin monorepo to v1.9.23
+- fix(deps): update dependency com.fasterxml.jackson.module:jackson-module-kotlin to v2.17.0
 
 ### Removed
 - Dependency check plugin
