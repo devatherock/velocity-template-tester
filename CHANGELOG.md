@@ -43,6 +43,7 @@
 - fix(deps): update dependency com.fasterxml.jackson.module:jackson-module-kotlin to v2.16.2
 - fix(deps): update kotlin monorepo to v1.9.23
 - fix(deps): update dependency com.fasterxml.jackson.module:jackson-module-kotlin to v2.17.0
+- chore(deps): update dependency gradle to v8.7
 
 ### Removed
 - Dependency check plugin
