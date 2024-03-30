@@ -45,6 +45,7 @@
 - fix(deps): update dependency com.fasterxml.jackson.module:jackson-module-kotlin to v2.17.0
 - chore(deps): update dependency gradle to v8.7
 - fix(deps): update dependency io.micronaut:micronaut-bom to v3.10.4
+- chore(deps): update plugin org.sonarqube to v5
 
 ### Removed
 - Dependency check plugin
