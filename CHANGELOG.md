@@ -46,6 +46,7 @@
 - chore(deps): update dependency gradle to v8.7
 - fix(deps): update dependency io.micronaut:micronaut-bom to v3.10.4
 - chore(deps): update plugin org.sonarqube to v5
+- fix(deps): update dependency ch.qos.logback:logback-classic to v1.5.5
 
 ### Removed
 - Dependency check plugin
