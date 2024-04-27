@@ -50,6 +50,7 @@
 - chore(deps): update cimg/openjdk docker tag to v17.0.11
 - chore(deps): update eclipse-temurin docker tag to v17.0.11_9-jre-jammy
 - fix(deps): update dependency ch.qos.logback:logback-classic to v1.5.6
+- chore(deps): update templates orb to v0.6.0
 
 ### Removed
 - Dependency check plugin
