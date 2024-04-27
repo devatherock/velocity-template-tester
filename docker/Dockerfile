@@ -1,4 +1,4 @@
-FROM eclipse-temurin:17.0.10_7-jre-jammy
+FROM eclipse-temurin:17.0.11_9-jre-jammy
 COPY build/libs/velocity-template-tester-*-all.jar velocity-template-tester.jar
 EXPOSE 8080
 CMD java -XX:+UnlockExperimentalVMOptions \
