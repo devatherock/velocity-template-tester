@@ -48,6 +48,7 @@
 - chore(deps): update plugin org.sonarqube to v5
 - fix(deps): update dependency ch.qos.logback:logback-classic to v1.5.5
 - chore(deps): update cimg/openjdk docker tag to v17.0.11
+- chore(deps): update eclipse-temurin docker tag to v17.0.11_9-jre-jammy
 
 ### Removed
 - Dependency check plugin
