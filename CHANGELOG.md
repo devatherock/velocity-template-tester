@@ -52,6 +52,7 @@
 - fix(deps): update dependency ch.qos.logback:logback-classic to v1.5.6
 - chore(deps): update templates orb to v0.6.0
 - chore(deps): update devatherock/minify-js docker tag to v3.1.0
+- chore(deps): update templates orb to v0.7.0
 
 ### Removed
 - Dependency check plugin
