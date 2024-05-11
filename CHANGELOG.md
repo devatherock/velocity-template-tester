@@ -54,6 +54,7 @@
 - chore(deps): update devatherock/minify-js docker tag to v3.1.0
 - chore(deps): update templates orb to v0.7.0
 - fix(deps): update dependency com.fasterxml.jackson.module:jackson-module-kotlin to v2.17.1
+- chore(deps): update plugin org.jetbrains.kotlin.jvm to v1.9.24
 
 ### Removed
 - Dependency check plugin
