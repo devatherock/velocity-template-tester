@@ -56,6 +56,7 @@
 - fix(deps): update dependency com.fasterxml.jackson.module:jackson-module-kotlin to v2.17.1
 - chore(deps): update plugin org.jetbrains.kotlin.jvm to v1.9.24
 - chore(deps): update plugin org.jetbrains.kotlin.kapt to v1.9.24
+- chore(deps): update plugin org.jetbrains.kotlin.plugin.allopen to v1.9.24
 
 ### Removed
 - Dependency check plugin
