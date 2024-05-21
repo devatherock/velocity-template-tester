@@ -144,4 +144,53 @@ abstract class VelocityControllerSpec extends Specification {
                 'Good evening, World!'
         ]
     }
+
+    @Unroll
+    void 'test expand template - #tool tool'() {
+        given:
+        def request = [
+                'template': template
+        ]
+
+        when:
+        String response = httpClient.toBlocking().retrieve(
+                HttpRequest.POST('/api/expandTemplate', JsonOutput.toJson(request))
+                        .contentType('application/json'))
+
+        then:
+        response == expectedOutput
+
+        where:
+        tool   | expectedOutput
+        'esc'  | '<img src="http://logos.com/my-logo.png?label=small+size">'
+        'json' | 'value'
+        'math' | '10'
+        'log'  | 'hola'
+
+        and:
+        template << [
+                '''<img src="http://logos.com/my-logo.png?label=$esc.url('small size')">''',
+                '''$json.parse('{"key":"value"}').key''',
+                '$math.max(10, 5)',
+                '''
+                $log.info("Hello World!")
+                hola
+                '''.stripIndent().trim(),
+        ]
+    }
+
+    void 'test expand template - date tool'() {
+        given:
+        def request = [
+                'template': '''$date.get('iso')'''
+        ]
+
+        when:
+        String response = httpClient.toBlocking().retrieve(
+                HttpRequest.POST('/api/expandTemplate', JsonOutput.toJson(request))
+                        .contentType('application/json'))
+
+        then:
+        response =~ '[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}'
+    }
 }

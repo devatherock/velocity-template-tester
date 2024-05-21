@@ -2,6 +2,11 @@ package io.github.devatherock.velocity.tester.util
 
 import org.apache.velocity.VelocityContext
 import org.apache.velocity.app.Velocity
+import org.apache.velocity.tools.generic.DateTool
+import org.apache.velocity.tools.generic.EscapeTool
+import org.apache.velocity.tools.generic.JsonTool
+import org.apache.velocity.tools.generic.LogTool
+import org.apache.velocity.tools.generic.MathTool
 import java.io.StringWriter
 
 /**
@@ -21,6 +26,13 @@ class VelocityUtil {
         ): String {
             var writer = StringWriter()
             var context = VelocityContext()
+
+            // Add tools to context
+            context.put("date", DateTool())
+            context.put("esc", EscapeTool())
+            context.put("json", JsonTool())
+            context.put("math", MathTool())
+            context.put("log", LogTool())
 
             if (null != parameters) {
                 for ((key, value) in parameters) {

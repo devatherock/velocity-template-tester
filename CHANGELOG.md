@@ -1,58 +1,32 @@
 # Changelog
 
 ## [Unreleased]
+### Added
+- [#318](https://github.com/devatherock/velocity-template-tester/issues/318): A few velocity tools into the context
+
 ### Changed
 - Used cache for integration tests
 - Integration tested the arm image
-- Upgraded Java to 17
 - fix(deps): update dependency net.logstash.logback:logstash-logback-encoder to v7.4
 - Persisted build reports
 - chore: Used templates orb for dockerhub and changelog update
 - Made the `gradle-includes` location configurable
-- chore(deps): update eclipse-temurin docker tag to v17.0.9_9-jre-jammy
-- fix(deps): update dependency io.micronaut:micronaut-bom to v3.10.3
-- chore(deps): update plugin org.sonarqube to v4.4.1.3373
-- chore(deps): update devatherock/minify-js docker tag to v3
 - Configure Mend Bolt for GitHub
 - Upgraded `spock` to `2.3`
-- Upgraded `logback-classic` to `1.4.14`
 - Replaced `groovy-all` with `groovy-json`
-- chore(deps): update dependency gradle to v8.5
-- chore(deps): update plugin com.diffplug.spotless to v6.23.3
-- chore(deps): update plugin org.owasp.dependencycheck to v9.0.6
-- chore(deps): update plugin org.jetbrains.kotlin.jvm to v1.9.22
-- chore(deps): update plugin org.jetbrains.kotlin.kapt to v1.9.22
-- chore(deps): update plugin org.jetbrains.kotlin.plugin.allopen to v1.9.22
-- fix(deps): update dependency com.fasterxml.jackson.module:jackson-module-kotlin to v2.16.1
-- fix(deps): update dependency org.codehaus.groovy:groovy-json to v3.0.20
 - fix(deps): update dependency org.jsoup:jsoup to v1.17.2
-- fix(deps): update kotlin monorepo to v1.9.22
 - chore(deps): update plugin org.gradle.toolchains.foojay-resolver-convention to v0.8.0
-- chore(deps): update eclipse-temurin docker tag to v17.0.10_7-jre-jammy
-- chore(deps): update cimg/openjdk docker tag to v17.0.10
 - chore(deps): update dependency gradle to v8.6
 - chore(deps): update plugin com.diffplug.spotless to v6.25.0
-- fix(deps): update dependency ch.qos.logback:logback-classic to v1.5.0
 - chore(deps): update dependency autosize.js to v5.0.2
-- fix(deps): update dependency ch.qos.logback:logback-classic to v1.5.2
 - fix(deps): update dependency org.codehaus.groovy:groovy-json to v3.0.21
-- chore(deps): update plugin org.jetbrains.kotlin.jvm to v1.9.23
-- chore(deps): update plugin org.jetbrains.kotlin.kapt to v1.9.23
-- chore(deps): update plugin org.jetbrains.kotlin.plugin.allopen to v1.9.23
-- fix(deps): update dependency ch.qos.logback:logback-classic to v1.5.3
-- fix(deps): update dependency com.fasterxml.jackson.module:jackson-module-kotlin to v2.16.2
-- fix(deps): update kotlin monorepo to v1.9.23
-- fix(deps): update dependency com.fasterxml.jackson.module:jackson-module-kotlin to v2.17.0
 - chore(deps): update dependency gradle to v8.7
 - fix(deps): update dependency io.micronaut:micronaut-bom to v3.10.4
 - chore(deps): update plugin org.sonarqube to v5
-- fix(deps): update dependency ch.qos.logback:logback-classic to v1.5.5
 - chore(deps): update cimg/openjdk docker tag to v17.0.11
 - chore(deps): update eclipse-temurin docker tag to v17.0.11_9-jre-jammy
 - fix(deps): update dependency ch.qos.logback:logback-classic to v1.5.6
-- chore(deps): update templates orb to v0.6.0
 - chore(deps): update devatherock/minify-js docker tag to v3.1.0
-- chore(deps): update templates orb to v0.7.0
 - fix(deps): update dependency com.fasterxml.jackson.module:jackson-module-kotlin to v2.17.1
 - chore(deps): update plugin org.jetbrains.kotlin.jvm to v1.9.24
 - chore(deps): update plugin org.jetbrains.kotlin.kapt to v1.9.24
