@@ -201,14 +201,21 @@ workflows:
   version: 2.1
   build_publish:
     jobs:
+      - templates/slack:
+          name: notify
+          context:
+            - docker-credentials
+            - slack-webhook
+          filters:
+            branches:
+              only: master
       - templates/yaml_validator:
           name: validate_yamls
           context:
             - docker-credentials
           work_dir: '~/<< pipeline.parameters.repo_name >>'
-          filters:
-            branches:
-              only: master
+          requires:
+            - notify
       - add_timestamp_to_static_files:
           context:
             - docker-credentials
@@ -255,35 +262,27 @@ workflows:
           runner: arm-executor
           requires:
             - dockerhub_readme
+
+  release:
+    jobs:
       - templates/slack:
           name: notify
           context:
             - docker-credentials
             - slack-webhook
-          requires:
-            - integration_test_amd
-            - integration_test_arm
-
-  release:
-    jobs:
+          <<: *release_filter
       - publish_release:
           context:
             - docker-credentials
           <<: *release_filter
+          requires:
+            - notify
       - deploy:
           context:
             - docker-credentials
           <<: *release_filter
           requires:
             - publish_release
-      - templates/slack:
-          name: notify
-          context:
-            - docker-credentials
-            - slack-webhook
-          <<: *release_filter
-          requires:
-            - deploy
 
   pr_check:
     jobs:
