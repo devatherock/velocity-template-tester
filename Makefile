@@ -17,6 +17,6 @@ docker-run:
 	-p 8080:8080 \
 	devatherock/velocity-template-tester:$(docker_tag)
 integration-test:
-	docker-compose up &
+	DOCKER_TAG=$(docker_tag) docker-compose up &
 	./gradlew integrationTest
 	docker-compose down	
