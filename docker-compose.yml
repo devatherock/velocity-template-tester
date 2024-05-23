@@ -2,7 +2,7 @@ version: '3.7'
 services:
 
   velocity-template-tester:
-    image: devatherock/velocity-template-tester:latest
+    image: devatherock/velocity-template-tester:${DOCKER_TAG:-latest}
     network_mode: "host"
     environment:
       JAVA_OPTS: '-Xmx640m'

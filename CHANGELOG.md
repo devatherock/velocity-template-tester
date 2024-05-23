@@ -2,6 +2,10 @@
 
 ## [Unreleased]
 ### Added
+- [#300](https://github.com/devatherock/velocity-template-tester/issues/300): `dumb-init` for graceful container shutdown
+
+## [2.1.0] - 2024-05-20
+### Added
 - [#318](https://github.com/devatherock/velocity-template-tester/issues/318): A few velocity tools into the context
 
 ### Changed
