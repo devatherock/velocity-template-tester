@@ -1,6 +1,10 @@
 # Changelog
 
 ## [Unreleased]
+### Changed
+- chore(deps): update devatherock/velocity-template-tester docker tag to v2.1.1
+
+## [2.1.1] - 2024-05-23
 ### Added
 - [#300](https://github.com/devatherock/velocity-template-tester/issues/300): `dumb-init` for graceful container shutdown
 
