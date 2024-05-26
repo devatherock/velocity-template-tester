@@ -6,6 +6,7 @@
 - chore(deps): update plugin org.jetbrains.kotlin.jvm to v2
 - chore(deps): update plugin org.jetbrains.kotlin.kapt to v2
 - chore(deps): update plugin org.jetbrains.kotlin.plugin.allopen to v2
+- fix(deps): update kotlin monorepo to v2 (major)
 
 ## [2.1.1] - 2024-05-23
 ### Added
