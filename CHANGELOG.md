@@ -3,6 +3,7 @@
 ## [Unreleased]
 ### Changed
 - chore(deps): update devatherock/velocity-template-tester docker tag to v2.1.1
+- chore(deps): update plugin org.jetbrains.kotlin.jvm to v2
 
 ## [2.1.1] - 2024-05-23
 ### Added
