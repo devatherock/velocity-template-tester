@@ -3,9 +3,6 @@
 ## [Unreleased]
 ### Changed
 - chore(deps): update devatherock/velocity-template-tester docker tag to v2.1.1
-- chore(deps): update plugin org.jetbrains.kotlin.jvm to v2
-- chore(deps): update plugin org.jetbrains.kotlin.kapt to v2
-- chore(deps): update plugin org.jetbrains.kotlin.plugin.allopen to v2
 - fix(deps): update kotlin monorepo to v2 (major)
 
 ## [2.1.1] - 2024-05-23
@@ -40,9 +37,6 @@
 - fix(deps): update dependency ch.qos.logback:logback-classic to v1.5.6
 - chore(deps): update devatherock/minify-js docker tag to v3.1.0
 - fix(deps): update dependency com.fasterxml.jackson.module:jackson-module-kotlin to v2.17.1
-- chore(deps): update plugin org.jetbrains.kotlin.jvm to v1.9.24
-- chore(deps): update plugin org.jetbrains.kotlin.kapt to v1.9.24
-- chore(deps): update plugin org.jetbrains.kotlin.plugin.allopen to v1.9.24
 - fix(deps): update kotlin monorepo to v1.9.24
 
 ### Removed
@@ -57,9 +51,6 @@
 - chore(deps): update plugin org.owasp.dependencycheck to v8.2.1
 - fix(deps): update dependency ch.qos.logback:logback-classic to v1.4.7
 - fix(deps): update dependency net.logstash.logback:logstash-logback-encoder to v7.3
-- chore(deps): update plugin org.jetbrains.kotlin.jvm to v1.8.21
-- chore(deps): update plugin org.jetbrains.kotlin.kapt to v1.8.21
-- chore(deps): update plugin org.jetbrains.kotlin.plugin.allopen to v1.8.21
 - fix(deps): update dependency io.micronaut:micronaut-bom to v3.9.1
 - fix(deps): update kotlin monorepo to v1.8.21
 - fix(deps): update dependency com.fasterxml.jackson.core:jackson-databind to v2.15.0
@@ -100,9 +91,6 @@
 - chore(deps): update dependency net.logstash.logback:logstash-logback-encoder to v7.2
 - chore(deps): update docker orb to v2.1.2
 - chore(deps): update kotlinversion to v1.7.10
-- chore(deps): update plugin org.jetbrains.kotlin.jvm to v1.7.10
-- chore(deps): update plugin org.jetbrains.kotlin.kapt to v1.7.10
-- chore(deps): update plugin org.jetbrains.kotlin.plugin.allopen to v1.7.10
 - chore(deps): update plugin org.sonarqube to v3.4.0.2513
 - chore(deps): update dependency org.codehaus.groovy:groovy-all to v3.0.12
 - Used spotless plugin for Kotlin formatting
@@ -124,10 +112,7 @@
 ### Changed
 - chore(deps): update dependency org.codehaus.groovy:groovy-all to v3.0.9
 - chore(deps): update kotlinversion to v1.5.31
-- chore(deps): update plugin org.jetbrains.kotlin.jvm to v1.5.31
 - chore: Added changelog-updater for creating missed changelog entries
-- chore(deps): update plugin org.jetbrains.kotlin.kapt to v1.5.31
-- chore(deps): update plugin org.jetbrains.kotlin.plugin.allopen to v1.5.31
 - chore(deps): update dependency com.fasterxml.jackson.module:jackson-module-kotlin to v2.13.0
 - chore(deps): update devatherock/minify-js docker tag to v1.0.3
 - chore(deps): update docker orb to v2
