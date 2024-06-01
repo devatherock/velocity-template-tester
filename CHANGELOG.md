@@ -4,6 +4,7 @@
 ### Changed
 - chore(deps): update devatherock/velocity-template-tester docker tag to v2.1.1
 - fix(deps): update kotlin monorepo to v2 (major)
+- chore(deps): update dependency gradle to v8.8
 
 ## [2.1.1] - 2024-05-23
 ### Added
