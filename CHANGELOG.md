@@ -6,6 +6,7 @@
 - fix(deps): update kotlin monorepo to v2 (major)
 - chore(deps): update dependency gradle to v8.8
 - fix(deps): update dependency org.codehaus.groovy:groovy-json to v3.0.22
+- fix(deps): update dependency com.fasterxml.jackson.module:jackson-module-kotlin to v2.17.2
 
 ## [2.1.1] - 2024-05-23
 ### Added
