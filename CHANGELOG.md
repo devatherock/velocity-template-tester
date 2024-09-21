@@ -16,6 +16,7 @@
 - chore(deps): update kotlinversion to v2.0.20
 - fix(deps): update dependency ch.qos.logback:logback-classic to v1.5.8
 - chore(deps): update dependency gradle to v8.10.1
+- fix(deps): update dependency net.logstash.logback:logstash-logback-encoder to v8
 
 ## [2.1.1] - 2024-05-23
 ### Added
