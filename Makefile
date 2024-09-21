@@ -29,5 +29,6 @@ ui-test-ci:
 	DOCKER_TAG=$(docker_tag) docker compose up --wait
 	npm install --save-dev @playwright/test
 	npx playwright install
+	npx playwright install-deps
 	UI_HOST=$(ui_host) npx playwright test
 	docker-compose down
