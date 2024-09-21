@@ -76,7 +76,7 @@ jobs:
       - run: |
           make fast-build docker-build integration-test
       - run: |    
-          make ui-test-ci
+          make ui-test-ci install_deps=true
       - save_cache:
           paths:
             - ~/.gradle
@@ -167,7 +167,7 @@ jobs:
       - run: |
           make integration-test
       - run: |
-          make ui-test-ci          
+          make ui-test-ci install_deps=true
       - store_test_results:
           path: build/test-results
       - store_artifacts:

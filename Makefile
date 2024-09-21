@@ -1,6 +1,7 @@
 docker_tag=latest
 all=false
 ui_host=http://localhost:8080
+install_deps=false
 
 clean:
 	./gradlew clean
@@ -27,7 +28,9 @@ ui-test-debug:
 	UI_HOST=$(ui_host) npx playwright test --ui --headed
 ui-test-ci:
 	DOCKER_TAG=$(docker_tag) docker compose up --wait
-	npm ci
+	npm install
+ifeq ($(install_deps), true)	
 	npx playwright install --with-deps chromium
+endif	
 	UI_HOST=$(ui_host) npx playwright test
 	docker-compose down
