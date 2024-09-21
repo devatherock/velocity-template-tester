@@ -22,4 +22,14 @@ test.describe('Test template', () => {
 
     await expect(page.locator('#result')).toHaveValue('Hello World!');    
   });
+
+  test('Verify keyboard access', async ({ page }) => {
+    await page.keyboard.type('Hello ${user}!');
+    await page.keyboard.press('Tab');
+    await page.keyboard.type('user=World');
+    await page.keyboard.press('Tab');
+    await page.keyboard.press('Enter');
+
+    await expect(page.locator('#result')).toHaveValue('Hello World!'); 
+  });
 });

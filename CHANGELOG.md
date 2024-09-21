@@ -3,6 +3,7 @@
 ## [Unreleased]
 ### Added
 - [#44](https://github.com/devatherock/velocity-template-tester/issues/44): Tests for the UI
+- UI test to verify navigation using keyboard
 
 ### Changed
 - fix(deps): update dependency org.codehaus.groovy:groovy-json to v3.0.22
