@@ -5,8 +5,6 @@
 - [#44](https://github.com/devatherock/velocity-template-tester/issues/44): Tests for the UI
 
 ### Changed
-- chore(deps): update devatherock/velocity-template-tester docker tag to v2.1.1
-- fix(deps): update kotlin monorepo to v2 (major)
 - fix(deps): update dependency org.codehaus.groovy:groovy-json to v3.0.22
 - fix(deps): update dependency com.fasterxml.jackson.module:jackson-module-kotlin to v2.17.2
 - chore(deps): update dependency gradle to v8.9
