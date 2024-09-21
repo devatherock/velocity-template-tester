@@ -93,7 +93,7 @@ shadowJar {
 
 run {
     classpath += configurations.developmentOnly
-    jvmArgs('-noverify', '-XX:TieredStopAtLevel=1', '-Dcom.sun.management.jmxremote', '-XshowSettings:vm')
+    jvmArgs('-XX:TieredStopAtLevel=1', '-Dcom.sun.management.jmxremote', '-XshowSettings:vm')
     systemProperties(System.properties)
 }
 
