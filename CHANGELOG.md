@@ -1,6 +1,9 @@
 # Changelog
 
 ## [Unreleased]
+### Added
+- [#44](https://github.com/devatherock/velocity-template-tester/issues/44): Tests for the UI
+
 ### Changed
 - chore(deps): update devatherock/velocity-template-tester docker tag to v2.1.1
 - fix(deps): update kotlin monorepo to v2 (major)
