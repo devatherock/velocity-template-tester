@@ -67,12 +67,15 @@ jobs:
       - run: |
           ./gradlew check sonar -Dsonar.token=$SONAR_TOKEN
           make fast-build docker-build integration-test
+          make ui-test
       - save_cache:
           paths:
             - ~/.gradle
           key: v1-integration-{{ checksum "build.gradle" }}
       - store_artifacts:
           path: build/reports
+      - store_artifacts:
+          path: playwright-report
       - store_test_results:
           path: build/test-results
 
@@ -145,9 +148,11 @@ jobs:
             - v1-integration-{{ checksum "build.gradle" }}
             - v1-integration
       - run: |
-          make integration-test
+          make integration-test ui-test
       - store_test_results:
           path: build/test-results
+      - store_artifacts:
+          path: playwright-report          
       - save_cache:
           paths:
             - ~/.gradle
