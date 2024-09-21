@@ -67,8 +67,9 @@ jobs:
       - restore_cache:
           keys:
             - v1-node-{{ checksum "package.json" }}
-            - v1-node            
+            - v1-node
       - run: |
+          ./gradlew check sonar -Dsonar.token=$SONAR_TOKEN
           make fast-build docker-build integration-test
           make ui-test-ci
       - save_cache:
@@ -77,8 +78,8 @@ jobs:
           key: v1-integration-{{ checksum "build.gradle" }}
       - save_cache:
           paths:
-            - ~/.node_modules
-          key: v1-node-{{ checksum "package.json" }}          
+            - .node_modules
+          key: v1-node-{{ checksum "package.json" }}
       - store_artifacts:
           path: build/reports
       - store_artifacts:
@@ -154,6 +155,10 @@ jobs:
           keys:
             - v1-integration-{{ checksum "build.gradle" }}
             - v1-integration
+      - restore_cache:
+          keys:
+            - v1-node-{{ checksum "package.json" }}
+            - v1-node            
       - run: |
           make integration-test ui-test-ci
       - store_test_results:
@@ -164,6 +169,10 @@ jobs:
           paths:
             - ~/.gradle
           key: v1-integration-{{ checksum "build.gradle" }}
+      - save_cache:
+          paths:
+            - .node_modules
+          key: v1-node-{{ checksum "package.json" }}          
 
   publish:
     executor: jdk-executor
