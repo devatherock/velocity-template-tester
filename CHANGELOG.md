@@ -13,6 +13,7 @@
 - chore(deps): update dependency gradle to v8.9
 - chore(deps): update plugin org.sonarqube to v5.1.0.4882
 - fix(deps): update dependency org.jsoup:jsoup to v1.18.1
+- chore(deps): update eclipse-temurin docker tag to v17.0.12_7-jre-jammy
 
 ## [2.1.1] - 2024-05-23
 ### Added
