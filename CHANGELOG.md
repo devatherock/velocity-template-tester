@@ -14,6 +14,7 @@
 - fix(deps): update dependency org.jsoup:jsoup to v1.18.1
 - chore(deps): update eclipse-temurin docker tag to v17.0.12_7-jre-jammy
 - Upgraded `autosize.js` to `6.0.1`
+- chore(deps): update kotlinversion to v2.0.20
 
 ## [2.1.1] - 2024-05-23
 ### Added
