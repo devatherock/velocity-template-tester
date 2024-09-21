@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
 
 test.beforeEach(async ({ page }) => {
-  await page.goto(process.env['UI_HOST'] || '');
+  await page.goto(process.env['UI_HOST']!);
 
   await expect(page).toHaveTitle('Velocity Template Tester');
 });

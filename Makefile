@@ -1,7 +1,6 @@
 docker_tag=latest
 all=false
 ui_host=http://localhost:8080
-start_containers=true
 
 clean:
 	./gradlew clean
@@ -23,12 +22,11 @@ integration-test:
 	./gradlew integrationTest
 	docker-compose down
 ui-test:
-ifeq ($(start_containers), true)
-	DOCKER_TAG=$(docker_tag) docker compose up --wait
-endif	
 	UI_HOST=$(ui_host) npx playwright test
-ifeq ($(start_containers), true)
-	docker-compose down
-endif			
 ui-test-debug:
 	UI_HOST=$(ui_host) npx playwright test --ui --headed
+ui-test-ci:
+	DOCKER_TAG=$(docker_tag) docker compose up --wait
+	npm install --save-dev @playwright/test
+	UI_HOST=$(ui_host) npx playwright test
+	docker-compose down

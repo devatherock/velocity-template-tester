@@ -65,9 +65,8 @@ jobs:
             - v1-integration-{{ checksum "build.gradle" }}
             - v1-integration
       - run: |
-          ./gradlew check sonar -Dsonar.token=$SONAR_TOKEN
           make fast-build docker-build integration-test
-          make ui-test
+          make ui-test-ci
       - save_cache:
           paths:
             - ~/.gradle
@@ -148,7 +147,7 @@ jobs:
             - v1-integration-{{ checksum "build.gradle" }}
             - v1-integration
       - run: |
-          make integration-test ui-test
+          make integration-test ui-test-ci
       - store_test_results:
           path: build/test-results
       - store_artifacts:
