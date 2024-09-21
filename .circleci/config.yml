@@ -32,6 +32,9 @@ parameters:
   repo_name:
     type: string
     default: "velocity-template-tester"
+  node_cache_prefix:
+    type: string
+    default: 'v2-node'  
 
 executors:
   jdk-executor:
@@ -66,8 +69,8 @@ jobs:
             - v1-integration
       - restore_cache:
           keys:
-            - v1-node-{{ checksum "package.json" }}
-            - v1-node            
+            - << pipeline.parameters.node_cache_prefix >>-{{ checksum "package.json" }}
+            - << pipeline.parameters.node_cache_prefix >>
       - run: |
           ./gradlew check sonar -Dsonar.token=$SONAR_TOKEN
       - run: |
@@ -81,7 +84,7 @@ jobs:
       - save_cache:
           paths:
             - node_modules
-          key: v1-node-{{ checksum "package.json" }}          
+          key: << pipeline.parameters.node_cache_prefix >>-{{ checksum "package.json" }}          
       - store_artifacts:
           path: build/reports
       - store_artifacts:
@@ -157,6 +160,10 @@ jobs:
           keys:
             - v1-integration-{{ checksum "build.gradle" }}
             - v1-integration
+      - restore_cache:
+          keys:
+            - << pipeline.parameters.node_cache_prefix >>-{{ checksum "package.json" }}
+            - << pipeline.parameters.node_cache_prefix >>            
       - run: |
           make integration-test
       - run: |
@@ -172,7 +179,7 @@ jobs:
       - save_cache:
           paths:
             - node_modules
-          key: v1-node-{{ checksum "package.json" }}          
+          key: << pipeline.parameters.node_cache_prefix >>-{{ checksum "package.json" }}          
 
   publish:
     executor: jdk-executor
