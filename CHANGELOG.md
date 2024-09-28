@@ -18,6 +18,7 @@
 - chore(deps): update dependency gradle to v8.10.1
 - fix(deps): update dependency net.logstash.logback:logstash-logback-encoder to v8
 - chore(deps): update dependency gradle to v8.10.2
+- chore(deps): update dependency @types/node to v22.7.4
 
 ## [2.1.1] - 2024-05-23
 ### Added
