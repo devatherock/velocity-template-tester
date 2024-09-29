@@ -3,7 +3,7 @@ plugins {
     id "org.jetbrains.kotlin.kapt" version "${kotlinVersion}"
     id "org.jetbrains.kotlin.plugin.allopen" version "${kotlinVersion}"
     id "com.github.johnrengelman.shadow" version "8.1.1"
-    id 'application'
+    id 'io.micronaut.application' version '4.4.2'
     id 'groovy'
     id 'jacoco'
     id 'org.sonarqube' version '5.1.0.4882'
@@ -30,42 +30,35 @@ configurations {
 }
 
 dependencies {
-    kapt platform("io.micronaut:micronaut-bom:$micronautVersion")
-    kapt "io.micronaut:micronaut-inject-java"
-    kapt "io.micronaut:micronaut-validation"
     kapt "io.micronaut.openapi:micronaut-openapi"
+    kapt "io.micronaut.validation:micronaut-validation-processor"
 
-    implementation platform("io.micronaut:micronaut-bom:$micronautVersion")
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:${kotlinVersion}"
     implementation "org.jetbrains.kotlin:kotlin-reflect:${kotlinVersion}"
 
+    implementation "io.micronaut.validation:micronaut-validation"
     implementation "io.micronaut:micronaut-runtime"
     implementation "io.swagger.core.v3:swagger-annotations"
-    implementation "io.micronaut:micronaut-http-server-netty"
-    implementation "io.micronaut.micrometer:micronaut-micrometer-core"
     implementation "io.micronaut:micronaut-management"
+    implementation "io.micronaut.micrometer:micronaut-micrometer-core"
+    implementation "io.micronaut:micronaut-jackson-databind"
+    implementation "io.micronaut:micronaut-http-server-netty"
 
     implementation group: 'org.apache.velocity', name: 'velocity-engine-core', version: '2.4'
     implementation group: 'org.apache.velocity.tools', name: 'velocity-tools-generic', version: '3.1'
     implementation group: 'net.logstash.logback', name: 'logstash-logback-encoder', version: '8.0'
     implementation group: 'javax.inject', name: 'javax.inject', version: '1'
+    implementation group: 'org.yaml', name: 'snakeyaml'
 
     runtimeOnly "com.fasterxml.jackson.module:jackson-module-kotlin:2.18.0"
     runtimeOnly "ch.qos.logback:logback-classic:1.5.8"
 
-    kaptTest platform("io.micronaut:micronaut-bom:$micronautVersion")
-    kaptTest "io.micronaut:micronaut-inject-java"
-
-    testAnnotationProcessor platform("io.micronaut:micronaut-bom:$micronautVersion")
-    testAnnotationProcessor "io.micronaut:micronaut-inject-java"
-
     testImplementation "io.micronaut:micronaut-inject-groovy"
-    testImplementation platform("io.micronaut:micronaut-bom:$micronautVersion")
     testImplementation "io.micronaut.test:micronaut-test-spock"
     testImplementation "io.micronaut:micronaut-http-client"
 
-    testImplementation group: 'org.codehaus.groovy', name: 'groovy-json', version: '3.0.22'
-    testImplementation group: 'org.spockframework', name: 'spock-core', version: '2.3-groovy-3.0'
+    testImplementation group: 'org.apache.groovy', name: 'groovy-json', version: '4.0.23'
+    testImplementation group: 'org.spockframework', name: 'spock-core', version: '2.3-groovy-4.0'
 }
 
 test.classpath += configurations.developmentOnly
@@ -74,6 +67,7 @@ mainClassName = "io.github.devatherock.velocity.tester.Application"
 
 tasks.withType(Test) {
     useJUnitPlatform()
+    environment('JAVA_OPTS', System.getenv('JAVA_OPTS') ?: '-Xmx1024m')
 }
 
 allOpen {

@@ -4,7 +4,7 @@ ui_host=http://localhost:8080
 install_deps=false
 
 clean:
-	./gradlew clean
+	rm -rf build
 check:
 ifeq ($(all), true)
 	yamllint -d relaxed . --no-warnings
@@ -19,9 +19,7 @@ docker-run:
 	-p 8080:8080 \
 	devatherock/velocity-template-tester:$(docker_tag)
 integration-test:
-	DOCKER_TAG=$(docker_tag) docker compose up --wait
-	./gradlew integrationTest
-	docker-compose down
+	./integration-tests.sh $(docker_tag) $(additional_gradle_args)
 ui-test:
 	UI_HOST=$(ui_host) npx playwright test
 ui-test-debug:
