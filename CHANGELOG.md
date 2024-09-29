@@ -6,21 +6,18 @@
 - UI test to verify navigation using keyboard
 
 ### Changed
-- fix(deps): update dependency org.codehaus.groovy:groovy-json to v3.0.22
-- fix(deps): update dependency com.fasterxml.jackson.module:jackson-module-kotlin to v2.17.2
-- chore(deps): update dependency gradle to v8.9
 - chore(deps): update plugin org.sonarqube to v5.1.0.4882
 - fix(deps): update dependency org.jsoup:jsoup to v1.18.1
-- chore(deps): update eclipse-temurin docker tag to v17.0.12_7-jre-jammy
 - Upgraded `autosize.js` to `6.0.1`
 - chore(deps): update kotlinversion to v2.0.20
 - fix(deps): update dependency ch.qos.logback:logback-classic to v1.5.8
-- chore(deps): update dependency gradle to v8.10.1
 - fix(deps): update dependency net.logstash.logback:logstash-logback-encoder to v8
 - chore(deps): update dependency gradle to v8.10.2
 - chore(deps): update dependency @types/node to v22.7.4
 - fix(deps): update dependency com.fasterxml.jackson.module:jackson-module-kotlin to v2.18.0
 - fix(deps): update dependency org.apache.velocity:velocity-engine-core to v2.4
+- [#370](https://github.com/devatherock/velocity-template-tester/issues/370): Upgraded micronaut to `4.6.2`
+- Upgraded to Java 21
 
 ## [2.1.1] - 2024-05-23
 ### Added

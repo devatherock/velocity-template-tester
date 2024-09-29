@@ -3,9 +3,10 @@ services:
 
   velocity-template-tester:
     image: devatherock/velocity-template-tester:${DOCKER_TAG:-latest}
+    container_name: velocity-template-tester-intg
     network_mode: "host"
     environment:
-      JAVA_OPTS: '-Xmx640m'
+      JAVA_OPTS: ${JAVA_OPTS:--Xmx640m}
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:8080/health"]
       interval: 2s

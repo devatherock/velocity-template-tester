@@ -39,7 +39,7 @@ parameters:
 executors:
   jdk-executor:
     docker:
-      - image: cimg/openjdk:17.0.11
+      - image: cimg/openjdk:21.0.2
         <<: *docker_auth
     <<: *resource_class
     <<: *work_directory
@@ -341,7 +341,6 @@ workflows:
           context:
             - docker-credentials
             - sonar-credentials
-            - dependencycheck-credentials
           <<: *pr_filter
           requires:
             - minify_js
