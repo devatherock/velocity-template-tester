@@ -18,6 +18,7 @@
 - fix(deps): update dependency org.apache.velocity:velocity-engine-core to v2.4
 - [#370](https://github.com/devatherock/velocity-template-tester/issues/370): Upgraded micronaut to `4.6.2`
 - Upgraded to Java 21
+- chore(deps): update plugin io.micronaut.application to v4.4.3
 
 ## [2.1.1] - 2024-05-23
 ### Added
