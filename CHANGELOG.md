@@ -20,6 +20,7 @@
 - Upgraded to Java 21
 - chore(deps): update plugin io.micronaut.application to v4.4.3
 - chore(deps): update dependency @types/node to v22.7.5
+- chore(deps): update kotlinversion to v2.0.21
 
 ## [2.1.1] - 2024-05-23
 ### Added
