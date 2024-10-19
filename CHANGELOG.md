@@ -24,6 +24,7 @@
 - fix(deps): update dependency ch.qos.logback:logback-classic to v1.5.10
 - chore(deps): update dependency @playwright/test to v1.48.0
 - chore(deps): update dependency @playwright/test to v1.48.1
+- chore(deps): update dependency @types/node to v22.7.7
 
 ## [2.1.1] - 2024-05-23
 ### Added
