@@ -27,6 +27,7 @@
 - chore(deps): update dependency @types/node to v22.7.7
 - fix(deps): update dependency ch.qos.logback:logback-classic to v1.5.11
 - chore(deps): update dependency @playwright/test to v1.48.2
+- chore(deps): update eclipse-temurin docker tag to v21.0.5_11-jre-jammy
 
 ## [2.1.1] - 2024-05-23
 ### Added
