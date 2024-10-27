@@ -29,6 +29,7 @@
 - chore(deps): update dependency @playwright/test to v1.48.2
 - chore(deps): update eclipse-temurin docker tag to v21.0.5_11-jre-jammy
 - fix(deps): update dependency ch.qos.logback:logback-classic to v1.5.12
+- fix(deps): update dependency org.apache.velocity:velocity-engine-core to v2.4.1
 
 ## [2.1.1] - 2024-05-23
 ### Added
