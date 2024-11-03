@@ -32,6 +32,7 @@
 - fix(deps): update dependency org.apache.velocity:velocity-engine-core to v2.4.1
 - fix(deps): update dependency com.fasterxml.jackson.module:jackson-module-kotlin to v2.18.1
 - chore(deps): update dependency @types/node to v22.8.6
+- chore(deps): update dependency @types/node to v22.8.7
 
 ## [2.1.1] - 2024-05-23
 ### Added
