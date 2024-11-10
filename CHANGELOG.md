@@ -35,6 +35,7 @@
 - chore(deps): update dependency @types/node to v22.8.7
 - chore(deps): update plugin io.micronaut.application to v4.4.4
 - fix(deps): update dependency org.apache.groovy:groovy-json to v4.0.24
+- chore(deps): update dependency @types/node to v22.9.0
 
 ## [2.1.1] - 2024-05-23
 ### Added
