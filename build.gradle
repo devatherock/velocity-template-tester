@@ -67,7 +67,7 @@ mainClassName = "io.github.devatherock.velocity.tester.Application"
 
 tasks.withType(Test) {
     useJUnitPlatform()
-    environment('JAVA_OPTS', System.getenv('JAVA_OPTS') ?: '-Xmx1024m')
+    environment('JAVA_OPTS', System.getenv('JAVA_OPTS') ?: '-Xmx640m')
 }
 
 allOpen {
