@@ -24,6 +24,7 @@
 - fix(deps): update dependency org.apache.groovy:groovy-json to v4.0.24
 - chore(deps): update dependency @types/node to v22.9.0
 - chore(deps): update dependency gradle to v8.11
+- Reduced gradle heap to `512m` and test task heap to `640m`, from `1024m`, to fix build failure
 
 ## [2.1.1] - 2024-05-23
 ### Added
