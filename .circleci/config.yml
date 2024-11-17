@@ -314,33 +314,8 @@ workflows:
 
   pr_check:
     jobs:
-      - templates/changelog_updater:
-          name: changelog_updater
-          context:
-            - docker-credentials
-            - changelog-updater-credentials
-          <<: *pr_filter
-      - templates/yaml_validator:
-          name: validate_yamls
-          context:
-            - docker-credentials
-          work_dir: '~/<< pipeline.parameters.repo_name >>'
-          requires:
-            - changelog_updater
-      - add_timestamp_to_static_files:
-          context:
-            - docker-credentials
-          requires:
-            - validate_yamls
-      - minify_js:
-          context:
-            - docker-credentials
-          requires:
-            - add_timestamp_to_static_files            
-      - test:
+      - build:
           context:
             - docker-credentials
             - sonar-credentials
           <<: *pr_filter
-          requires:
-            - minify_js
