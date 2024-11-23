@@ -26,6 +26,7 @@
 - chore(deps): update dependency gradle to v8.11
 - Reduced gradle heap to `512m` and test task heap to `640m`, from `1024m`, to fix build failure
 - chore(deps): update dependency @types/node to v22.9.3
+- chore(deps): update dependency gradle to v8.11.1
 
 ## [2.1.1] - 2024-05-23
 ### Added
