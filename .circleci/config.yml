@@ -5,13 +5,21 @@ docker_auth: &docker_auth
 
 vm_executor_image: &vm_executor_image
   machine:
-    image: ubuntu-2204:2023.04.2    
+    image: ubuntu-2204:2023.04.2
+
+docker_executor_image: &docker_executor_image
+  docker:
+    - image: cimg/openjdk:21.0.2
+      <<: *docker_auth
 
 work_directory: &work_directory
   working_directory: ~/velocity-template-tester
 
 resource_class: &resource_class
   resource_class: small
+
+medium_resource_class: &medium_resource_class
+  resource_class: medium
 
 release_filter: &release_filter
   filters:
@@ -37,18 +45,20 @@ parameters:
     default: 'v2-node'  
 
 executors:
-  jdk-executor:
-    docker:
-      - image: cimg/openjdk:21.0.2
-        <<: *docker_auth
+  docker-executor:
+    <<: *docker_executor_image
     <<: *resource_class
+    <<: *work_directory
+  jdk-executor:
+    <<: *docker_executor_image
+    <<: *medium_resource_class
     <<: *work_directory
     environment:
       # To generate swagger UI
       JAVA_TOOL_OPTIONS: '-Dmicronaut.openapi.views.spec=swagger-ui.enabled=true,swagger-ui.theme=flattop'
   machine-executor:
     <<: *vm_executor_image
-    resource_class: medium
+    <<: *medium_resource_class
     <<: *work_directory
   arm-executor:
     <<: *vm_executor_image
@@ -93,7 +103,7 @@ jobs:
           path: build/test-results
 
   add_timestamp_to_static_files:
-    executor: jdk-executor
+    executor: docker-executor
     <<: *work_directory
     steps:
       - checkout
@@ -182,7 +192,7 @@ jobs:
           key: << pipeline.parameters.node_cache_prefix >>-{{ checksum "package.json" }}          
 
   publish:
-    executor: jdk-executor
+    executor: docker-executor
     steps:
       - checkout
       - setup_remote_docker
@@ -201,7 +211,7 @@ jobs:
             -f docker/Dockerfile .
 
   publish_release:
-    executor: jdk-executor
+    executor: docker-executor
     steps:
       - checkout
       - setup_remote_docker
@@ -217,8 +227,7 @@ jobs:
             -t devatherock/velocity-template-tester:$TAG devatherock/velocity-template-tester:$DEV_TAG
 
   deploy:
-    executor: jdk-executor
-    <<: *resource_class
+    executor: docker-executor
     steps:
       - run:
           name: Trigger deployment to render.com

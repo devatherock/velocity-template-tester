@@ -13,18 +13,14 @@
 - [#370](https://github.com/devatherock/velocity-template-tester/issues/370): Upgraded micronaut to `4.6.2`
 - Upgraded to Java 21
 - chore(deps): update kotlinversion to v2.0.21
-- chore(deps): update dependency @playwright/test to v1.48.1
 - fix(deps): update dependency ch.qos.logback:logback-classic to v1.5.11
-- chore(deps): update dependency @playwright/test to v1.48.2
 - chore(deps): update eclipse-temurin docker tag to v21.0.5_11-jre-jammy
 - fix(deps): update dependency ch.qos.logback:logback-classic to v1.5.12
 - fix(deps): update dependency org.apache.velocity:velocity-engine-core to v2.4.1
 - fix(deps): update dependency com.fasterxml.jackson.module:jackson-module-kotlin to v2.18.1
 - chore(deps): update plugin io.micronaut.application to v4.4.4
 - fix(deps): update dependency org.apache.groovy:groovy-json to v4.0.24
-- chore(deps): update dependency @types/node to v22.9.0
-- chore(deps): update dependency gradle to v8.11
-- Reduced gradle heap to `512m` and test task heap to `640m`, from `1024m`, to fix build failure
+- Reduced gradle heap to `512m` and test task heap to `640m`, from `1024m`, and increased resources, to fix build failure
 - chore(deps): update dependency @types/node to v22.9.3
 - chore(deps): update dependency gradle to v8.11.1
 - chore(deps): update dependency @playwright/test to v1.49.0
