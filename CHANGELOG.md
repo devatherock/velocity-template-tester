@@ -25,6 +25,7 @@
 - chore(deps): update dependency gradle to v8.11.1
 - chore(deps): update dependency @playwright/test to v1.49.0
 - chore(deps): update plugin org.sonarqube to v6
+- chore(deps): update plugin org.sonarqube to v6.0.1.5171
 
 ## [2.1.1] - 2024-05-23
 ### Added
