@@ -32,6 +32,7 @@
 - chore(deps): update kotlinversion to v2.1.0
 - fix(deps): update dependency org.jsoup:jsoup to v1.18.3
 - chore(deps): update plugin org.gradle.toolchains.foojay-resolver-convention to v0.9.0
+- chore(deps): update dependency @playwright/test to v1.49.1
 
 ## [2.1.1] - 2024-05-23
 ### Added
