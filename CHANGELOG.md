@@ -35,6 +35,7 @@
 - chore(deps): update dependency @playwright/test to v1.49.1
 - chore(deps): update dependency @types/node to v22.10.2
 - fix(deps): update dependency ch.qos.logback:logback-classic to v1.5.14
+- chore(deps): update dependency gradle to v8.12
 
 ## [2.1.1] - 2024-05-23
 ### Added
