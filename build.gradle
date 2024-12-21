@@ -51,7 +51,7 @@ dependencies {
     implementation group: 'org.yaml', name: 'snakeyaml'
 
     runtimeOnly "com.fasterxml.jackson.module:jackson-module-kotlin:2.18.2"
-    runtimeOnly "ch.qos.logback:logback-classic:1.5.14"
+    runtimeOnly "ch.qos.logback:logback-classic:1.5.15"
 
     testImplementation "io.micronaut:micronaut-inject-groovy"
     testImplementation "io.micronaut.test:micronaut-test-spock"
