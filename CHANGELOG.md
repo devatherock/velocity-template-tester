@@ -37,6 +37,7 @@
 - fix(deps): update dependency ch.qos.logback:logback-classic to v1.5.14
 - chore(deps): update dependency gradle to v8.12
 - fix(deps): update dependency ch.qos.logback:logback-classic to v1.5.15
+- chore(deps): update dependency @types/node to v22.10.5
 
 ## [2.1.1] - 2024-05-23
 ### Added
