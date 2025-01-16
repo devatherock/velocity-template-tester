@@ -28,7 +28,8 @@ import io.swagger.v3.oas.annotations.servers.Server
 object Application {
     @JvmStatic
     fun main(args: Array<String>) {
-        Micronaut.build()
+        Micronaut
+            .build()
             .packages("")
             .mainClass(Application::class.java)
             .start()

@@ -110,13 +110,13 @@ class VelocityController {
      * @param headers
      * @return content type
      */
-    private fun contentType(headers: HttpHeaders): MediaType {
-        return if (headers.accept()
+    private fun contentType(headers: HttpHeaders): MediaType =
+        if (headers
+                .accept()
                 .contains(MediaType.TEXT_HTML_TYPE)
         ) {
             MediaType.TEXT_HTML_TYPE
         } else {
             MediaType.TEXT_PLAIN_TYPE
         }
-    }
 }
