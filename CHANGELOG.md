@@ -43,6 +43,7 @@
 - chore(deps): update dependency @types/node to v22.10.7
 - chore(deps): update plugin io.micronaut.application to v4.4.5
 - chore(deps): update dependency @types/node to v22.10.10
+- chore(deps): update dependency gradle to v8.12.1
 
 ## [2.1.1] - 2024-05-23
 ### Added
