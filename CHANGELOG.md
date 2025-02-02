@@ -45,6 +45,7 @@
 - chore(deps): update dependency @types/node to v22.10.10
 - chore(deps): update dependency gradle to v8.12.1
 - chore(deps): update eclipse-temurin docker tag to v21.0.6_7-jre-jammy
+- chore(deps): update kotlinversion to v2.1.10
 
 ## [2.1.1] - 2024-05-23
 ### Added
