@@ -44,6 +44,7 @@
 - chore(deps): update plugin io.micronaut.application to v4.4.5
 - chore(deps): update dependency @types/node to v22.10.10
 - chore(deps): update dependency gradle to v8.12.1
+- chore(deps): update eclipse-temurin docker tag to v21.0.6_7-jre-jammy
 
 ## [2.1.1] - 2024-05-23
 ### Added
