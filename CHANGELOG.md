@@ -51,6 +51,7 @@
 - chore(deps): update dependency @types/node to v22.13.1
 - chore(deps): update dependency @types/node to v22.13.4
 - chore(deps): update dependency @types/node to v22.13.5
+- chore(deps): update dependency @types/node to v22.13.8
 
 ## [2.1.1] - 2024-05-23
 ### Added
