@@ -54,6 +54,7 @@
 - chore(deps): update dependency @types/node to v22.13.8
 - fix(deps): update dependency ch.qos.logback:logback-classic to v1.5.17
 - chore(deps): update dependency @types/node to v22.13.10
+- fix(deps): update dependency com.fasterxml.jackson.module:jackson-module-kotlin to v2.18.3
 
 ## [2.1.1] - 2024-05-23
 ### Added
