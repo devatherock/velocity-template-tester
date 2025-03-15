@@ -59,6 +59,7 @@
 - chore(deps): update dependency @playwright/test to v1.51.0
 - chore(deps): update dependency gradle to v8.13
 - chore(deps): update plugin io.micronaut.application to v4.5.0
+- fix(deps): update dependency org.jsoup:jsoup to v1.19.1
 
 ## [2.1.1] - 2024-05-23
 ### Added
