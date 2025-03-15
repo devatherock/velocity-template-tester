@@ -57,6 +57,7 @@
 - fix(deps): update dependency com.fasterxml.jackson.module:jackson-module-kotlin to v2.18.3
 - fix(deps): update dependency org.apache.groovy:groovy-json to v4.0.26
 - chore(deps): update dependency @playwright/test to v1.51.0
+- chore(deps): update dependency gradle to v8.13
 
 ## [2.1.1] - 2024-05-23
 ### Added
