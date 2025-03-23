@@ -62,6 +62,7 @@
 - fix(deps): update dependency org.jsoup:jsoup to v1.19.1
 - chore(deps): update dependency @playwright/test to v1.51.1
 - chore(deps): update dependency @types/node to v22.13.11
+- chore(deps): update kotlinversion to v2.1.20
 
 ## [2.1.1] - 2024-05-23
 ### Added
