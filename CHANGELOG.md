@@ -65,6 +65,7 @@
 - chore(deps): update kotlinversion to v2.1.20
 - fix(deps): update dependency ch.qos.logback:logback-classic to v1.5.18
 - chore(deps): update dependency @types/node to v22.14.1
+- chore(deps): update plugin com.diffplug.spotless to v7.0.3
 
 ## [2.1.1] - 2024-05-23
 ### Added
