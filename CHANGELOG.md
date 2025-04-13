@@ -67,6 +67,7 @@
 - chore(deps): update dependency @types/node to v22.14.1
 - chore(deps): update plugin com.diffplug.spotless to v7.0.3
 - chore(deps): update plugin io.micronaut.application to v4.5.2
+- chore(deps): update plugin org.gradle.toolchains.foojay-resolver-convention to v0.10.0
 
 ## [2.1.1] - 2024-05-23
 ### Added
