@@ -66,6 +66,7 @@
 - fix(deps): update dependency ch.qos.logback:logback-classic to v1.5.18
 - chore(deps): update dependency @types/node to v22.14.1
 - chore(deps): update plugin com.diffplug.spotless to v7.0.3
+- chore(deps): update plugin io.micronaut.application to v4.5.2
 
 ## [2.1.1] - 2024-05-23
 ### Added
