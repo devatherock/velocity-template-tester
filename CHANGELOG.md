@@ -71,6 +71,7 @@
 - chore(deps): update plugin io.micronaut.application to v4.5.3
 - chore(deps): update dependency @playwright/test to v1.52.0
 - chore(deps): update plugin org.sonarqube to v6.1.0.5360
+- fix(deps): update dependency net.logstash.logback:logstash-logback-encoder to v8.1
 
 ## [2.1.1] - 2024-05-23
 ### Added
