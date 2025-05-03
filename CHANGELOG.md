@@ -76,6 +76,7 @@
 - chore(deps): update dependency @types/node to v22.15.2
 - chore(deps): update dependency @types/node to v22.15.3
 - chore(deps): update dependency gradle to v8.14
+- fix(deps): update dependency com.fasterxml.jackson.module:jackson-module-kotlin to v2.19.0
 
 ## [2.1.1] - 2024-05-23
 ### Added
