@@ -74,6 +74,7 @@
 - fix(deps): update dependency net.logstash.logback:logstash-logback-encoder to v8.1
 - chore(deps): update eclipse-temurin docker tag to v21.0.7_6-jre-jammy
 - chore(deps): update dependency @types/node to v22.15.2
+- chore(deps): update dependency @types/node to v22.15.3
 
 ## [2.1.1] - 2024-05-23
 ### Added
