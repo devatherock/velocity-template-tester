@@ -80,6 +80,7 @@
 - fix(deps): update dependency org.jsoup:jsoup to v1.20.1
 - chore(deps): update dependency @types/node to v22.15.17
 - chore(deps): update dependency @types/node to v22.15.18
+- chore(deps): update kotlinversion to v2.1.21
 
 ## [2.1.1] - 2024-05-23
 ### Added
