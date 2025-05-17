@@ -79,6 +79,7 @@
 - fix(deps): update dependency com.fasterxml.jackson.module:jackson-module-kotlin to v2.19.0
 - fix(deps): update dependency org.jsoup:jsoup to v1.20.1
 - chore(deps): update dependency @types/node to v22.15.17
+- chore(deps): update dependency @types/node to v22.15.18
 
 ## [2.1.1] - 2024-05-23
 ### Added
