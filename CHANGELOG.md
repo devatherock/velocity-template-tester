@@ -81,6 +81,7 @@
 - chore(deps): update dependency @types/node to v22.15.17
 - chore(deps): update dependency @types/node to v22.15.18
 - chore(deps): update kotlinversion to v2.1.21
+- chore(deps): update plugin org.sonarqube to v6.2.0.5505
 
 ## [2.1.1] - 2024-05-23
 ### Added
