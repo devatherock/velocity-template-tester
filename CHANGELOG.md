@@ -85,6 +85,7 @@
 - chore(deps): update dependency @types/node to v22.15.21
 - chore(deps): update dependency gradle to v8.14.1
 - chore(deps): update plugin org.gradle.toolchains.foojay-resolver-convention to v1
+- chore(deps): update dependency @types/node to v22.15.29
 
 ## [2.1.1] - 2024-05-23
 ### Added
