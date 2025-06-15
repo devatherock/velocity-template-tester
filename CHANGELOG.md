@@ -89,6 +89,7 @@
 - chore(deps): update dependency @types/node to v22.15.31
 - chore(deps): update dependency gradle to v8.14.2
 - chore(deps): update plugin com.diffplug.spotless to v7.0.4
+- fix(deps): update dependency com.fasterxml.jackson.module:jackson-module-kotlin to v2.19.1
 
 ## [2.1.1] - 2024-05-23
 ### Added
