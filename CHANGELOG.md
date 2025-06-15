@@ -91,6 +91,7 @@
 - chore(deps): update plugin com.diffplug.spotless to v7.0.4
 - fix(deps): update dependency com.fasterxml.jackson.module:jackson-module-kotlin to v2.19.1
 - fix(deps): update dependency org.apache.groovy:groovy-json to v4.0.27
+- chore(deps): update dependency @playwright/test to v1.53.0
 
 ## [2.1.1] - 2024-05-23
 ### Added
