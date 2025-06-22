@@ -94,6 +94,7 @@
 - chore(deps): update dependency @playwright/test to v1.53.0
 - chore(deps): update dependency @playwright/test to v1.53.1
 - chore(deps): update dependency @types/node to v22.15.32
+- chore(deps): update plugin io.micronaut.application to v4.5.4
 
 ## [2.1.1] - 2024-05-23
 ### Added
