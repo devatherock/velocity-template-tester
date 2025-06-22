@@ -93,6 +93,7 @@
 - fix(deps): update dependency org.apache.groovy:groovy-json to v4.0.27
 - chore(deps): update dependency @playwright/test to v1.53.0
 - chore(deps): update dependency @playwright/test to v1.53.1
+- chore(deps): update dependency @types/node to v22.15.32
 
 ## [2.1.1] - 2024-05-23
 ### Added
