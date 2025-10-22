@@ -96,6 +96,7 @@
 - chore(deps): update dependency @types/node to v22.15.32
 - chore(deps): update plugin io.micronaut.application to v4.5.4
 - chore(deps): update dependency @types/node to v22.15.34
+- Bump playwright and @playwright/test
 
 ## [2.1.1] - 2024-05-23
 ### Added
