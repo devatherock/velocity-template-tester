@@ -29,6 +29,7 @@
 - Bump playwright and @playwright/test
 - Switched to `com.gradleup.shadow` gradle plugin from `com.github.johnrengelman.shadow`
 - chore(deps): update eclipse-temurin docker tag to v21.0.9_10-jre-jammy
+- chore(deps): update gradle to v8.14.3
 
 ## [2.1.1] - 2024-05-23
 ### Added
