@@ -28,6 +28,7 @@
 - chore(deps): update dependency @types/node to v22.15.34
 - Bump playwright and @playwright/test
 - Switched to `com.gradleup.shadow` gradle plugin from `com.github.johnrengelman.shadow`
+- chore(deps): update eclipse-temurin docker tag to v21.0.9_10-jre-jammy
 
 ## [2.1.1] - 2024-05-23
 ### Added
