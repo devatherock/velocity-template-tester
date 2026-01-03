@@ -1,4 +1,4 @@
-FROM eclipse-temurin:21.0.7_6-jre-jammy
+FROM eclipse-temurin:21.0.9_10-jre-jammy
 
 RUN apt-get update \
 	&& apt-get install dumb-init -y
