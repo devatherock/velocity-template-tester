@@ -30,6 +30,7 @@
 - Switched to `com.gradleup.shadow` gradle plugin from `com.github.johnrengelman.shadow`
 - chore(deps): update eclipse-temurin docker tag to v21.0.9_10-jre-jammy
 - chore(deps): update gradle to v8.14.3
+- chore(deps): update plugin com.gradleup.shadow to v8.3.9
 
 ## [2.1.1] - 2024-05-23
 ### Added
