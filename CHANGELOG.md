@@ -31,6 +31,7 @@
 - chore(deps): update eclipse-temurin docker tag to v21.0.9_10-jre-jammy
 - chore(deps): update gradle to v8.14.3
 - chore(deps): update plugin com.gradleup.shadow to v8.3.9
+- fix(deps): update dependency ch.qos.logback:logback-classic to v1.5.24
 
 ## [2.1.1] - 2024-05-23
 ### Added
