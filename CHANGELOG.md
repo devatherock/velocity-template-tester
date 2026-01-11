@@ -33,6 +33,7 @@
 - chore(deps): update plugin com.gradleup.shadow to v8.3.9
 - fix(deps): update dependency ch.qos.logback:logback-classic to v1.5.24
 - fix(deps): update dependency org.apache.groovy:groovy-json to v4.0.29
+- chore(deps): update dependency @playwright/test to v1.57.0
 
 ## [2.1.1] - 2024-05-23
 ### Added
