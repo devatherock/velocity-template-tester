@@ -37,6 +37,7 @@
 - chore(deps): update dependency @types/node to v22.19.5
 - chore(deps): update dependency @types/node to v22.19.7
 - chore(deps): update gradle to v8.14.4
+- chore(deps): update dependency @types/node to v22.19.13
 
 ## [2.1.1] - 2024-05-23
 ### Added
