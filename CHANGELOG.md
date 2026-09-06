@@ -40,6 +40,7 @@
 - chore(deps): update dependency @types/node to v22.19.17
 - chore(deps): update eclipse-temurin docker tag to v21.0.11_10-jre-jammy
 - chore(deps): update cimg/openjdk docker tag to v21.0.12
+- chore(deps): update eclipse-temurin docker tag to v21.0.12_8-jre-jammy
 
 ## [2.1.1] - 2024-05-23
 ### Added
