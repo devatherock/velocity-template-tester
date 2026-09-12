@@ -3,6 +3,7 @@
 ## [Unreleased]
 ### Changed
 - chore(deps): update plugin com.gradleup.shadow to v8.3.11
+- fix(deps): update dependency org.apache.groovy:groovy-json to v4.0.33
 
 ## [2.2.0] - 2026-09-08
 ### Added
