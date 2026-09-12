@@ -1,6 +1,10 @@
 # Changelog
 
 ## [Unreleased]
+### Changed
+- chore(deps): update plugin com.gradleup.shadow to v8.3.11
+
+## [2.2.0] - 2026-09-08
 ### Added
 - [#44](https://github.com/devatherock/velocity-template-tester/issues/44): Tests for the UI
 - UI test to verify navigation using keyboard
