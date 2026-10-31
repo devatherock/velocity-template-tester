@@ -65,7 +65,7 @@ executors:
     resource_class: arm.medium
     <<: *work_directory
     environment:
-      NEEDRESTART_MODE: a
+      DEBIAN_FRONTEND: noninteractive
 
 version: 2.1
 jobs:
