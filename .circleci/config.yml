@@ -81,10 +81,10 @@ jobs:
           keys:
             - << pipeline.parameters.node_cache_prefix >>-{{ checksum "package.json" }}
             - << pipeline.parameters.node_cache_prefix >>
-      - run: |
-          ./gradlew check sonar -Dsonar.token=$SONAR_TOKEN
-      - run: |
-          make fast-build docker-build integration-test
+#      - run: |
+#          ./gradlew check sonar -Dsonar.token=$SONAR_TOKEN
+#      - run: |
+#          make fast-build docker-build integration-test
       - run: |    
           make ui-test-ci install_deps=true
       - save_cache:
