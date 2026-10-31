@@ -5,7 +5,7 @@ docker_auth: &docker_auth
 
 vm_executor_image: &vm_executor_image
   machine:
-    image: ubuntu-2204:2023.04.2
+    image: ubuntu-2204:2026.05.1
 
 docker_executor_image: &docker_executor_image
   docker:
@@ -60,10 +60,14 @@ executors:
     <<: *vm_executor_image
     <<: *medium_resource_class
     <<: *work_directory
+    environment:
+      DEBIAN_FRONTEND: noninteractive  # Required to prevent a prompt during playwright install
   arm-executor:
     <<: *vm_executor_image
     resource_class: arm.medium
     <<: *work_directory
+    environment:
+      DEBIAN_FRONTEND: noninteractive
 
 version: 2.1
 jobs:
@@ -345,7 +349,7 @@ workflows:
           context:
             - docker-credentials
           requires:
-            - add_timestamp_to_static_files            
+            - add_timestamp_to_static_files
       - test:
           context:
             - docker-credentials
