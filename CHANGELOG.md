@@ -6,6 +6,7 @@
 - fix(deps): update dependency org.apache.groovy:groovy-json to v4.0.33
 - chore(deps): update dependency @playwright/test to v1.64.1
 - chore(deps): update cimg/openjdk docker tag to v21.0.13
+- chore(deps): update eclipse-temurin docker tag to v21.0.13.1_2-jre-jammy
 
 ## [2.2.0] - 2026-09-08
 ### Added
