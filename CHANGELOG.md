@@ -9,6 +9,7 @@
 - chore(deps): update eclipse-temurin docker tag to v21.0.13_9-jre-jammy
 - chore(deps): update gradle to v8.14.8
 - chore(deps): update dependency @playwright/test to v1.65.1
+- chore(deps): update dependency @types/node to v22.20.7
 
 ## [2.2.0] - 2026-09-08
 ### Added
